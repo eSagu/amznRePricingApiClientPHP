@@ -21,11 +21,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/eSagu/amznRePricingApiClientPHP.git"
+      "url": "https://github.com/e-sagu/amzn-re-pricing-api-client-php.git"
     }
   ],
   "require": {
-    "eSagu/amznRePricingApiClientPHP": "*@dev"
+    "e-sagu/amzn-re-pricing-api-client-php": "*@dev"
   }
 }
 ```
