@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **callList**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[] callList()
+> \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[] callList()
 
 Gets all exclusion criteria of a service.
 
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]**](../Model/RepricingExclusionCriteriaDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]**](../Model/RepricingExclusionCriteriaDTO.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO get($exclusion_criteria_id)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO get($exclusion_criteria_id)
 
 Gets the exclusion criteria by id.
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO**](../Model/RepricingExclusionCriteriaDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO**](../Model/RepricingExclusionCriteriaDTO.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 // eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingExclusionCriteriaApi();
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO | 
 
 try {
     $api_instance->post($body);
@@ -188,7 +188,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO.md)|  | [optional]
 
 ### Return type
 
@@ -224,7 +224,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingExclusionCriteriaApi();
 $exclusion_criteria_id = 789; // int | 
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO | 
 
 try {
     $api_instance->put($exclusion_criteria_id, $body);
@@ -239,7 +239,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exclusion_criteria_id** | **int**|  |
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO.md)|  | [optional]
 
 ### Return type
 

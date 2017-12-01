@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO get($item_id)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO get($item_id)
 
 Gets the item's strategy settings.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO**](../Model/RepricingItemStrategyDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO**](../Model/RepricingItemStrategyDTO.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingItemStrategyApi();
 $item_id = 789; // int | 
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO | 
 
 try {
     $api_instance->put($item_id, $body);
@@ -92,7 +92,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **item_id** | **int**|  |
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO.md)|  | [optional]
 
 ### Return type
 

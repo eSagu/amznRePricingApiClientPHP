@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Api;
+namespace eSagu\Amzn\RePricing\V1\Api;
 
 use \eSagu\Amzn\RePricing\V1\ApiClient;
 use \eSagu\Amzn\RePricing\V1\ApiException;
@@ -93,7 +93,7 @@ class RepricingBuyBoxSlotsApi
      * Get all user service's buy box slots.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]
      */
     public function callList()
     {
@@ -107,7 +107,7 @@ class RepricingBuyBoxSlotsApi
      * Get all user service's buy box slots.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function callListWithHttpInfo()
     {
@@ -146,15 +146,15 @@ class RepricingBuyBoxSlotsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]',
                 '/buy-box-slots'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -170,7 +170,7 @@ class RepricingBuyBoxSlotsApi
      *
      * @param int $buy_box_slots_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]
      */
     public function get($buy_box_slots_id)
     {
@@ -185,7 +185,7 @@ class RepricingBuyBoxSlotsApi
      *
      * @param int $buy_box_slots_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithHttpInfo($buy_box_slots_id)
     {
@@ -236,15 +236,15 @@ class RepricingBuyBoxSlotsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]',
                 '/buy-box-slots/{buyBoxSlotsId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

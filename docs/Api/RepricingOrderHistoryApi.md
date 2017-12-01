@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[] get()
+> \eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[] get()
 
 Gets stats of the order history for given userService.
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]**](../Model/RepricingAmazonOrderHistoryDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]**](../Model/RepricingAmazonOrderHistoryDTO.md)
 
 ### Authorization
 

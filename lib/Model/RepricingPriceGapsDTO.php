@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model;
+namespace eSagu\Amzn\RePricing\V1\Model;
 
 use \ArrayAccess;
 
@@ -58,7 +58,7 @@ class RepricingPriceGapsDTO implements ArrayAccess
         'is_default_fba' => 'bool',
         'is_default_mfn' => 'bool',
         'name' => 'string',
-        'price_gaps' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[]',
+        'price_gaps' => '\eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[]',
         'shipping_included' => 'bool'
     ];
 
@@ -233,7 +233,7 @@ class RepricingPriceGapsDTO implements ArrayAccess
 
     /**
      * Gets price_gaps
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[]
      */
     public function getPriceGaps()
     {
@@ -242,7 +242,7 @@ class RepricingPriceGapsDTO implements ArrayAccess
 
     /**
      * Sets price_gaps
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[] $price_gaps
+     * @param \eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[] $price_gaps
      * @return $this
      */
     public function setPriceGaps($price_gaps)

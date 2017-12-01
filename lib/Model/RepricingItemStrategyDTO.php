@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model;
+namespace eSagu\Amzn\RePricing\V1\Model;
 
 use \ArrayAccess;
 
@@ -59,7 +59,7 @@ class RepricingItemStrategyDTO implements ArrayAccess
         'custom_code_id' => 'int',
         'exclusion_criteria_id' => 'int',
         'price_gap_id' => 'int',
-        'price_settings' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemPriceSettingsDTO',
+        'price_settings' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemPriceSettingsDTO',
         'shipping_costs_id' => 'int'
     ];
 
@@ -259,7 +259,7 @@ class RepricingItemStrategyDTO implements ArrayAccess
 
     /**
      * Gets price_settings
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemPriceSettingsDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemPriceSettingsDTO
      */
     public function getPriceSettings()
     {
@@ -268,7 +268,7 @@ class RepricingItemStrategyDTO implements ArrayAccess
 
     /**
      * Sets price_settings
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemPriceSettingsDTO $price_settings
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingItemPriceSettingsDTO $price_settings
      * @return $this
      */
     public function setPriceSettings($price_settings)

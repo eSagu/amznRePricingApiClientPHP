@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Api;
+namespace eSagu\Amzn\RePricing\V1\Api;
 
 use \eSagu\Amzn\RePricing\V1\ApiClient;
 use \eSagu\Amzn\RePricing\V1\ApiException;
@@ -123,7 +123,7 @@ class RepricingItemApi
      * @param bool $count_items  (optional, default to false)
      * @param bool $return_items  (optional, default to true)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]
      */
     public function callList($by_sku = null, $by_sku_exact = null, $by_title = null, $by_title_exact = null, $by_asin = null, $by_search_term = null, $by_amazon_price_from = null, $by_amazon_price_to = null, $by_price_mode = null, $by_price_state = null, $by_condition = null, $by_fulfillment_type = null, $by_no_price_settings = null, $by_buy_box_strategy = null, $by_price_gaps = null, $by_exclusion_criteria = null, $by_shipping_costs = null, $by_buy_box = null, $by_missing_rules = null, $by_quantity_greater_zero = null, $by_quantity_equal_zero = null, $by_id_greater_than = null, $has_buy_box = null, $by_custom_code = null, $sort = null, $order = null, $offset = null, $limit = null, $count_items = null, $return_items = null)
     {
@@ -167,7 +167,7 @@ class RepricingItemApi
      * @param bool $count_items  (optional, default to false)
      * @param bool $return_items  (optional, default to true)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function callListWithHttpInfo($by_sku = null, $by_sku_exact = null, $by_title = null, $by_title_exact = null, $by_asin = null, $by_search_term = null, $by_amazon_price_from = null, $by_amazon_price_to = null, $by_price_mode = null, $by_price_state = null, $by_condition = null, $by_fulfillment_type = null, $by_no_price_settings = null, $by_buy_box_strategy = null, $by_price_gaps = null, $by_exclusion_criteria = null, $by_shipping_costs = null, $by_buy_box = null, $by_missing_rules = null, $by_quantity_greater_zero = null, $by_quantity_equal_zero = null, $by_id_greater_than = null, $has_buy_box = null, $by_custom_code = null, $sort = null, $order = null, $offset = null, $limit = null, $count_items = null, $return_items = null)
     {
@@ -326,15 +326,15 @@ class RepricingItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]',
                 '/item'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -350,7 +350,7 @@ class RepricingItemApi
      *
      * @param int $item_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO
      */
     public function get($item_id)
     {
@@ -365,7 +365,7 @@ class RepricingItemApi
      *
      * @param int $item_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithHttpInfo($item_id)
     {
@@ -416,15 +416,15 @@ class RepricingItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO',
                 '/item/{itemId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

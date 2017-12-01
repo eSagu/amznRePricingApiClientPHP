@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **callList**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[] callList()
+> \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[] callList()
 
 Get a list of all CSV requests of a user's service.
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]**](../Model/RepricingCSVRequestDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]**](../Model/RepricingCSVRequestDTO.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO get($csv_request_id)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO get($csv_request_id)
 
 Get a single CSV request of a user's service specified by its id.
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO**](../Model/RepricingCSVRequestDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO**](../Model/RepricingCSVRequestDTO.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 // eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingCSVRequestApi();
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO | 
 
 try {
     $api_instance->post($body);
@@ -137,7 +137,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO.md)|  | [optional]
 
 ### Return type
 

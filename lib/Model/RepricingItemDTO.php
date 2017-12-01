@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model;
+namespace eSagu\Amzn\RePricing\V1\Model;
 
 use \ArrayAccess;
 
@@ -60,17 +60,17 @@ class RepricingItemDTO implements ArrayAccess
         'asin' => 'string',
         'condition' => 'string',
         'fba' => 'bool',
-        'feed_submission' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO',
+        'feed_submission' => '\eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO',
         'id' => 'int',
         'initial_price' => 'int',
         'inserted' => '\DateTime',
         'listed' => 'bool',
-        'offers' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]',
+        'offers' => '\eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]',
         'offers_updated' => 'int',
-        'optimization_result' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO',
+        'optimization_result' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO',
         'quantity' => 'int',
         'sku' => 'string',
-        'strategy' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO',
+        'strategy' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO',
         'title' => 'string',
         'updated' => '\DateTime'
     ];
@@ -387,7 +387,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Gets feed_submission
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO
      */
     public function getFeedSubmission()
     {
@@ -396,7 +396,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Sets feed_submission
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO $feed_submission
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO $feed_submission
      * @return $this
      */
     public function setFeedSubmission($feed_submission)
@@ -492,7 +492,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Gets offers
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]
      */
     public function getOffers()
     {
@@ -501,7 +501,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Sets offers
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[] $offers
+     * @param \eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[] $offers
      * @return $this
      */
     public function setOffers($offers)
@@ -534,7 +534,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Gets optimization_result
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO
      */
     public function getOptimizationResult()
     {
@@ -543,7 +543,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Sets optimization_result
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO $optimization_result
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO $optimization_result
      * @return $this
      */
     public function setOptimizationResult($optimization_result)
@@ -597,7 +597,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Gets strategy
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO
      */
     public function getStrategy()
     {
@@ -606,7 +606,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Sets strategy
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO $strategy
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO $strategy
      * @return $this
      */
     public function setStrategy($strategy)

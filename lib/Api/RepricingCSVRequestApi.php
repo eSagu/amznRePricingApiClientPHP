@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Api;
+namespace eSagu\Amzn\RePricing\V1\Api;
 
 use \eSagu\Amzn\RePricing\V1\ApiClient;
 use \eSagu\Amzn\RePricing\V1\ApiException;
@@ -93,7 +93,7 @@ class RepricingCSVRequestApi
      * Get a list of all CSV requests of a user's service.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]
      */
     public function callList()
     {
@@ -107,7 +107,7 @@ class RepricingCSVRequestApi
      * Get a list of all CSV requests of a user's service.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function callListWithHttpInfo()
     {
@@ -146,15 +146,15 @@ class RepricingCSVRequestApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]',
                 '/csv-request'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -170,7 +170,7 @@ class RepricingCSVRequestApi
      *
      * @param int $csv_request_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO
      */
     public function get($csv_request_id)
     {
@@ -185,7 +185,7 @@ class RepricingCSVRequestApi
      *
      * @param int $csv_request_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithHttpInfo($csv_request_id)
     {
@@ -236,15 +236,15 @@ class RepricingCSVRequestApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO',
                 '/csv-request/{csvRequestId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -258,7 +258,7 @@ class RepricingCSVRequestApi
      *
      * Creates a new CSV request for a user's service.
      *
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO $body  (optional)
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO $body  (optional)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return void
      */
@@ -273,7 +273,7 @@ class RepricingCSVRequestApi
      *
      * Creates a new CSV request for a user's service.
      *
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO $body  (optional)
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingCSVRequestDTO $body  (optional)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */

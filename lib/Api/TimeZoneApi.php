@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Api;
+namespace eSagu\Amzn\RePricing\V1\Api;
 
 use \eSagu\Amzn\RePricing\V1\ApiClient;
 use \eSagu\Amzn\RePricing\V1\ApiException;

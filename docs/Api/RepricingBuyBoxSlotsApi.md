@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **callList**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[] callList()
+> \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[] callList()
 
 Get all user service's buy box slots.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]**](../Model/RepricingBuyBoxSlotsDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]**](../Model/RepricingBuyBoxSlotsDTO.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[] get($buy_box_slots_id)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[] get($buy_box_slots_id)
 
 Get the buy box slots specified by it's id.
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]**](../Model/RepricingBuyBoxSlotsDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSlotsDTO[]**](../Model/RepricingBuyBoxSlotsDTO.md)
 
 ### Authorization
 

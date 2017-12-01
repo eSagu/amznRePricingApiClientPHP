@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **callList**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO[] callList()
+> \eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO[] callList()
 
 Get a list of all CSV imports.
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO[]**](../Model/RepricingCSVImportDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO[]**](../Model/RepricingCSVImportDTO.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO get($csv_import_id)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO get($csv_import_id)
 
 Get the specified single CSV import.
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO**](../Model/RepricingCSVImportDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO**](../Model/RepricingCSVImportDTO.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 // eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingCSVImportApi();
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO | 
 
 try {
     $api_instance->post($body);
@@ -137,7 +137,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingCSVImportDTO.md)|  | [optional]
 
 ### Return type
 

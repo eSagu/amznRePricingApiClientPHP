@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Api;
+namespace eSagu\Amzn\RePricing\V1\Api;
 
 use \eSagu\Amzn\RePricing\V1\ApiClient;
 use \eSagu\Amzn\RePricing\V1\ApiException;
@@ -94,7 +94,7 @@ class RepricingItemStrategyApi
      *
      * @param int $item_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO
      */
     public function get($item_id)
     {
@@ -109,7 +109,7 @@ class RepricingItemStrategyApi
      *
      * @param int $item_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithHttpInfo($item_id)
     {
@@ -160,15 +160,15 @@ class RepricingItemStrategyApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO',
                 '/item/{itemId}/strategy'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -183,7 +183,7 @@ class RepricingItemStrategyApi
      * Creates or updates the item's strategy settings.
      *
      * @param int $item_id  (required)
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO $body  (optional)
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO $body  (optional)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return void
      */
@@ -199,7 +199,7 @@ class RepricingItemStrategyApi
      * Creates or updates the item's strategy settings.
      *
      * @param int $item_id  (required)
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO $body  (optional)
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO $body  (optional)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */

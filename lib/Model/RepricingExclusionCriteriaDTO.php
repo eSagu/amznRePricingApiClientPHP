@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model;
+namespace eSagu\Amzn\RePricing\V1\Model;
 
 use \ArrayAccess;
 
@@ -55,10 +55,10 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'criterion_rating' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO',
-        'criterion_seller_id' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO',
-        'criterion_shipping_time' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO',
-        'criterion_ships_from' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO',
+        'criterion_rating' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO',
+        'criterion_seller_id' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO',
+        'criterion_shipping_time' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO',
+        'criterion_ships_from' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO',
         'is_default_fba' => 'bool',
         'is_default_mfn' => 'bool',
         'name' => 'string',
@@ -218,7 +218,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
     /**
      * Gets criterion_rating
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO
      */
     public function getCriterionRating()
     {
@@ -227,7 +227,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
     /**
      * Sets criterion_rating
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO $criterion_rating
+     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO $criterion_rating
      * @return $this
      */
     public function setCriterionRating($criterion_rating)
@@ -239,7 +239,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
     /**
      * Gets criterion_seller_id
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO
      */
     public function getCriterionSellerId()
     {
@@ -248,7 +248,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
     /**
      * Sets criterion_seller_id
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO $criterion_seller_id
+     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO $criterion_seller_id
      * @return $this
      */
     public function setCriterionSellerId($criterion_seller_id)
@@ -260,7 +260,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
     /**
      * Gets criterion_shipping_time
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO
      */
     public function getCriterionShippingTime()
     {
@@ -269,7 +269,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
     /**
      * Sets criterion_shipping_time
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO $criterion_shipping_time
+     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO $criterion_shipping_time
      * @return $this
      */
     public function setCriterionShippingTime($criterion_shipping_time)
@@ -281,7 +281,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
     /**
      * Gets criterion_ships_from
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO
      */
     public function getCriterionShipsFrom()
     {
@@ -290,7 +290,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
     /**
      * Sets criterion_ships_from
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO $criterion_ships_from
+     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO $criterion_ships_from
      * @return $this
      */
     public function setCriterionShipsFrom($criterion_ships_from)

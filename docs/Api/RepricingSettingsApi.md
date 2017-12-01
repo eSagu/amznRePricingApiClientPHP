@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO get()
+> \eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO get()
 
 Gets the repricing settings.
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO**](../Model/RepricingSettingsDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO**](../Model/RepricingSettingsDTO.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 // eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingSettingsApi();
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO | 
 
 try {
     $api_instance->post($body);
@@ -87,7 +87,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO.md)|  | [optional]
 
 ### Return type
 
@@ -122,7 +122,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 // eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingSettingsApi();
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO | 
 
 try {
     $api_instance->put($body);
@@ -136,7 +136,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingSettingsDTO.md)|  | [optional]
 
 ### Return type
 

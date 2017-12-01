@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **callList**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO[] callList()
+> \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO[] callList()
 
 Get all user service's buy box settings.
 
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO[]**](../Model/RepricingBuyBoxSettingsDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO[]**](../Model/RepricingBuyBoxSettingsDTO.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO get($buy_box_settings_id)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO get($buy_box_settings_id)
 
 Get the buy box settings specified by it's id.
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO**](../Model/RepricingBuyBoxSettingsDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO**](../Model/RepricingBuyBoxSettingsDTO.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 // eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingBuyBoxSettingsApi();
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO | 
 
 try {
     $api_instance->post($body);
@@ -188,7 +188,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO.md)|  | [optional]
 
 ### Return type
 
@@ -224,7 +224,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingBuyBoxSettingsApi();
 $buy_box_settings_id = 789; // int | 
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO | 
 
 try {
     $api_instance->put($buy_box_settings_id, $body);
@@ -239,7 +239,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **buy_box_settings_id** | **int**|  |
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingBuyBoxSettingsDTO.md)|  | [optional]
 
 ### Return type
 

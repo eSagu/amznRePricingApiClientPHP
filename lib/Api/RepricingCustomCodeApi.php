@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Api;
+namespace eSagu\Amzn\RePricing\V1\Api;
 
 use \eSagu\Amzn\RePricing\V1\ApiClient;
 use \eSagu\Amzn\RePricing\V1\ApiException;
@@ -93,7 +93,7 @@ class RepricingCustomCodeApi
      * Gets a custom code list.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[]
      */
     public function callList()
     {
@@ -107,7 +107,7 @@ class RepricingCustomCodeApi
      * Gets a custom code list.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function callListWithHttpInfo()
     {
@@ -146,15 +146,15 @@ class RepricingCustomCodeApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[]',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[]',
                 '/custom-code'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -170,7 +170,7 @@ class RepricingCustomCodeApi
      *
      * @param int $custom_code_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO
      */
     public function get($custom_code_id)
     {
@@ -185,7 +185,7 @@ class RepricingCustomCodeApi
      *
      * @param int $custom_code_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithHttpInfo($custom_code_id)
     {
@@ -236,15 +236,15 @@ class RepricingCustomCodeApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO',
                 '/custom-code/{customCodeId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingCustomCodeDTO', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

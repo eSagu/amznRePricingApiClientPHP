@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**criterion_rating** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO**](ExclusionCriterionRatingDTO.md) |  | [optional] 
-**criterion_seller_id** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO**](ExclusionCriterionSellerIdDTO.md) |  | [optional] 
-**criterion_shipping_time** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO**](ExclusionCriterionShippingTimeDTO.md) |  | [optional] 
-**criterion_ships_from** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO**](ExclusionCriterionShipsFromDTO.md) |  | [optional] 
+**criterion_rating** | [**\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO**](ExclusionCriterionRatingDTO.md) |  | [optional] 
+**criterion_seller_id** | [**\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO**](ExclusionCriterionSellerIdDTO.md) |  | [optional] 
+**criterion_shipping_time** | [**\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO**](ExclusionCriterionShippingTimeDTO.md) |  | [optional] 
+**criterion_ships_from** | [**\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO**](ExclusionCriterionShipsFromDTO.md) |  | [optional] 
 **is_default_fba** | **bool** |  | [optional] 
 **is_default_mfn** | **bool** |  | [optional] 
 **name** | **string** |  | [optional] 

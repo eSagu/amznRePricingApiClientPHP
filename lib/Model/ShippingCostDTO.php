@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model;
+namespace eSagu\Amzn\RePricing\V1\Model;
 
 use \ArrayAccess;
 

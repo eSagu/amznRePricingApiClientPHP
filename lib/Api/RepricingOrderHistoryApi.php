@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Api;
+namespace eSagu\Amzn\RePricing\V1\Api;
 
 use \eSagu\Amzn\RePricing\V1\ApiClient;
 use \eSagu\Amzn\RePricing\V1\ApiException;
@@ -93,7 +93,7 @@ class RepricingOrderHistoryApi
      * Gets stats of the order history for given userService.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]
      */
     public function get()
     {
@@ -107,7 +107,7 @@ class RepricingOrderHistoryApi
      * Gets stats of the order history for given userService.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithHttpInfo()
     {
@@ -146,15 +146,15 @@ class RepricingOrderHistoryApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]',
                 '/order-history'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingAmazonOrderHistoryDTO[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

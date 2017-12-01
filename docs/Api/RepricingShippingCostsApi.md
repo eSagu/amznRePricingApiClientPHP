@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **callList**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO[] callList()
+> \eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO[] callList()
 
 Gets all shipping costs fo a service.
 
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO[]**](../Model/RepricingShippingCostsDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO[]**](../Model/RepricingShippingCostsDTO.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO get($shipping_costs_id)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO get($shipping_costs_id)
 
 Get the shipping costs specified by it's id.
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO**](../Model/RepricingShippingCostsDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO**](../Model/RepricingShippingCostsDTO.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 // eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingShippingCostsApi();
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO | 
 
 try {
     $api_instance->post($body);
@@ -188,7 +188,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO.md)|  | [optional]
 
 ### Return type
 
@@ -224,7 +224,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingShippingCostsApi();
 $shipping_costs_id = 789; // int | 
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO | 
 
 try {
     $api_instance->put($shipping_costs_id, $body);
@@ -239,7 +239,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipping_costs_id** | **int**|  |
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingShippingCostsDTO.md)|  | [optional]
 
 ### Return type
 

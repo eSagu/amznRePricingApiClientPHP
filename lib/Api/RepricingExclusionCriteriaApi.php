@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Api;
+namespace eSagu\Amzn\RePricing\V1\Api;
 
 use \eSagu\Amzn\RePricing\V1\ApiClient;
 use \eSagu\Amzn\RePricing\V1\ApiException;
@@ -93,7 +93,7 @@ class RepricingExclusionCriteriaApi
      * Gets all exclusion criteria of a service.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]
      */
     public function callList()
     {
@@ -107,7 +107,7 @@ class RepricingExclusionCriteriaApi
      * Gets all exclusion criteria of a service.
      *
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function callListWithHttpInfo()
     {
@@ -146,15 +146,15 @@ class RepricingExclusionCriteriaApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]',
                 '/exclusion-criteria'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -256,7 +256,7 @@ class RepricingExclusionCriteriaApi
      *
      * @param int $exclusion_criteria_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO
      */
     public function get($exclusion_criteria_id)
     {
@@ -271,7 +271,7 @@ class RepricingExclusionCriteriaApi
      *
      * @param int $exclusion_criteria_id  (required)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
-     * @return array of \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithHttpInfo($exclusion_criteria_id)
     {
@@ -322,15 +322,15 @@ class RepricingExclusionCriteriaApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO',
+                '\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO',
                 '/exclusion-criteria/{exclusionCriteriaId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -344,7 +344,7 @@ class RepricingExclusionCriteriaApi
      *
      * Adds a new exclusion criteria.
      *
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO $body  (optional)
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO $body  (optional)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return void
      */
@@ -359,7 +359,7 @@ class RepricingExclusionCriteriaApi
      *
      * Adds a new exclusion criteria.
      *
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO $body  (optional)
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO $body  (optional)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -424,7 +424,7 @@ class RepricingExclusionCriteriaApi
      * Edit the exclusion criteria.
      *
      * @param int $exclusion_criteria_id  (required)
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO $body  (optional)
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO $body  (optional)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return void
      */
@@ -440,7 +440,7 @@ class RepricingExclusionCriteriaApi
      * Edit the exclusion criteria.
      *
      * @param int $exclusion_criteria_id  (required)
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO $body  (optional)
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingExclusionCriteriaDTO $body  (optional)
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */

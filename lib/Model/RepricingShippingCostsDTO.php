@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model;
+namespace eSagu\Amzn\RePricing\V1\Model;
 
 use \ArrayAccess;
 
@@ -58,7 +58,7 @@ class RepricingShippingCostsDTO implements ArrayAccess
         'is_default_fba' => 'bool',
         'is_default_mfn' => 'bool',
         'name' => 'string',
-        'shipping_costs' => '\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]'
+        'shipping_costs' => '\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]'
     ];
 
     public static function swaggerTypes()
@@ -228,7 +228,7 @@ class RepricingShippingCostsDTO implements ArrayAccess
 
     /**
      * Gets shipping_costs
-     * @return \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]
+     * @return \eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]
      */
     public function getShippingCosts()
     {
@@ -237,7 +237,7 @@ class RepricingShippingCostsDTO implements ArrayAccess
 
     /**
      * Sets shipping_costs
-     * @param \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[] $shipping_costs
+     * @param \eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[] $shipping_costs
      * @return $this
      */
     public function setShippingCosts($shipping_costs)

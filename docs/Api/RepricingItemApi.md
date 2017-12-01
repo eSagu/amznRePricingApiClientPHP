@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **callList**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[] callList($by_sku, $by_sku_exact, $by_title, $by_title_exact, $by_asin, $by_search_term, $by_amazon_price_from, $by_amazon_price_to, $by_price_mode, $by_price_state, $by_condition, $by_fulfillment_type, $by_no_price_settings, $by_buy_box_strategy, $by_price_gaps, $by_exclusion_criteria, $by_shipping_costs, $by_buy_box, $by_missing_rules, $by_quantity_greater_zero, $by_quantity_equal_zero, $by_id_greater_than, $has_buy_box, $by_custom_code, $sort, $order, $offset, $limit, $count_items, $return_items)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[] callList($by_sku, $by_sku_exact, $by_title, $by_title_exact, $by_asin, $by_search_term, $by_amazon_price_from, $by_amazon_price_to, $by_price_mode, $by_price_state, $by_condition, $by_fulfillment_type, $by_no_price_settings, $by_buy_box_strategy, $by_price_gaps, $by_exclusion_criteria, $by_shipping_costs, $by_buy_box, $by_missing_rules, $by_quantity_greater_zero, $by_quantity_equal_zero, $by_id_greater_than, $has_buy_box, $by_custom_code, $sort, $order, $offset, $limit, $count_items, $return_items)
 
 Gets a list of repricing items.
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]**](../Model/RepricingItemDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]**](../Model/RepricingItemDTO.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO get($item_id)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO get($item_id)
 
 Get a single repricing item specified by it's id.
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO**](../Model/RepricingItemDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO**](../Model/RepricingItemDTO.md)
 
 ### Authorization
 

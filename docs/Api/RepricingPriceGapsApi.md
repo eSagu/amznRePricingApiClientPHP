@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **callList**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO[] callList()
+> \eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO[] callList()
 
 Gets all price gaps of a service.
 
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO[]**](../Model/RepricingPriceGapsDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO[]**](../Model/RepricingPriceGapsDTO.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **get**
-> \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO get($price_gaps_id)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO get($price_gaps_id)
 
 Get a price gap specified by it's id.
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO**](../Model/RepricingPriceGapsDTO.md)
+[**\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO**](../Model/RepricingPriceGapsDTO.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 // eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingPriceGapsApi();
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO | 
 
 try {
     $api_instance->post($body);
@@ -188,7 +188,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO.md)|  | [optional]
 
 ### Return type
 
@@ -224,7 +224,7 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 
 $api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingPriceGapsApi();
 $price_gaps_id = 789; // int | 
-$body = new \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO(); // \eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO | 
+$body = new \eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO(); // \eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO | 
 
 try {
     $api_instance->put($price_gaps_id, $body);
@@ -239,7 +239,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **price_gaps_id** | **int**|  |
- **body** | [**\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO**](../Model/\eSagu\Amzn\RePricing\V1\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO.md)|  | [optional]
+ **body** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO**](../Model/\eSagu\Amzn\RePricing\V1\Model\RepricingPriceGapsDTO.md)|  | [optional]
 
 ### Return type
 
