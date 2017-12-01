@@ -8,12 +8,12 @@ git_repo_id=$2
 release_note=$3
 
 if [ "$git_user_id" = "" ]; then
-    git_user_id="GIT_USER_ID"
+    git_user_id="eSagu"
     echo "[INFO] No command line input provided. Set \$git_user_id to $git_user_id"
 fi
 
 if [ "$git_repo_id" = "" ]; then
-    git_repo_id="GIT_REPO_ID"
+    git_repo_id="amznRePricingApiClientPHP"
     echo "[INFO] No command line input provided. Set \$git_repo_id to $git_repo_id"
 fi
 
@@ -35,13 +35,7 @@ git commit -m "$release_note"
 git_remote=`git remote`
 if [ "$git_remote" = "" ]; then # git remote not defined
 
-    if [ "$GIT_TOKEN" = "" ]; then
-        echo "[INFO] \$GIT_TOKEN (environment variable) is not set. Using the git crediential in your environment."
-        git remote add origin https://github.com/${git_user_id}/${git_repo_id}.git
-    else
-        git remote add origin https://${git_user_id}:${GIT_TOKEN}@github.com/${git_user_id}/${git_repo_id}.git
-    fi
-
+    git remote add origin git@github.com:eSagu/amznRePricingApiClientPHP.git
 fi
 
 git pull origin master
