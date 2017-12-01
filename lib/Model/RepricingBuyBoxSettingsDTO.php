@@ -138,16 +138,6 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     const PRICE_DOWN_PERCENT_750 = 750;
     const PRICE_DOWN_PERCENT_1000 = 1000;
     const PRICE_DOWN_PERCENT_1500 = 1500;
-    const PRICE_UP_PERCENT_25 = 25;
-    const PRICE_UP_PERCENT_50 = 50;
-    const PRICE_UP_PERCENT_100 = 100;
-    const PRICE_UP_PERCENT_150 = 150;
-    const PRICE_UP_PERCENT_200 = 200;
-    const PRICE_UP_PERCENT_250 = 250;
-    const PRICE_UP_PERCENT_500 = 500;
-    const PRICE_UP_PERCENT_750 = 750;
-    const PRICE_UP_PERCENT_1000 = 1000;
-    const PRICE_UP_PERCENT_1500 = 1500;
     const STRATEGY_MARGIN = 'MARGIN';
     const STRATEGY_HOLD = 'HOLD';
     
@@ -188,26 +178,6 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
             self::PRICE_DOWN_PERCENT_750,
             self::PRICE_DOWN_PERCENT_1000,
             self::PRICE_DOWN_PERCENT_1500,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getPriceUpPercentAllowableValues()
-    {
-        return [
-            self::PRICE_UP_PERCENT_25,
-            self::PRICE_UP_PERCENT_50,
-            self::PRICE_UP_PERCENT_100,
-            self::PRICE_UP_PERCENT_150,
-            self::PRICE_UP_PERCENT_200,
-            self::PRICE_UP_PERCENT_250,
-            self::PRICE_UP_PERCENT_500,
-            self::PRICE_UP_PERCENT_750,
-            self::PRICE_UP_PERCENT_1000,
-            self::PRICE_UP_PERCENT_1500,
         ];
     }
     
@@ -271,11 +241,6 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
             $invalid_properties[] = "invalid value for 'price_down_percent', must be one of '25', '50', '100', '150', '200', '250', '500', '750', '1000', '1500'.";
         }
 
-        $allowed_values = ["25", "50", "100", "150", "200", "250", "500", "750", "1000", "1500"];
-        if (!in_array($this->container['price_up_percent'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'price_up_percent', must be one of '25', '50', '100', '150', '200', '250', '500', '750', '1000', '1500'.";
-        }
-
         if ($this->container['strategy'] === null) {
             $invalid_properties[] = "'strategy' can't be null";
         }
@@ -311,10 +276,6 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         }
         $allowed_values = ["25", "50", "100", "150", "200", "250", "500", "750", "1000", "1500"];
         if (!in_array($this->container['price_down_percent'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = ["25", "50", "100", "150", "200", "250", "500", "750", "1000", "1500"];
-        if (!in_array($this->container['price_up_percent'], $allowed_values)) {
             return false;
         }
         if ($this->container['strategy'] === null) {
@@ -415,10 +376,6 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      */
     public function setPriceUpPercent($price_up_percent)
     {
-        $allowed_values = array('25', '50', '100', '150', '200', '250', '500', '750', '1000', '1500');
-        if (!is_null($price_up_percent) && (!in_array($price_up_percent, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'price_up_percent', must be one of '25', '50', '100', '150', '200', '250', '500', '750', '1000', '1500'");
-        }
         $this->container['price_up_percent'] = $price_up_percent;
 
         return $this;

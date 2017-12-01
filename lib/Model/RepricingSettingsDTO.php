@@ -35,7 +35,7 @@ use \ArrayAccess;
  * RepricingSettingsDTO Class Doc Comment
  *
  * @category    Class
- * @description The global settings. The global settings contains flags for dis or enabling up and downloads or the number of Amazon MWS API request performed by esagu.
+ * @description The global settings. The global settings contains flags for dis or enabling up and downloads or the number of Amazon MWS API request performed by esagu. The name must be unique.
  * @package     eSagu\Amzn\RePricing\V1
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,6 +67,8 @@ class RepricingSettingsDTO implements ArrayAccess
         'show_expert_settings' => 'bool',
         'stock_update_max_age' => 'int',
         'time_zone' => 'string',
+        'trigger_enabled' => 'bool',
+        'trigger_limit' => 'int',
         'upload_enabled' => 'bool'
     ];
 
@@ -92,6 +94,8 @@ class RepricingSettingsDTO implements ArrayAccess
         'show_expert_settings' => 'showExpertSettings',
         'stock_update_max_age' => 'stockUpdateMaxAge',
         'time_zone' => 'timeZone',
+        'trigger_enabled' => 'triggerEnabled',
+        'trigger_limit' => 'triggerLimit',
         'upload_enabled' => 'uploadEnabled'
     ];
 
@@ -113,6 +117,8 @@ class RepricingSettingsDTO implements ArrayAccess
         'show_expert_settings' => 'setShowExpertSettings',
         'stock_update_max_age' => 'setStockUpdateMaxAge',
         'time_zone' => 'setTimeZone',
+        'trigger_enabled' => 'setTriggerEnabled',
+        'trigger_limit' => 'setTriggerLimit',
         'upload_enabled' => 'setUploadEnabled'
     ];
 
@@ -134,6 +140,8 @@ class RepricingSettingsDTO implements ArrayAccess
         'show_expert_settings' => 'getShowExpertSettings',
         'stock_update_max_age' => 'getStockUpdateMaxAge',
         'time_zone' => 'getTimeZone',
+        'trigger_enabled' => 'getTriggerEnabled',
+        'trigger_limit' => 'getTriggerLimit',
         'upload_enabled' => 'getUploadEnabled'
     ];
 
@@ -280,6 +288,8 @@ class RepricingSettingsDTO implements ArrayAccess
         $this->container['show_expert_settings'] = isset($data['show_expert_settings']) ? $data['show_expert_settings'] : null;
         $this->container['stock_update_max_age'] = isset($data['stock_update_max_age']) ? $data['stock_update_max_age'] : null;
         $this->container['time_zone'] = isset($data['time_zone']) ? $data['time_zone'] : null;
+        $this->container['trigger_enabled'] = isset($data['trigger_enabled']) ? $data['trigger_enabled'] : null;
+        $this->container['trigger_limit'] = isset($data['trigger_limit']) ? $data['trigger_limit'] : null;
         $this->container['upload_enabled'] = isset($data['upload_enabled']) ? $data['upload_enabled'] : null;
     }
 
@@ -336,6 +346,14 @@ class RepricingSettingsDTO implements ArrayAccess
             $invalid_properties[] = "invalid value for 'stock_update_max_age', must be one of '900', '1200', '1800', '2700', '3600', '5400', '7200', '14400', '28800', '57600', '86400'.";
         }
 
+        if (!is_null($this->container['trigger_limit']) && ($this->container['trigger_limit'] > 30000)) {
+            $invalid_properties[] = "invalid value for 'trigger_limit', must be smaller than or equal to 30000.";
+        }
+
+        if (!is_null($this->container['trigger_limit']) && ($this->container['trigger_limit'] < 1000)) {
+            $invalid_properties[] = "invalid value for 'trigger_limit', must be bigger than or equal to 1000.";
+        }
+
         return $invalid_properties;
     }
 
@@ -380,6 +398,12 @@ class RepricingSettingsDTO implements ArrayAccess
         }
         $allowed_values = ["900", "1200", "1800", "2700", "3600", "5400", "7200", "14400", "28800", "57600", "86400"];
         if (!in_array($this->container['stock_update_max_age'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['trigger_limit'] > 30000) {
+            return false;
+        }
+        if ($this->container['trigger_limit'] < 1000) {
             return false;
         }
         return true;
@@ -674,6 +698,56 @@ class RepricingSettingsDTO implements ArrayAccess
     public function setTimeZone($time_zone)
     {
         $this->container['time_zone'] = $time_zone;
+
+        return $this;
+    }
+
+    /**
+     * Gets trigger_enabled
+     * @return bool
+     */
+    public function getTriggerEnabled()
+    {
+        return $this->container['trigger_enabled'];
+    }
+
+    /**
+     * Sets trigger_enabled
+     * @param bool $trigger_enabled
+     * @return $this
+     */
+    public function setTriggerEnabled($trigger_enabled)
+    {
+        $this->container['trigger_enabled'] = $trigger_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets trigger_limit
+     * @return int
+     */
+    public function getTriggerLimit()
+    {
+        return $this->container['trigger_limit'];
+    }
+
+    /**
+     * Sets trigger_limit
+     * @param int $trigger_limit
+     * @return $this
+     */
+    public function setTriggerLimit($trigger_limit)
+    {
+
+        if (!is_null($trigger_limit) && ($trigger_limit > 30000)) {
+            throw new \InvalidArgumentException('invalid value for $trigger_limit when calling RepricingSettingsDTO., must be smaller than or equal to 30000.');
+        }
+        if (!is_null($trigger_limit) && ($trigger_limit < 1000)) {
+            throw new \InvalidArgumentException('invalid value for $trigger_limit when calling RepricingSettingsDTO., must be bigger than or equal to 1000.');
+        }
+
+        $this->container['trigger_limit'] = $trigger_limit;
 
         return $this;
     }

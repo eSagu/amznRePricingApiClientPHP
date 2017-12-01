@@ -35,7 +35,7 @@ use \ArrayAccess;
  * PriceGapDTO Class Doc Comment
  *
  * @category    Class
- * @description A single price gap rule. The gap defined the amount and can be negative for underbidding or positive for overbidding.The mode defined hwo the gap should be calculated if ABSOLUTE is set, the gap gets used without any calculation. If the mode is PERCENTAGE the competitors offers price will be used with or without shipping costs as base for the percentage gap calculation.The sellerId and fulfillmentType are optional and can be sued in combination, too. The name must be unique.
+ * @description A single price gap rule. The gap defined the amount and can be negative for underbidding or positive for overbidding.The mode defined hwo the gap should be calculated if ABSOLUTE is set, the gap gets used without any calculation. If the mode is PERCENTAGE the competitors offers price will be used with or without shipping costs as base for the percentage gap calculation.The sellerId and fulfillmentType are optional and can be used in combination, too.
  * @package     eSagu\Amzn\RePricing\V1
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

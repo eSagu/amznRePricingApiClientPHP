@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **show_expert_settings** | **bool** |  | [optional] 
 **stock_update_max_age** | **int** |  | [optional] 
 **time_zone** | **string** |  | [optional] 
+**trigger_enabled** | **bool** |  | [optional] 
+**trigger_limit** | **int** |  | [optional] 
 **upload_enabled** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

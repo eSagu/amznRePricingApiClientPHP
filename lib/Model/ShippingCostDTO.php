@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ShippingCostDTO Class Doc Comment
  *
  * @category    Class
- * @description A single shipping costs scale entry. The name must be unique.
+ * @description A single shipping costs scale entry.
  * @package     eSagu\Amzn\RePricing\V1
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

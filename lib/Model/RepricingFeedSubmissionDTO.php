@@ -35,6 +35,7 @@ use \ArrayAccess;
  * RepricingFeedSubmissionDTO Class Doc Comment
  *
  * @category    Class
+ * @description A feed submission. Contains information about the feed submission to amzn via MWS like the submission id and the processing status at amzn.
  * @package     eSagu\Amzn\RePricing\V1
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
