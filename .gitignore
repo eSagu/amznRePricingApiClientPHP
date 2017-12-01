@@ -1,0 +1,5 @@
+.idea
+amznRePricingApiClientPHP.iml
+modules/*
+amzn-src
+ebay-src
