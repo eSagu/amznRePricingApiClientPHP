@@ -54,8 +54,8 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'max' => 'int',
-        'min' => 'int'
+        'min' => 'int',
+        'max' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'max' => 'max',
-        'min' => 'min'
+        'min' => 'min',
+        'max' => 'max'
     ];
 
 
@@ -78,8 +78,8 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'max' => 'setMax',
-        'min' => 'setMin'
+        'min' => 'setMin',
+        'max' => 'setMax'
     ];
 
 
@@ -88,8 +88,8 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'max' => 'getMax',
-        'min' => 'getMin'
+        'min' => 'getMin',
+        'max' => 'getMax'
     ];
 
     public static function attributeMap()
@@ -123,8 +123,8 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['max'] = isset($data['max']) ? $data['max'] : null;
         $this->container['min'] = isset($data['min']) ? $data['min'] : null;
+        $this->container['max'] = isset($data['max']) ? $data['max'] : null;
     }
 
     /**
@@ -136,12 +136,12 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['max']) && ($this->container['max'] < 0)) {
-            $invalid_properties[] = "invalid value for 'max', must be bigger than or equal to 0.";
-        }
-
         if (!is_null($this->container['min']) && ($this->container['min'] < 0)) {
             $invalid_properties[] = "invalid value for 'min', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['max']) && ($this->container['max'] < 0)) {
+            $invalid_properties[] = "invalid value for 'max', must be bigger than or equal to 0.";
         }
 
         return $invalid_properties;
@@ -156,41 +156,15 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['max'] < 0) {
+        if ($this->container['min'] < 0) {
             return false;
         }
-        if ($this->container['min'] < 0) {
+        if ($this->container['max'] < 0) {
             return false;
         }
         return true;
     }
 
-
-    /**
-     * Gets max
-     * @return int
-     */
-    public function getMax()
-    {
-        return $this->container['max'];
-    }
-
-    /**
-     * Sets max
-     * @param int $max
-     * @return $this
-     */
-    public function setMax($max)
-    {
-
-        if (!is_null($max) && ($max < 0)) {
-            throw new \InvalidArgumentException('invalid value for $max when calling ExclusionCriterionShippingTimeDTO., must be bigger than or equal to 0.');
-        }
-
-        $this->container['max'] = $max;
-
-        return $this;
-    }
 
     /**
      * Gets min
@@ -214,6 +188,32 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
         }
 
         $this->container['min'] = $min;
+
+        return $this;
+    }
+
+    /**
+     * Gets max
+     * @return int
+     */
+    public function getMax()
+    {
+        return $this->container['max'];
+    }
+
+    /**
+     * Sets max
+     * @param int $max
+     * @return $this
+     */
+    public function setMax($max)
+    {
+
+        if (!is_null($max) && ($max < 0)) {
+            throw new \InvalidArgumentException('invalid value for $max when calling ExclusionCriterionShippingTimeDTO., must be bigger than or equal to 0.');
+        }
+
+        $this->container['max'] = $max;
 
         return $this;
     }

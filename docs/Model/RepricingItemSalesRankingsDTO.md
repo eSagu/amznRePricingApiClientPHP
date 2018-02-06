@@ -1,17 +1,13 @@
-# RepricingCustomCodeDTO
+# RepricingItemSalesRankingsDTO
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
 **inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**name** | **string** |  | [optional] 
-**verified** | **bool** |  | [optional] 
-**use_exclusion_criteria** | **bool** |  | [optional] 
-**trigger_price_change** | **bool** |  | [optional] 
-**use_price_gaps** | **bool** |  | [optional] 
-**use_shipping_costs** | **bool** |  | [optional] 
+**lowest_display_on_website_sales_rank_name** | **string** |  | [optional] 
+**lowest_display_on_website_sales_rank** | **int** |  | [optional] 
+**sales_rankings** | **map[string,int]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

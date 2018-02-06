@@ -55,11 +55,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'csv_download_url' => 'string',
+        'state' => 'string',
         'fields' => 'string[]',
         'number_format' => 'string',
-        'public_csv_file_name' => 'string',
-        'state' => 'string'
+        'csv_download_url' => 'string',
+        'public_csv_file_name' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -72,11 +72,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'csv_download_url' => 'csvDownloadUrl',
+        'state' => 'state',
         'fields' => 'fields',
         'number_format' => 'numberFormat',
-        'public_csv_file_name' => 'publicCsvFileName',
-        'state' => 'state'
+        'csv_download_url' => 'csvDownloadUrl',
+        'public_csv_file_name' => 'publicCsvFileName'
     ];
 
 
@@ -85,11 +85,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'csv_download_url' => 'setCsvDownloadUrl',
+        'state' => 'setState',
         'fields' => 'setFields',
         'number_format' => 'setNumberFormat',
-        'public_csv_file_name' => 'setPublicCsvFileName',
-        'state' => 'setState'
+        'csv_download_url' => 'setCsvDownloadUrl',
+        'public_csv_file_name' => 'setPublicCsvFileName'
     ];
 
 
@@ -98,11 +98,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'csv_download_url' => 'getCsvDownloadUrl',
+        'state' => 'getState',
         'fields' => 'getFields',
         'number_format' => 'getNumberFormat',
-        'public_csv_file_name' => 'getPublicCsvFileName',
-        'state' => 'getState'
+        'csv_download_url' => 'getCsvDownloadUrl',
+        'public_csv_file_name' => 'getPublicCsvFileName'
     ];
 
     public static function attributeMap()
@@ -120,6 +120,9 @@ class RepricingCSVRequestDTO implements ArrayAccess
         return self::$getters;
     }
 
+    const STATE_NEW = 'NEW';
+    const STATE_IN_PROGRESS = 'IN_PROGRESS';
+    const STATE_DONE = 'DONE';
     const FIELDS_SKU = 'SKU';
     const FIELDS_ASIN = 'ASIN';
     const FIELDS_TITLE = 'TITLE';
@@ -154,14 +157,30 @@ class RepricingCSVRequestDTO implements ArrayAccess
     const FIELDS_LEAD_TIME_TO = 'LEAD_TIME_TO';
     const FIELDS_SHIPPING_COSTS = 'SHIPPING_COSTS';
     const FIELDS_ESAGU_ITEM_ID = 'ESAGU_ITEM_ID';
+    const FIELDS_ITEM_ORDERS_LAST_SEVEN_DAYS = 'ITEM_ORDERS_LAST_SEVEN_DAYS';
+    const FIELDS_ITEM_ORDERS_LAST_FOURTEEN_DAYS = 'ITEM_ORDERS_LAST_FOURTEEN_DAYS';
+    const FIELDS_ITEM_ORDERS_LAST_THIRTY_DAYS = 'ITEM_ORDERS_LAST_THIRTY_DAYS';
+    const FIELDS_LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME = 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME';
+    const FIELDS_LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE = 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE';
+    const FIELDS_SALES_RANKINGS = 'SALES_RANKINGS';
     const NUMBER_FORMAT_DECIMAL_DOT = 'DECIMAL_DOT';
     const NUMBER_FORMAT_DECIMAL_COMMA = 'DECIMAL_COMMA';
     const NUMBER_FORMAT_CENTS = 'CENTS';
-    const STATE_NEW = 'NEW';
-    const STATE_IN_PROGRESS = 'IN_PROGRESS';
-    const STATE_DONE = 'DONE';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_NEW,
+            self::STATE_IN_PROGRESS,
+            self::STATE_DONE,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -204,6 +223,12 @@ class RepricingCSVRequestDTO implements ArrayAccess
             self::FIELDS_LEAD_TIME_TO,
             self::FIELDS_SHIPPING_COSTS,
             self::FIELDS_ESAGU_ITEM_ID,
+            self::FIELDS_ITEM_ORDERS_LAST_SEVEN_DAYS,
+            self::FIELDS_ITEM_ORDERS_LAST_FOURTEEN_DAYS,
+            self::FIELDS_ITEM_ORDERS_LAST_THIRTY_DAYS,
+            self::FIELDS_LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME,
+            self::FIELDS_LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE,
+            self::FIELDS_SALES_RANKINGS,
         ];
     }
     
@@ -220,19 +245,6 @@ class RepricingCSVRequestDTO implements ArrayAccess
         ];
     }
     
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStateAllowableValues()
-    {
-        return [
-            self::STATE_NEW,
-            self::STATE_IN_PROGRESS,
-            self::STATE_DONE,
-        ];
-    }
-    
 
     /**
      * Associative array for storing property values
@@ -246,11 +258,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['csv_download_url'] = isset($data['csv_download_url']) ? $data['csv_download_url'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
         $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
+        $this->container['csv_download_url'] = isset($data['csv_download_url']) ? $data['csv_download_url'] : null;
         $this->container['public_csv_file_name'] = isset($data['public_csv_file_name']) ? $data['public_csv_file_name'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
     }
 
     /**
@@ -262,14 +274,14 @@ class RepricingCSVRequestDTO implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = ["DECIMAL_DOT", "DECIMAL_COMMA", "CENTS"];
-        if (!in_array($this->container['number_format'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'number_format', must be one of 'DECIMAL_DOT', 'DECIMAL_COMMA', 'CENTS'.";
-        }
-
         $allowed_values = ["NEW", "IN_PROGRESS", "DONE"];
         if (!in_array($this->container['state'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'state', must be one of 'NEW', 'IN_PROGRESS', 'DONE'.";
+        }
+
+        $allowed_values = ["DECIMAL_DOT", "DECIMAL_COMMA", "CENTS"];
+        if (!in_array($this->container['number_format'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'number_format', must be one of 'DECIMAL_DOT', 'DECIMAL_COMMA', 'CENTS'.";
         }
 
         return $invalid_properties;
@@ -284,12 +296,12 @@ class RepricingCSVRequestDTO implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = ["DECIMAL_DOT", "DECIMAL_COMMA", "CENTS"];
-        if (!in_array($this->container['number_format'], $allowed_values)) {
-            return false;
-        }
         $allowed_values = ["NEW", "IN_PROGRESS", "DONE"];
         if (!in_array($this->container['state'], $allowed_values)) {
+            return false;
+        }
+        $allowed_values = ["DECIMAL_DOT", "DECIMAL_COMMA", "CENTS"];
+        if (!in_array($this->container['number_format'], $allowed_values)) {
             return false;
         }
         return true;
@@ -297,22 +309,26 @@ class RepricingCSVRequestDTO implements ArrayAccess
 
 
     /**
-     * Gets csv_download_url
+     * Gets state
      * @return string
      */
-    public function getCsvDownloadUrl()
+    public function getState()
     {
-        return $this->container['csv_download_url'];
+        return $this->container['state'];
     }
 
     /**
-     * Sets csv_download_url
-     * @param string $csv_download_url
+     * Sets state
+     * @param string $state
      * @return $this
      */
-    public function setCsvDownloadUrl($csv_download_url)
+    public function setState($state)
     {
-        $this->container['csv_download_url'] = $csv_download_url;
+        $allowed_values = array('NEW', 'IN_PROGRESS', 'DONE');
+        if (!is_null($state) && (!in_array($state, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'NEW', 'IN_PROGRESS', 'DONE'");
+        }
+        $this->container['state'] = $state;
 
         return $this;
     }
@@ -333,9 +349,9 @@ class RepricingCSVRequestDTO implements ArrayAccess
      */
     public function setFields($fields)
     {
-        $allowed_values = array('SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID');
+        $allowed_values = array('SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID', 'ITEM_ORDERS_LAST_SEVEN_DAYS', 'ITEM_ORDERS_LAST_FOURTEEN_DAYS', 'ITEM_ORDERS_LAST_THIRTY_DAYS', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE', 'SALES_RANKINGS');
         if (!is_null($fields) && (array_diff($fields, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'fields', must be one of 'SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID'");
+            throw new \InvalidArgumentException("Invalid value for 'fields', must be one of 'SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID', 'ITEM_ORDERS_LAST_SEVEN_DAYS', 'ITEM_ORDERS_LAST_FOURTEEN_DAYS', 'ITEM_ORDERS_LAST_THIRTY_DAYS', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE', 'SALES_RANKINGS'");
         }
         $this->container['fields'] = $fields;
 
@@ -368,6 +384,27 @@ class RepricingCSVRequestDTO implements ArrayAccess
     }
 
     /**
+     * Gets csv_download_url
+     * @return string
+     */
+    public function getCsvDownloadUrl()
+    {
+        return $this->container['csv_download_url'];
+    }
+
+    /**
+     * Sets csv_download_url
+     * @param string $csv_download_url
+     * @return $this
+     */
+    public function setCsvDownloadUrl($csv_download_url)
+    {
+        $this->container['csv_download_url'] = $csv_download_url;
+
+        return $this;
+    }
+
+    /**
      * Gets public_csv_file_name
      * @return string
      */
@@ -384,31 +421,6 @@ class RepricingCSVRequestDTO implements ArrayAccess
     public function setPublicCsvFileName($public_csv_file_name)
     {
         $this->container['public_csv_file_name'] = $public_csv_file_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     * @return string
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     * @param string $state
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $allowed_values = array('NEW', 'IN_PROGRESS', 'DONE');
-        if (!is_null($state) && (!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'NEW', 'IN_PROGRESS', 'DONE'");
-        }
-        $this->container['state'] = $state;
 
         return $this;
     }

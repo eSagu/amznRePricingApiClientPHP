@@ -55,11 +55,11 @@ class RepricingFeedSubmissionDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'inserted' => '\DateTime',
+        'updated' => '\DateTime',
         'feed_submission_id' => 'string',
         'feed_type' => 'string',
-        'inserted' => '\DateTime',
-        'processing_status' => 'string',
-        'updated' => '\DateTime'
+        'processing_status' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -72,11 +72,11 @@ class RepricingFeedSubmissionDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'inserted' => 'inserted',
+        'updated' => 'updated',
         'feed_submission_id' => 'feedSubmissionId',
         'feed_type' => 'feedType',
-        'inserted' => 'inserted',
-        'processing_status' => 'processingStatus',
-        'updated' => 'updated'
+        'processing_status' => 'processingStatus'
     ];
 
 
@@ -85,11 +85,11 @@ class RepricingFeedSubmissionDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'inserted' => 'setInserted',
+        'updated' => 'setUpdated',
         'feed_submission_id' => 'setFeedSubmissionId',
         'feed_type' => 'setFeedType',
-        'inserted' => 'setInserted',
-        'processing_status' => 'setProcessingStatus',
-        'updated' => 'setUpdated'
+        'processing_status' => 'setProcessingStatus'
     ];
 
 
@@ -98,11 +98,11 @@ class RepricingFeedSubmissionDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'inserted' => 'getInserted',
+        'updated' => 'getUpdated',
         'feed_submission_id' => 'getFeedSubmissionId',
         'feed_type' => 'getFeedType',
-        'inserted' => 'getInserted',
-        'processing_status' => 'getProcessingStatus',
-        'updated' => 'getUpdated'
+        'processing_status' => 'getProcessingStatus'
     ];
 
     public static function attributeMap()
@@ -196,11 +196,11 @@ class RepricingFeedSubmissionDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
         $this->container['feed_submission_id'] = isset($data['feed_submission_id']) ? $data['feed_submission_id'] : null;
         $this->container['feed_type'] = isset($data['feed_type']) ? $data['feed_type'] : null;
-        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['processing_status'] = isset($data['processing_status']) ? $data['processing_status'] : null;
-        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -245,6 +245,48 @@ class RepricingFeedSubmissionDTO implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
+
+        return $this;
+    }
 
     /**
      * Gets feed_submission_id
@@ -293,27 +335,6 @@ class RepricingFeedSubmissionDTO implements ArrayAccess
     }
 
     /**
-     * Gets inserted
-     * @return \DateTime
-     */
-    public function getInserted()
-    {
-        return $this->container['inserted'];
-    }
-
-    /**
-     * Sets inserted
-     * @param \DateTime $inserted
-     * @return $this
-     */
-    public function setInserted($inserted)
-    {
-        $this->container['inserted'] = $inserted;
-
-        return $this;
-    }
-
-    /**
      * Gets processing_status
      * @return string
      */
@@ -334,27 +355,6 @@ class RepricingFeedSubmissionDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'processing_status', must be one of '_AWAITING_ASYNCHRONOUS_REPLY_', '_CANCELLED_', '_DONE_', '_IN_PROGRESS_', '_IN_SAFETY_NET_', '_SUBMITTED_', '_UNCONFIRMED_'");
         }
         $this->container['processing_status'] = $processing_status;
-
-        return $this;
-    }
-
-    /**
-     * Gets updated
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->container['updated'];
-    }
-
-    /**
-     * Sets updated
-     * @param \DateTime $updated
-     * @return $this
-     */
-    public function setUpdated($updated)
-    {
-        $this->container['updated'] = $updated;
 
         return $this;
     }

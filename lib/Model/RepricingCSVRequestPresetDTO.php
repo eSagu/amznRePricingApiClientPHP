@@ -55,8 +55,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'fields' => 'string[]',
         'name' => 'string',
+        'fields' => 'string[]',
         'number_format' => 'string'
     ];
 
@@ -70,8 +70,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'fields' => 'fields',
         'name' => 'name',
+        'fields' => 'fields',
         'number_format' => 'numberFormat'
     ];
 
@@ -81,8 +81,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'fields' => 'setFields',
         'name' => 'setName',
+        'fields' => 'setFields',
         'number_format' => 'setNumberFormat'
     ];
 
@@ -92,8 +92,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'fields' => 'getFields',
         'name' => 'getName',
+        'fields' => 'getFields',
         'number_format' => 'getNumberFormat'
     ];
 
@@ -146,6 +146,12 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
     const FIELDS_LEAD_TIME_TO = 'LEAD_TIME_TO';
     const FIELDS_SHIPPING_COSTS = 'SHIPPING_COSTS';
     const FIELDS_ESAGU_ITEM_ID = 'ESAGU_ITEM_ID';
+    const FIELDS_ITEM_ORDERS_LAST_SEVEN_DAYS = 'ITEM_ORDERS_LAST_SEVEN_DAYS';
+    const FIELDS_ITEM_ORDERS_LAST_FOURTEEN_DAYS = 'ITEM_ORDERS_LAST_FOURTEEN_DAYS';
+    const FIELDS_ITEM_ORDERS_LAST_THIRTY_DAYS = 'ITEM_ORDERS_LAST_THIRTY_DAYS';
+    const FIELDS_LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME = 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME';
+    const FIELDS_LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE = 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE';
+    const FIELDS_SALES_RANKINGS = 'SALES_RANKINGS';
     const NUMBER_FORMAT_DECIMAL_DOT = 'DECIMAL_DOT';
     const NUMBER_FORMAT_DECIMAL_COMMA = 'DECIMAL_COMMA';
     const NUMBER_FORMAT_CENTS = 'CENTS';
@@ -193,6 +199,12 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
             self::FIELDS_LEAD_TIME_TO,
             self::FIELDS_SHIPPING_COSTS,
             self::FIELDS_ESAGU_ITEM_ID,
+            self::FIELDS_ITEM_ORDERS_LAST_SEVEN_DAYS,
+            self::FIELDS_ITEM_ORDERS_LAST_FOURTEEN_DAYS,
+            self::FIELDS_ITEM_ORDERS_LAST_THIRTY_DAYS,
+            self::FIELDS_LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME,
+            self::FIELDS_LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE,
+            self::FIELDS_SALES_RANKINGS,
         ];
     }
     
@@ -222,8 +234,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
         $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
     }
 
@@ -262,31 +274,6 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
 
 
     /**
-     * Gets fields
-     * @return string[]
-     */
-    public function getFields()
-    {
-        return $this->container['fields'];
-    }
-
-    /**
-     * Sets fields
-     * @param string[] $fields
-     * @return $this
-     */
-    public function setFields($fields)
-    {
-        $allowed_values = array('SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID');
-        if (!is_null($fields) && (array_diff($fields, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'fields', must be one of 'SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID'");
-        }
-        $this->container['fields'] = $fields;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      * @return string
      */
@@ -303,6 +290,31 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets fields
+     * @return string[]
+     */
+    public function getFields()
+    {
+        return $this->container['fields'];
+    }
+
+    /**
+     * Sets fields
+     * @param string[] $fields
+     * @return $this
+     */
+    public function setFields($fields)
+    {
+        $allowed_values = array('SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID', 'ITEM_ORDERS_LAST_SEVEN_DAYS', 'ITEM_ORDERS_LAST_FOURTEEN_DAYS', 'ITEM_ORDERS_LAST_THIRTY_DAYS', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE', 'SALES_RANKINGS');
+        if (!is_null($fields) && (array_diff($fields, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'fields', must be one of 'SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID', 'ITEM_ORDERS_LAST_SEVEN_DAYS', 'ITEM_ORDERS_LAST_FOURTEEN_DAYS', 'ITEM_ORDERS_LAST_THIRTY_DAYS', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE', 'SALES_RANKINGS'");
+        }
+        $this->container['fields'] = $fields;
 
         return $this;
     }

@@ -55,24 +55,25 @@ class RepricingItemDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amazon_open_date' => 'int',
-        'amazon_price' => 'int',
+        'id' => 'int',
+        'inserted' => '\DateTime',
+        'updated' => '\DateTime',
+        'sku' => 'string',
         'asin' => 'string',
+        'title' => 'string',
+        'amazon_price' => 'int',
+        'initial_price' => 'int',
+        'quantity' => 'int',
+        'listed' => 'bool',
         'condition' => 'string',
         'fba' => 'bool',
-        'feed_submission' => '\eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO',
-        'id' => 'int',
-        'initial_price' => 'int',
-        'inserted' => '\DateTime',
-        'listed' => 'bool',
-        'offers' => '\eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]',
-        'offers_updated' => 'int',
-        'optimization_result' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO',
-        'quantity' => 'int',
-        'sku' => 'string',
+        'amazon_open_date' => 'int',
         'strategy' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO',
-        'title' => 'string',
-        'updated' => '\DateTime'
+        'offers' => '\eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]',
+        'optimization_result' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO',
+        'feed_submission' => '\eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO',
+        'offers_updated' => 'int',
+        'sales_rankings' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemSalesRankingsDTO'
     ];
 
     public static function swaggerTypes()
@@ -85,24 +86,25 @@ class RepricingItemDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amazon_open_date' => 'amazonOpenDate',
-        'amazon_price' => 'amazonPrice',
+        'id' => 'id',
+        'inserted' => 'inserted',
+        'updated' => 'updated',
+        'sku' => 'sku',
         'asin' => 'asin',
+        'title' => 'title',
+        'amazon_price' => 'amazonPrice',
+        'initial_price' => 'initialPrice',
+        'quantity' => 'quantity',
+        'listed' => 'listed',
         'condition' => 'condition',
         'fba' => 'fba',
-        'feed_submission' => 'feedSubmission',
-        'id' => 'id',
-        'initial_price' => 'initialPrice',
-        'inserted' => 'inserted',
-        'listed' => 'listed',
-        'offers' => 'offers',
-        'offers_updated' => 'offersUpdated',
-        'optimization_result' => 'optimizationResult',
-        'quantity' => 'quantity',
-        'sku' => 'sku',
+        'amazon_open_date' => 'amazonOpenDate',
         'strategy' => 'strategy',
-        'title' => 'title',
-        'updated' => 'updated'
+        'offers' => 'offers',
+        'optimization_result' => 'optimizationResult',
+        'feed_submission' => 'feedSubmission',
+        'offers_updated' => 'offersUpdated',
+        'sales_rankings' => 'salesRankings'
     ];
 
 
@@ -111,24 +113,25 @@ class RepricingItemDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amazon_open_date' => 'setAmazonOpenDate',
-        'amazon_price' => 'setAmazonPrice',
+        'id' => 'setId',
+        'inserted' => 'setInserted',
+        'updated' => 'setUpdated',
+        'sku' => 'setSku',
         'asin' => 'setAsin',
+        'title' => 'setTitle',
+        'amazon_price' => 'setAmazonPrice',
+        'initial_price' => 'setInitialPrice',
+        'quantity' => 'setQuantity',
+        'listed' => 'setListed',
         'condition' => 'setCondition',
         'fba' => 'setFba',
-        'feed_submission' => 'setFeedSubmission',
-        'id' => 'setId',
-        'initial_price' => 'setInitialPrice',
-        'inserted' => 'setInserted',
-        'listed' => 'setListed',
-        'offers' => 'setOffers',
-        'offers_updated' => 'setOffersUpdated',
-        'optimization_result' => 'setOptimizationResult',
-        'quantity' => 'setQuantity',
-        'sku' => 'setSku',
+        'amazon_open_date' => 'setAmazonOpenDate',
         'strategy' => 'setStrategy',
-        'title' => 'setTitle',
-        'updated' => 'setUpdated'
+        'offers' => 'setOffers',
+        'optimization_result' => 'setOptimizationResult',
+        'feed_submission' => 'setFeedSubmission',
+        'offers_updated' => 'setOffersUpdated',
+        'sales_rankings' => 'setSalesRankings'
     ];
 
 
@@ -137,24 +140,25 @@ class RepricingItemDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amazon_open_date' => 'getAmazonOpenDate',
-        'amazon_price' => 'getAmazonPrice',
+        'id' => 'getId',
+        'inserted' => 'getInserted',
+        'updated' => 'getUpdated',
+        'sku' => 'getSku',
         'asin' => 'getAsin',
+        'title' => 'getTitle',
+        'amazon_price' => 'getAmazonPrice',
+        'initial_price' => 'getInitialPrice',
+        'quantity' => 'getQuantity',
+        'listed' => 'getListed',
         'condition' => 'getCondition',
         'fba' => 'getFba',
-        'feed_submission' => 'getFeedSubmission',
-        'id' => 'getId',
-        'initial_price' => 'getInitialPrice',
-        'inserted' => 'getInserted',
-        'listed' => 'getListed',
-        'offers' => 'getOffers',
-        'offers_updated' => 'getOffersUpdated',
-        'optimization_result' => 'getOptimizationResult',
-        'quantity' => 'getQuantity',
-        'sku' => 'getSku',
+        'amazon_open_date' => 'getAmazonOpenDate',
         'strategy' => 'getStrategy',
-        'title' => 'getTitle',
-        'updated' => 'getUpdated'
+        'offers' => 'getOffers',
+        'optimization_result' => 'getOptimizationResult',
+        'feed_submission' => 'getFeedSubmission',
+        'offers_updated' => 'getOffersUpdated',
+        'sales_rankings' => 'getSalesRankings'
     ];
 
     public static function attributeMap()
@@ -222,24 +226,25 @@ class RepricingItemDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['amazon_open_date'] = isset($data['amazon_open_date']) ? $data['amazon_open_date'] : null;
-        $this->container['amazon_price'] = isset($data['amazon_price']) ? $data['amazon_price'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
+        $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['amazon_price'] = isset($data['amazon_price']) ? $data['amazon_price'] : null;
+        $this->container['initial_price'] = isset($data['initial_price']) ? $data['initial_price'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['listed'] = isset($data['listed']) ? $data['listed'] : null;
         $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
         $this->container['fba'] = isset($data['fba']) ? $data['fba'] : null;
-        $this->container['feed_submission'] = isset($data['feed_submission']) ? $data['feed_submission'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['initial_price'] = isset($data['initial_price']) ? $data['initial_price'] : null;
-        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
-        $this->container['listed'] = isset($data['listed']) ? $data['listed'] : null;
-        $this->container['offers'] = isset($data['offers']) ? $data['offers'] : null;
-        $this->container['offers_updated'] = isset($data['offers_updated']) ? $data['offers_updated'] : null;
-        $this->container['optimization_result'] = isset($data['optimization_result']) ? $data['optimization_result'] : null;
-        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
+        $this->container['amazon_open_date'] = isset($data['amazon_open_date']) ? $data['amazon_open_date'] : null;
         $this->container['strategy'] = isset($data['strategy']) ? $data['strategy'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
+        $this->container['offers'] = isset($data['offers']) ? $data['offers'] : null;
+        $this->container['optimization_result'] = isset($data['optimization_result']) ? $data['optimization_result'] : null;
+        $this->container['feed_submission'] = isset($data['feed_submission']) ? $data['feed_submission'] : null;
+        $this->container['offers_updated'] = isset($data['offers_updated']) ? $data['offers_updated'] : null;
+        $this->container['sales_rankings'] = isset($data['sales_rankings']) ? $data['sales_rankings'] : null;
     }
 
     /**
@@ -277,22 +282,127 @@ class RepricingItemDTO implements ArrayAccess
 
 
     /**
-     * Gets amazon_open_date
+     * Gets id
      * @return int
      */
-    public function getAmazonOpenDate()
+    public function getId()
     {
-        return $this->container['amazon_open_date'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets amazon_open_date
-     * @param int $amazon_open_date
+     * Sets id
+     * @param int $id
      * @return $this
      */
-    public function setAmazonOpenDate($amazon_open_date)
+    public function setId($id)
     {
-        $this->container['amazon_open_date'] = $amazon_open_date;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets sku
+     * @return string
+     */
+    public function getSku()
+    {
+        return $this->container['sku'];
+    }
+
+    /**
+     * Sets sku
+     * @param string $sku
+     * @return $this
+     */
+    public function setSku($sku)
+    {
+        $this->container['sku'] = $sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets asin
+     * @return string
+     */
+    public function getAsin()
+    {
+        return $this->container['asin'];
+    }
+
+    /**
+     * Sets asin
+     * @param string $asin
+     * @return $this
+     */
+    public function setAsin($asin)
+    {
+        $this->container['asin'] = $asin;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     * @param string $title
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
 
         return $this;
     }
@@ -319,22 +429,64 @@ class RepricingItemDTO implements ArrayAccess
     }
 
     /**
-     * Gets asin
-     * @return string
+     * Gets initial_price
+     * @return int
      */
-    public function getAsin()
+    public function getInitialPrice()
     {
-        return $this->container['asin'];
+        return $this->container['initial_price'];
     }
 
     /**
-     * Sets asin
-     * @param string $asin
+     * Sets initial_price
+     * @param int $initial_price
      * @return $this
      */
-    public function setAsin($asin)
+    public function setInitialPrice($initial_price)
     {
-        $this->container['asin'] = $asin;
+        $this->container['initial_price'] = $initial_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     * @return int
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     * @param int $quantity
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets listed
+     * @return bool
+     */
+    public function getListed()
+    {
+        return $this->container['listed'];
+    }
+
+    /**
+     * Sets listed
+     * @param bool $listed
+     * @return $this
+     */
+    public function setListed($listed)
+    {
+        $this->container['listed'] = $listed;
 
         return $this;
     }
@@ -386,211 +538,22 @@ class RepricingItemDTO implements ArrayAccess
     }
 
     /**
-     * Gets feed_submission
-     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO
-     */
-    public function getFeedSubmission()
-    {
-        return $this->container['feed_submission'];
-    }
-
-    /**
-     * Sets feed_submission
-     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO $feed_submission
-     * @return $this
-     */
-    public function setFeedSubmission($feed_submission)
-    {
-        $this->container['feed_submission'] = $feed_submission;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
+     * Gets amazon_open_date
      * @return int
      */
-    public function getId()
+    public function getAmazonOpenDate()
     {
-        return $this->container['id'];
+        return $this->container['amazon_open_date'];
     }
 
     /**
-     * Sets id
-     * @param int $id
+     * Sets amazon_open_date
+     * @param int $amazon_open_date
      * @return $this
      */
-    public function setId($id)
+    public function setAmazonOpenDate($amazon_open_date)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets initial_price
-     * @return int
-     */
-    public function getInitialPrice()
-    {
-        return $this->container['initial_price'];
-    }
-
-    /**
-     * Sets initial_price
-     * @param int $initial_price
-     * @return $this
-     */
-    public function setInitialPrice($initial_price)
-    {
-        $this->container['initial_price'] = $initial_price;
-
-        return $this;
-    }
-
-    /**
-     * Gets inserted
-     * @return \DateTime
-     */
-    public function getInserted()
-    {
-        return $this->container['inserted'];
-    }
-
-    /**
-     * Sets inserted
-     * @param \DateTime $inserted
-     * @return $this
-     */
-    public function setInserted($inserted)
-    {
-        $this->container['inserted'] = $inserted;
-
-        return $this;
-    }
-
-    /**
-     * Gets listed
-     * @return bool
-     */
-    public function getListed()
-    {
-        return $this->container['listed'];
-    }
-
-    /**
-     * Sets listed
-     * @param bool $listed
-     * @return $this
-     */
-    public function setListed($listed)
-    {
-        $this->container['listed'] = $listed;
-
-        return $this;
-    }
-
-    /**
-     * Gets offers
-     * @return \eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]
-     */
-    public function getOffers()
-    {
-        return $this->container['offers'];
-    }
-
-    /**
-     * Sets offers
-     * @param \eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[] $offers
-     * @return $this
-     */
-    public function setOffers($offers)
-    {
-        $this->container['offers'] = $offers;
-
-        return $this;
-    }
-
-    /**
-     * Gets offers_updated
-     * @return int
-     */
-    public function getOffersUpdated()
-    {
-        return $this->container['offers_updated'];
-    }
-
-    /**
-     * Sets offers_updated
-     * @param int $offers_updated
-     * @return $this
-     */
-    public function setOffersUpdated($offers_updated)
-    {
-        $this->container['offers_updated'] = $offers_updated;
-
-        return $this;
-    }
-
-    /**
-     * Gets optimization_result
-     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO
-     */
-    public function getOptimizationResult()
-    {
-        return $this->container['optimization_result'];
-    }
-
-    /**
-     * Sets optimization_result
-     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO $optimization_result
-     * @return $this
-     */
-    public function setOptimizationResult($optimization_result)
-    {
-        $this->container['optimization_result'] = $optimization_result;
-
-        return $this;
-    }
-
-    /**
-     * Gets quantity
-     * @return int
-     */
-    public function getQuantity()
-    {
-        return $this->container['quantity'];
-    }
-
-    /**
-     * Sets quantity
-     * @param int $quantity
-     * @return $this
-     */
-    public function setQuantity($quantity)
-    {
-        $this->container['quantity'] = $quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets sku
-     * @return string
-     */
-    public function getSku()
-    {
-        return $this->container['sku'];
-    }
-
-    /**
-     * Sets sku
-     * @param string $sku
-     * @return $this
-     */
-    public function setSku($sku)
-    {
-        $this->container['sku'] = $sku;
+        $this->container['amazon_open_date'] = $amazon_open_date;
 
         return $this;
     }
@@ -617,43 +580,106 @@ class RepricingItemDTO implements ArrayAccess
     }
 
     /**
-     * Gets title
-     * @return string
+     * Gets offers
+     * @return \eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]
      */
-    public function getTitle()
+    public function getOffers()
     {
-        return $this->container['title'];
+        return $this->container['offers'];
     }
 
     /**
-     * Sets title
-     * @param string $title
+     * Sets offers
+     * @param \eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[] $offers
      * @return $this
      */
-    public function setTitle($title)
+    public function setOffers($offers)
     {
-        $this->container['title'] = $title;
+        $this->container['offers'] = $offers;
 
         return $this;
     }
 
     /**
-     * Gets updated
-     * @return \DateTime
+     * Gets optimization_result
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO
      */
-    public function getUpdated()
+    public function getOptimizationResult()
     {
-        return $this->container['updated'];
+        return $this->container['optimization_result'];
     }
 
     /**
-     * Sets updated
-     * @param \DateTime $updated
+     * Sets optimization_result
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO $optimization_result
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setOptimizationResult($optimization_result)
     {
-        $this->container['updated'] = $updated;
+        $this->container['optimization_result'] = $optimization_result;
+
+        return $this;
+    }
+
+    /**
+     * Gets feed_submission
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO
+     */
+    public function getFeedSubmission()
+    {
+        return $this->container['feed_submission'];
+    }
+
+    /**
+     * Sets feed_submission
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingFeedSubmissionDTO $feed_submission
+     * @return $this
+     */
+    public function setFeedSubmission($feed_submission)
+    {
+        $this->container['feed_submission'] = $feed_submission;
+
+        return $this;
+    }
+
+    /**
+     * Gets offers_updated
+     * @return int
+     */
+    public function getOffersUpdated()
+    {
+        return $this->container['offers_updated'];
+    }
+
+    /**
+     * Sets offers_updated
+     * @param int $offers_updated
+     * @return $this
+     */
+    public function setOffersUpdated($offers_updated)
+    {
+        $this->container['offers_updated'] = $offers_updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets sales_rankings
+     * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemSalesRankingsDTO
+     */
+    public function getSalesRankings()
+    {
+        return $this->container['sales_rankings'];
+    }
+
+    /**
+     * Sets sales_rankings
+     * @param \eSagu\Amzn\RePricing\V1\Model\RepricingItemSalesRankingsDTO $sales_rankings
+     * @return $this
+     */
+    public function setSalesRankings($sales_rankings)
+    {
+        $this->container['sales_rankings'] = $sales_rankings;
 
         return $this;
     }

@@ -55,9 +55,9 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'fixed_price' => 'int',
-        'max_price' => 'int',
         'min_price' => 'int',
+        'max_price' => 'int',
+        'fixed_price' => 'int',
         'mode' => 'string'
     ];
 
@@ -71,9 +71,9 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'fixed_price' => 'fixedPrice',
-        'max_price' => 'maxPrice',
         'min_price' => 'minPrice',
+        'max_price' => 'maxPrice',
+        'fixed_price' => 'fixedPrice',
         'mode' => 'mode'
     ];
 
@@ -83,9 +83,9 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'fixed_price' => 'setFixedPrice',
-        'max_price' => 'setMaxPrice',
         'min_price' => 'setMinPrice',
+        'max_price' => 'setMaxPrice',
+        'fixed_price' => 'setFixedPrice',
         'mode' => 'setMode'
     ];
 
@@ -95,9 +95,9 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'fixed_price' => 'getFixedPrice',
-        'max_price' => 'getMaxPrice',
         'min_price' => 'getMinPrice',
+        'max_price' => 'getMaxPrice',
+        'fixed_price' => 'getFixedPrice',
         'mode' => 'getMode'
     ];
 
@@ -154,9 +154,9 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['fixed_price'] = isset($data['fixed_price']) ? $data['fixed_price'] : null;
-        $this->container['max_price'] = isset($data['max_price']) ? $data['max_price'] : null;
         $this->container['min_price'] = isset($data['min_price']) ? $data['min_price'] : null;
+        $this->container['max_price'] = isset($data['max_price']) ? $data['max_price'] : null;
+        $this->container['fixed_price'] = isset($data['fixed_price']) ? $data['fixed_price'] : null;
         $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
     }
 
@@ -169,14 +169,14 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['fixed_price'] === null) {
-            $invalid_properties[] = "'fixed_price' can't be null";
+        if ($this->container['min_price'] === null) {
+            $invalid_properties[] = "'min_price' can't be null";
         }
         if ($this->container['max_price'] === null) {
             $invalid_properties[] = "'max_price' can't be null";
         }
-        if ($this->container['min_price'] === null) {
-            $invalid_properties[] = "'min_price' can't be null";
+        if ($this->container['fixed_price'] === null) {
+            $invalid_properties[] = "'fixed_price' can't be null";
         }
         if ($this->container['mode'] === null) {
             $invalid_properties[] = "'mode' can't be null";
@@ -198,13 +198,13 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['fixed_price'] === null) {
+        if ($this->container['min_price'] === null) {
             return false;
         }
         if ($this->container['max_price'] === null) {
             return false;
         }
-        if ($this->container['min_price'] === null) {
+        if ($this->container['fixed_price'] === null) {
             return false;
         }
         if ($this->container['mode'] === null) {
@@ -219,22 +219,22 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
 
 
     /**
-     * Gets fixed_price
+     * Gets min_price
      * @return int
      */
-    public function getFixedPrice()
+    public function getMinPrice()
     {
-        return $this->container['fixed_price'];
+        return $this->container['min_price'];
     }
 
     /**
-     * Sets fixed_price
-     * @param int $fixed_price
+     * Sets min_price
+     * @param int $min_price
      * @return $this
      */
-    public function setFixedPrice($fixed_price)
+    public function setMinPrice($min_price)
     {
-        $this->container['fixed_price'] = $fixed_price;
+        $this->container['min_price'] = $min_price;
 
         return $this;
     }
@@ -261,22 +261,22 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
     }
 
     /**
-     * Gets min_price
+     * Gets fixed_price
      * @return int
      */
-    public function getMinPrice()
+    public function getFixedPrice()
     {
-        return $this->container['min_price'];
+        return $this->container['fixed_price'];
     }
 
     /**
-     * Sets min_price
-     * @param int $min_price
+     * Sets fixed_price
+     * @param int $fixed_price
      * @return $this
      */
-    public function setMinPrice($min_price)
+    public function setFixedPrice($fixed_price)
     {
-        $this->container['min_price'] = $min_price;
+        $this->container['fixed_price'] = $fixed_price;
 
         return $this;
     }

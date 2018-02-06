@@ -56,10 +56,10 @@ class RepricingCSVImportDTO implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'download_url' => 'string',
-        'error_count' => 'int',
-        'md5' => 'string',
         'state' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'md5' => 'string',
+        'error_count' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -73,10 +73,10 @@ class RepricingCSVImportDTO implements ArrayAccess
      */
     protected static $attributeMap = [
         'download_url' => 'downloadUrl',
-        'error_count' => 'errorCount',
-        'md5' => 'md5',
         'state' => 'state',
-        'type' => 'type'
+        'type' => 'type',
+        'md5' => 'md5',
+        'error_count' => 'errorCount'
     ];
 
 
@@ -86,10 +86,10 @@ class RepricingCSVImportDTO implements ArrayAccess
      */
     protected static $setters = [
         'download_url' => 'setDownloadUrl',
-        'error_count' => 'setErrorCount',
-        'md5' => 'setMd5',
         'state' => 'setState',
-        'type' => 'setType'
+        'type' => 'setType',
+        'md5' => 'setMd5',
+        'error_count' => 'setErrorCount'
     ];
 
 
@@ -99,10 +99,10 @@ class RepricingCSVImportDTO implements ArrayAccess
      */
     protected static $getters = [
         'download_url' => 'getDownloadUrl',
-        'error_count' => 'getErrorCount',
-        'md5' => 'getMd5',
         'state' => 'getState',
-        'type' => 'getType'
+        'type' => 'getType',
+        'md5' => 'getMd5',
+        'error_count' => 'getErrorCount'
     ];
 
     public static function attributeMap()
@@ -179,10 +179,10 @@ class RepricingCSVImportDTO implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
-        $this->container['error_count'] = isset($data['error_count']) ? $data['error_count'] : null;
-        $this->container['md5'] = isset($data['md5']) ? $data['md5'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['md5'] = isset($data['md5']) ? $data['md5'] : null;
+        $this->container['error_count'] = isset($data['error_count']) ? $data['error_count'] : null;
     }
 
     /**
@@ -250,48 +250,6 @@ class RepricingCSVImportDTO implements ArrayAccess
     }
 
     /**
-     * Gets error_count
-     * @return int
-     */
-    public function getErrorCount()
-    {
-        return $this->container['error_count'];
-    }
-
-    /**
-     * Sets error_count
-     * @param int $error_count
-     * @return $this
-     */
-    public function setErrorCount($error_count)
-    {
-        $this->container['error_count'] = $error_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets md5
-     * @return string
-     */
-    public function getMd5()
-    {
-        return $this->container['md5'];
-    }
-
-    /**
-     * Sets md5
-     * @param string $md5
-     * @return $this
-     */
-    public function setMd5($md5)
-    {
-        $this->container['md5'] = $md5;
-
-        return $this;
-    }
-
-    /**
      * Gets state
      * @return string
      */
@@ -337,6 +295,48 @@ class RepricingCSVImportDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'SCHEDULED', 'MANUAL'");
         }
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets md5
+     * @return string
+     */
+    public function getMd5()
+    {
+        return $this->container['md5'];
+    }
+
+    /**
+     * Sets md5
+     * @param string $md5
+     * @return $this
+     */
+    public function setMd5($md5)
+    {
+        $this->container['md5'] = $md5;
+
+        return $this;
+    }
+
+    /**
+     * Gets error_count
+     * @return int
+     */
+    public function getErrorCount()
+    {
+        return $this->container['error_count'];
+    }
+
+    /**
+     * Sets error_count
+     * @param int $error_count
+     * @return $this
+     */
+    public function setErrorCount($error_count)
+    {
+        $this->container['error_count'] = $error_count;
 
         return $this;
     }

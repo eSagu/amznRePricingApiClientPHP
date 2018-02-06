@@ -55,12 +55,12 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'end_date' => '\DateTime',
         'id' => 'int',
         'inserted' => '\DateTime',
-        'slot_count' => 'int',
+        'updated' => '\DateTime',
         'start_date' => '\DateTime',
-        'updated' => '\DateTime'
+        'end_date' => '\DateTime',
+        'slot_count' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -73,12 +73,12 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'end_date' => 'endDate',
         'id' => 'id',
         'inserted' => 'inserted',
-        'slot_count' => 'slotCount',
+        'updated' => 'updated',
         'start_date' => 'startDate',
-        'updated' => 'updated'
+        'end_date' => 'endDate',
+        'slot_count' => 'slotCount'
     ];
 
 
@@ -87,12 +87,12 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'end_date' => 'setEndDate',
         'id' => 'setId',
         'inserted' => 'setInserted',
-        'slot_count' => 'setSlotCount',
+        'updated' => 'setUpdated',
         'start_date' => 'setStartDate',
-        'updated' => 'setUpdated'
+        'end_date' => 'setEndDate',
+        'slot_count' => 'setSlotCount'
     ];
 
 
@@ -101,12 +101,12 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'end_date' => 'getEndDate',
         'id' => 'getId',
         'inserted' => 'getInserted',
-        'slot_count' => 'getSlotCount',
+        'updated' => 'getUpdated',
         'start_date' => 'getStartDate',
-        'updated' => 'getUpdated'
+        'end_date' => 'getEndDate',
+        'slot_count' => 'getSlotCount'
     ];
 
     public static function attributeMap()
@@ -140,12 +140,12 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
-        $this->container['slot_count'] = isset($data['slot_count']) ? $data['slot_count'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['slot_count'] = isset($data['slot_count']) ? $data['slot_count'] : null;
     }
 
     /**
@@ -172,27 +172,6 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets end_date
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     * @param \DateTime $end_date
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
 
     /**
      * Gets id
@@ -237,22 +216,22 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
     }
 
     /**
-     * Gets slot_count
-     * @return int
+     * Gets updated
+     * @return \DateTime
      */
-    public function getSlotCount()
+    public function getUpdated()
     {
-        return $this->container['slot_count'];
+        return $this->container['updated'];
     }
 
     /**
-     * Sets slot_count
-     * @param int $slot_count
+     * Sets updated
+     * @param \DateTime $updated
      * @return $this
      */
-    public function setSlotCount($slot_count)
+    public function setUpdated($updated)
     {
-        $this->container['slot_count'] = $slot_count;
+        $this->container['updated'] = $updated;
 
         return $this;
     }
@@ -279,22 +258,43 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
     }
 
     /**
-     * Gets updated
+     * Gets end_date
      * @return \DateTime
      */
-    public function getUpdated()
+    public function getEndDate()
     {
-        return $this->container['updated'];
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets updated
-     * @param \DateTime $updated
+     * Sets end_date
+     * @param \DateTime $end_date
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setEndDate($end_date)
     {
-        $this->container['updated'] = $updated;
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets slot_count
+     * @return int
+     */
+    public function getSlotCount()
+    {
+        return $this->container['slot_count'];
+    }
+
+    /**
+     * Sets slot_count
+     * @param int $slot_count
+     * @return $this
+     */
+    public function setSlotCount($slot_count)
+    {
+        $this->container['slot_count'] = $slot_count;
 
         return $this;
     }

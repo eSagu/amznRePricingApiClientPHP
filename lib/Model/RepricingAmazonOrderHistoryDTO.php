@@ -54,10 +54,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'currency_code' => 'string',
-        'date' => 'string',
+        'quantity_total' => 'int',
         'item_price_total' => 'int',
-        'quantity_total' => 'int'
+        'date' => 'string',
+        'currency_code' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'currency_code' => 'currencyCode',
-        'date' => 'date',
+        'quantity_total' => 'quantityTotal',
         'item_price_total' => 'itemPriceTotal',
-        'quantity_total' => 'quantityTotal'
+        'date' => 'date',
+        'currency_code' => 'currencyCode'
     ];
 
 
@@ -82,10 +82,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'currency_code' => 'setCurrencyCode',
-        'date' => 'setDate',
+        'quantity_total' => 'setQuantityTotal',
         'item_price_total' => 'setItemPriceTotal',
-        'quantity_total' => 'setQuantityTotal'
+        'date' => 'setDate',
+        'currency_code' => 'setCurrencyCode'
     ];
 
 
@@ -94,10 +94,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'currency_code' => 'getCurrencyCode',
-        'date' => 'getDate',
+        'quantity_total' => 'getQuantityTotal',
         'item_price_total' => 'getItemPriceTotal',
-        'quantity_total' => 'getQuantityTotal'
+        'date' => 'getDate',
+        'currency_code' => 'getCurrencyCode'
     ];
 
     public static function attributeMap()
@@ -131,10 +131,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
-        $this->container['item_price_total'] = isset($data['item_price_total']) ? $data['item_price_total'] : null;
         $this->container['quantity_total'] = isset($data['quantity_total']) ? $data['quantity_total'] : null;
+        $this->container['item_price_total'] = isset($data['item_price_total']) ? $data['item_price_total'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
     }
 
     /**
@@ -163,43 +163,22 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
 
 
     /**
-     * Gets currency_code
-     * @return string
+     * Gets quantity_total
+     * @return int
      */
-    public function getCurrencyCode()
+    public function getQuantityTotal()
     {
-        return $this->container['currency_code'];
+        return $this->container['quantity_total'];
     }
 
     /**
-     * Sets currency_code
-     * @param string $currency_code
+     * Sets quantity_total
+     * @param int $quantity_total
      * @return $this
      */
-    public function setCurrencyCode($currency_code)
+    public function setQuantityTotal($quantity_total)
     {
-        $this->container['currency_code'] = $currency_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets date
-     * @return string
-     */
-    public function getDate()
-    {
-        return $this->container['date'];
-    }
-
-    /**
-     * Sets date
-     * @param string $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->container['date'] = $date;
+        $this->container['quantity_total'] = $quantity_total;
 
         return $this;
     }
@@ -226,22 +205,43 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
     }
 
     /**
-     * Gets quantity_total
-     * @return int
+     * Gets date
+     * @return string
      */
-    public function getQuantityTotal()
+    public function getDate()
     {
-        return $this->container['quantity_total'];
+        return $this->container['date'];
     }
 
     /**
-     * Sets quantity_total
-     * @param int $quantity_total
+     * Sets date
+     * @param string $date
      * @return $this
      */
-    public function setQuantityTotal($quantity_total)
+    public function setDate($date)
     {
-        $this->container['quantity_total'] = $quantity_total;
+        $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency_code
+     * @return string
+     */
+    public function getCurrencyCode()
+    {
+        return $this->container['currency_code'];
+    }
+
+    /**
+     * Sets currency_code
+     * @param string $currency_code
+     * @return $this
+     */
+    public function setCurrencyCode($currency_code)
+    {
+        $this->container['currency_code'] = $currency_code;
 
         return $this;
     }

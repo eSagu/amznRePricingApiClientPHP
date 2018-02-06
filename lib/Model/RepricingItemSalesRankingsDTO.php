@@ -1,6 +1,6 @@
 <?php
 /**
- * RepricingShippingCostsDTO
+ * RepricingItemSalesRankingsDTO
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace eSagu\Amzn\RePricing\V1\Model;
 use \ArrayAccess;
 
 /**
- * RepricingShippingCostsDTO Class Doc Comment
+ * RepricingItemSalesRankingsDTO Class Doc Comment
  *
  * @category    Class
- * @description The shipping costs.A shipping scale, used for the internal shipping cost calculation.
+ * @description The repricing item&#39;s sales rankings as amzn.
  * @package     eSagu\Amzn\RePricing\V1
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RepricingShippingCostsDTO implements ArrayAccess
+class RepricingItemSalesRankingsDTO implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,17 +48,18 @@ class RepricingShippingCostsDTO implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'RepricingShippingCostsDTO';
+    protected static $swaggerModelName = 'RepricingItemSalesRankingsDTO';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'is_default_mfn' => 'bool',
-        'is_default_fba' => 'bool',
-        'shipping_costs' => '\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]'
+        'inserted' => '\DateTime',
+        'updated' => '\DateTime',
+        'lowest_display_on_website_sales_rank_name' => 'string',
+        'lowest_display_on_website_sales_rank' => 'int',
+        'sales_rankings' => 'map[string,int]'
     ];
 
     public static function swaggerTypes()
@@ -71,10 +72,11 @@ class RepricingShippingCostsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'is_default_mfn' => 'isDefaultMFN',
-        'is_default_fba' => 'isDefaultFBA',
-        'shipping_costs' => 'shippingCosts'
+        'inserted' => 'inserted',
+        'updated' => 'updated',
+        'lowest_display_on_website_sales_rank_name' => 'lowestDisplayOnWebsiteSalesRankName',
+        'lowest_display_on_website_sales_rank' => 'lowestDisplayOnWebsiteSalesRank',
+        'sales_rankings' => 'salesRankings'
     ];
 
 
@@ -83,10 +85,11 @@ class RepricingShippingCostsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'is_default_mfn' => 'setIsDefaultMfn',
-        'is_default_fba' => 'setIsDefaultFba',
-        'shipping_costs' => 'setShippingCosts'
+        'inserted' => 'setInserted',
+        'updated' => 'setUpdated',
+        'lowest_display_on_website_sales_rank_name' => 'setLowestDisplayOnWebsiteSalesRankName',
+        'lowest_display_on_website_sales_rank' => 'setLowestDisplayOnWebsiteSalesRank',
+        'sales_rankings' => 'setSalesRankings'
     ];
 
 
@@ -95,10 +98,11 @@ class RepricingShippingCostsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'is_default_mfn' => 'getIsDefaultMfn',
-        'is_default_fba' => 'getIsDefaultFba',
-        'shipping_costs' => 'getShippingCosts'
+        'inserted' => 'getInserted',
+        'updated' => 'getUpdated',
+        'lowest_display_on_website_sales_rank_name' => 'getLowestDisplayOnWebsiteSalesRankName',
+        'lowest_display_on_website_sales_rank' => 'getLowestDisplayOnWebsiteSalesRank',
+        'sales_rankings' => 'getSalesRankings'
     ];
 
     public static function attributeMap()
@@ -132,10 +136,11 @@ class RepricingShippingCostsDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
-        $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
-        $this->container['shipping_costs'] = isset($data['shipping_costs']) ? $data['shipping_costs'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
+        $this->container['lowest_display_on_website_sales_rank_name'] = isset($data['lowest_display_on_website_sales_rank_name']) ? $data['lowest_display_on_website_sales_rank_name'] : null;
+        $this->container['lowest_display_on_website_sales_rank'] = isset($data['lowest_display_on_website_sales_rank']) ? $data['lowest_display_on_website_sales_rank'] : null;
+        $this->container['sales_rankings'] = isset($data['sales_rankings']) ? $data['sales_rankings'] : null;
     }
 
     /**
@@ -164,85 +169,106 @@ class RepricingShippingCostsDTO implements ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets lowest_display_on_website_sales_rank_name
      * @return string
      */
-    public function getName()
+    public function getLowestDisplayOnWebsiteSalesRankName()
     {
-        return $this->container['name'];
+        return $this->container['lowest_display_on_website_sales_rank_name'];
     }
 
     /**
-     * Sets name
-     * @param string $name
+     * Sets lowest_display_on_website_sales_rank_name
+     * @param string $lowest_display_on_website_sales_rank_name
      * @return $this
      */
-    public function setName($name)
+    public function setLowestDisplayOnWebsiteSalesRankName($lowest_display_on_website_sales_rank_name)
     {
-        $this->container['name'] = $name;
+        $this->container['lowest_display_on_website_sales_rank_name'] = $lowest_display_on_website_sales_rank_name;
 
         return $this;
     }
 
     /**
-     * Gets is_default_mfn
-     * @return bool
+     * Gets lowest_display_on_website_sales_rank
+     * @return int
      */
-    public function getIsDefaultMfn()
+    public function getLowestDisplayOnWebsiteSalesRank()
     {
-        return $this->container['is_default_mfn'];
+        return $this->container['lowest_display_on_website_sales_rank'];
     }
 
     /**
-     * Sets is_default_mfn
-     * @param bool $is_default_mfn
+     * Sets lowest_display_on_website_sales_rank
+     * @param int $lowest_display_on_website_sales_rank
      * @return $this
      */
-    public function setIsDefaultMfn($is_default_mfn)
+    public function setLowestDisplayOnWebsiteSalesRank($lowest_display_on_website_sales_rank)
     {
-        $this->container['is_default_mfn'] = $is_default_mfn;
+        $this->container['lowest_display_on_website_sales_rank'] = $lowest_display_on_website_sales_rank;
 
         return $this;
     }
 
     /**
-     * Gets is_default_fba
-     * @return bool
+     * Gets sales_rankings
+     * @return map[string,int]
      */
-    public function getIsDefaultFba()
+    public function getSalesRankings()
     {
-        return $this->container['is_default_fba'];
+        return $this->container['sales_rankings'];
     }
 
     /**
-     * Sets is_default_fba
-     * @param bool $is_default_fba
+     * Sets sales_rankings
+     * @param map[string,int] $sales_rankings
      * @return $this
      */
-    public function setIsDefaultFba($is_default_fba)
+    public function setSalesRankings($sales_rankings)
     {
-        $this->container['is_default_fba'] = $is_default_fba;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipping_costs
-     * @return \eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]
-     */
-    public function getShippingCosts()
-    {
-        return $this->container['shipping_costs'];
-    }
-
-    /**
-     * Sets shipping_costs
-     * @param \eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[] $shipping_costs
-     * @return $this
-     */
-    public function setShippingCosts($shipping_costs)
-    {
-        $this->container['shipping_costs'] = $shipping_costs;
+        $this->container['sales_rankings'] = $sales_rankings;
 
         return $this;
     }
