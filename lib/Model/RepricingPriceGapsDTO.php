@@ -55,11 +55,11 @@ class RepricingPriceGapsDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'is_default_mfn' => 'bool',
         'is_default_fba' => 'bool',
-        'shipping_included' => 'bool',
-        'price_gaps' => '\eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[]'
+        'is_default_mfn' => 'bool',
+        'name' => 'string',
+        'price_gaps' => '\eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[]',
+        'shipping_included' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -72,11 +72,11 @@ class RepricingPriceGapsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'is_default_mfn' => 'isDefaultMFN',
         'is_default_fba' => 'isDefaultFBA',
-        'shipping_included' => 'shippingIncluded',
-        'price_gaps' => 'priceGaps'
+        'is_default_mfn' => 'isDefaultMFN',
+        'name' => 'name',
+        'price_gaps' => 'priceGaps',
+        'shipping_included' => 'shippingIncluded'
     ];
 
 
@@ -85,11 +85,11 @@ class RepricingPriceGapsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'is_default_mfn' => 'setIsDefaultMfn',
         'is_default_fba' => 'setIsDefaultFba',
-        'shipping_included' => 'setShippingIncluded',
-        'price_gaps' => 'setPriceGaps'
+        'is_default_mfn' => 'setIsDefaultMfn',
+        'name' => 'setName',
+        'price_gaps' => 'setPriceGaps',
+        'shipping_included' => 'setShippingIncluded'
     ];
 
 
@@ -98,11 +98,11 @@ class RepricingPriceGapsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'is_default_mfn' => 'getIsDefaultMfn',
         'is_default_fba' => 'getIsDefaultFba',
-        'shipping_included' => 'getShippingIncluded',
-        'price_gaps' => 'getPriceGaps'
+        'is_default_mfn' => 'getIsDefaultMfn',
+        'name' => 'getName',
+        'price_gaps' => 'getPriceGaps',
+        'shipping_included' => 'getShippingIncluded'
     ];
 
     public static function attributeMap()
@@ -136,11 +136,11 @@ class RepricingPriceGapsDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
         $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
-        $this->container['shipping_included'] = isset($data['shipping_included']) ? $data['shipping_included'] : null;
+        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['price_gaps'] = isset($data['price_gaps']) ? $data['price_gaps'] : null;
+        $this->container['shipping_included'] = isset($data['shipping_included']) ? $data['shipping_included'] : null;
     }
 
     /**
@@ -169,22 +169,22 @@ class RepricingPriceGapsDTO implements ArrayAccess
 
 
     /**
-     * Gets name
-     * @return string
+     * Gets is_default_fba
+     * @return bool
      */
-    public function getName()
+    public function getIsDefaultFba()
     {
-        return $this->container['name'];
+        return $this->container['is_default_fba'];
     }
 
     /**
-     * Sets name
-     * @param string $name
+     * Sets is_default_fba
+     * @param bool $is_default_fba
      * @return $this
      */
-    public function setName($name)
+    public function setIsDefaultFba($is_default_fba)
     {
-        $this->container['name'] = $name;
+        $this->container['is_default_fba'] = $is_default_fba;
 
         return $this;
     }
@@ -211,43 +211,22 @@ class RepricingPriceGapsDTO implements ArrayAccess
     }
 
     /**
-     * Gets is_default_fba
-     * @return bool
+     * Gets name
+     * @return string
      */
-    public function getIsDefaultFba()
+    public function getName()
     {
-        return $this->container['is_default_fba'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets is_default_fba
-     * @param bool $is_default_fba
+     * Sets name
+     * @param string $name
      * @return $this
      */
-    public function setIsDefaultFba($is_default_fba)
+    public function setName($name)
     {
-        $this->container['is_default_fba'] = $is_default_fba;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipping_included
-     * @return bool
-     */
-    public function getShippingIncluded()
-    {
-        return $this->container['shipping_included'];
-    }
-
-    /**
-     * Sets shipping_included
-     * @param bool $shipping_included
-     * @return $this
-     */
-    public function setShippingIncluded($shipping_included)
-    {
-        $this->container['shipping_included'] = $shipping_included;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -269,6 +248,27 @@ class RepricingPriceGapsDTO implements ArrayAccess
     public function setPriceGaps($price_gaps)
     {
         $this->container['price_gaps'] = $price_gaps;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipping_included
+     * @return bool
+     */
+    public function getShippingIncluded()
+    {
+        return $this->container['shipping_included'];
+    }
+
+    /**
+     * Sets shipping_included
+     * @param bool $shipping_included
+     * @return $this
+     */
+    public function setShippingIncluded($shipping_included)
+    {
+        $this->container['shipping_included'] = $shipping_included;
 
         return $this;
     }

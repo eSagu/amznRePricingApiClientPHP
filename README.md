@@ -145,6 +145,7 @@ Class | Method | HTTP request | Description
  - [RepricingFeedSubmissionDTO](docs/Model/RepricingFeedSubmissionDTO.md)
  - [RepricingItemDTO](docs/Model/RepricingItemDTO.md)
  - [RepricingItemOptimizationResultDTO](docs/Model/RepricingItemOptimizationResultDTO.md)
+ - [RepricingItemOrderStatsDTO](docs/Model/RepricingItemOrderStatsDTO.md)
  - [RepricingItemPriceSettingsDTO](docs/Model/RepricingItemPriceSettingsDTO.md)
  - [RepricingItemSalesRankingsDTO](docs/Model/RepricingItemSalesRankingsDTO.md)
  - [RepricingItemStrategyDTO](docs/Model/RepricingItemStrategyDTO.md)

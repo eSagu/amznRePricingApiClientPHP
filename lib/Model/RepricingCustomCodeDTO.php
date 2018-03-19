@@ -57,13 +57,13 @@ class RepricingCustomCodeDTO implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'inserted' => '\DateTime',
-        'updated' => '\DateTime',
         'name' => 'string',
-        'verified' => 'bool',
-        'use_exclusion_criteria' => 'bool',
         'trigger_price_change' => 'bool',
+        'updated' => '\DateTime',
+        'use_exclusion_criteria' => 'bool',
         'use_price_gaps' => 'bool',
-        'use_shipping_costs' => 'bool'
+        'use_shipping_costs' => 'bool',
+        'verified' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -78,13 +78,13 @@ class RepricingCustomCodeDTO implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'inserted' => 'inserted',
-        'updated' => 'updated',
         'name' => 'name',
-        'verified' => 'verified',
-        'use_exclusion_criteria' => 'useExclusionCriteria',
         'trigger_price_change' => 'triggerPriceChange',
+        'updated' => 'updated',
+        'use_exclusion_criteria' => 'useExclusionCriteria',
         'use_price_gaps' => 'usePriceGaps',
-        'use_shipping_costs' => 'useShippingCosts'
+        'use_shipping_costs' => 'useShippingCosts',
+        'verified' => 'verified'
     ];
 
 
@@ -95,13 +95,13 @@ class RepricingCustomCodeDTO implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'inserted' => 'setInserted',
-        'updated' => 'setUpdated',
         'name' => 'setName',
-        'verified' => 'setVerified',
-        'use_exclusion_criteria' => 'setUseExclusionCriteria',
         'trigger_price_change' => 'setTriggerPriceChange',
+        'updated' => 'setUpdated',
+        'use_exclusion_criteria' => 'setUseExclusionCriteria',
         'use_price_gaps' => 'setUsePriceGaps',
-        'use_shipping_costs' => 'setUseShippingCosts'
+        'use_shipping_costs' => 'setUseShippingCosts',
+        'verified' => 'setVerified'
     ];
 
 
@@ -112,13 +112,13 @@ class RepricingCustomCodeDTO implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'inserted' => 'getInserted',
-        'updated' => 'getUpdated',
         'name' => 'getName',
-        'verified' => 'getVerified',
-        'use_exclusion_criteria' => 'getUseExclusionCriteria',
         'trigger_price_change' => 'getTriggerPriceChange',
+        'updated' => 'getUpdated',
+        'use_exclusion_criteria' => 'getUseExclusionCriteria',
         'use_price_gaps' => 'getUsePriceGaps',
-        'use_shipping_costs' => 'getUseShippingCosts'
+        'use_shipping_costs' => 'getUseShippingCosts',
+        'verified' => 'getVerified'
     ];
 
     public static function attributeMap()
@@ -154,13 +154,13 @@ class RepricingCustomCodeDTO implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
-        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['verified'] = isset($data['verified']) ? $data['verified'] : null;
-        $this->container['use_exclusion_criteria'] = isset($data['use_exclusion_criteria']) ? $data['use_exclusion_criteria'] : null;
         $this->container['trigger_price_change'] = isset($data['trigger_price_change']) ? $data['trigger_price_change'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
+        $this->container['use_exclusion_criteria'] = isset($data['use_exclusion_criteria']) ? $data['use_exclusion_criteria'] : null;
         $this->container['use_price_gaps'] = isset($data['use_price_gaps']) ? $data['use_price_gaps'] : null;
         $this->container['use_shipping_costs'] = isset($data['use_shipping_costs']) ? $data['use_shipping_costs'] : null;
+        $this->container['verified'] = isset($data['verified']) ? $data['verified'] : null;
     }
 
     /**
@@ -231,27 +231,6 @@ class RepricingCustomCodeDTO implements ArrayAccess
     }
 
     /**
-     * Gets updated
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->container['updated'];
-    }
-
-    /**
-     * Sets updated
-     * @param \DateTime $updated
-     * @return $this
-     */
-    public function setUpdated($updated)
-    {
-        $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      * @return string
      */
@@ -273,22 +252,43 @@ class RepricingCustomCodeDTO implements ArrayAccess
     }
 
     /**
-     * Gets verified
+     * Gets trigger_price_change
      * @return bool
      */
-    public function getVerified()
+    public function getTriggerPriceChange()
     {
-        return $this->container['verified'];
+        return $this->container['trigger_price_change'];
     }
 
     /**
-     * Sets verified
-     * @param bool $verified
+     * Sets trigger_price_change
+     * @param bool $trigger_price_change
      * @return $this
      */
-    public function setVerified($verified)
+    public function setTriggerPriceChange($trigger_price_change)
     {
-        $this->container['verified'] = $verified;
+        $this->container['trigger_price_change'] = $trigger_price_change;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }
@@ -310,27 +310,6 @@ class RepricingCustomCodeDTO implements ArrayAccess
     public function setUseExclusionCriteria($use_exclusion_criteria)
     {
         $this->container['use_exclusion_criteria'] = $use_exclusion_criteria;
-
-        return $this;
-    }
-
-    /**
-     * Gets trigger_price_change
-     * @return bool
-     */
-    public function getTriggerPriceChange()
-    {
-        return $this->container['trigger_price_change'];
-    }
-
-    /**
-     * Sets trigger_price_change
-     * @param bool $trigger_price_change
-     * @return $this
-     */
-    public function setTriggerPriceChange($trigger_price_change)
-    {
-        $this->container['trigger_price_change'] = $trigger_price_change;
 
         return $this;
     }
@@ -373,6 +352,27 @@ class RepricingCustomCodeDTO implements ArrayAccess
     public function setUseShippingCosts($use_shipping_costs)
     {
         $this->container['use_shipping_costs'] = $use_shipping_costs;
+
+        return $this;
+    }
+
+    /**
+     * Gets verified
+     * @return bool
+     */
+    public function getVerified()
+    {
+        return $this->container['verified'];
+    }
+
+    /**
+     * Sets verified
+     * @param bool $verified
+     * @return $this
+     */
+    public function setVerified($verified)
+    {
+        $this->container['verified'] = $verified;
 
         return $this;
     }

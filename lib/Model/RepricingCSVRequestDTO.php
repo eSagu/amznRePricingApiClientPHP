@@ -55,11 +55,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'state' => 'string',
+        'csv_download_url' => 'string',
         'fields' => 'string[]',
         'number_format' => 'string',
-        'csv_download_url' => 'string',
-        'public_csv_file_name' => 'string'
+        'public_csv_file_name' => 'string',
+        'state' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -72,11 +72,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'state' => 'state',
+        'csv_download_url' => 'csvDownloadUrl',
         'fields' => 'fields',
         'number_format' => 'numberFormat',
-        'csv_download_url' => 'csvDownloadUrl',
-        'public_csv_file_name' => 'publicCsvFileName'
+        'public_csv_file_name' => 'publicCsvFileName',
+        'state' => 'state'
     ];
 
 
@@ -85,11 +85,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'state' => 'setState',
+        'csv_download_url' => 'setCsvDownloadUrl',
         'fields' => 'setFields',
         'number_format' => 'setNumberFormat',
-        'csv_download_url' => 'setCsvDownloadUrl',
-        'public_csv_file_name' => 'setPublicCsvFileName'
+        'public_csv_file_name' => 'setPublicCsvFileName',
+        'state' => 'setState'
     ];
 
 
@@ -98,11 +98,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'state' => 'getState',
+        'csv_download_url' => 'getCsvDownloadUrl',
         'fields' => 'getFields',
         'number_format' => 'getNumberFormat',
-        'csv_download_url' => 'getCsvDownloadUrl',
-        'public_csv_file_name' => 'getPublicCsvFileName'
+        'public_csv_file_name' => 'getPublicCsvFileName',
+        'state' => 'getState'
     ];
 
     public static function attributeMap()
@@ -120,9 +120,6 @@ class RepricingCSVRequestDTO implements ArrayAccess
         return self::$getters;
     }
 
-    const STATE_NEW = 'NEW';
-    const STATE_IN_PROGRESS = 'IN_PROGRESS';
-    const STATE_DONE = 'DONE';
     const FIELDS_SKU = 'SKU';
     const FIELDS_ASIN = 'ASIN';
     const FIELDS_TITLE = 'TITLE';
@@ -166,21 +163,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
     const NUMBER_FORMAT_DECIMAL_DOT = 'DECIMAL_DOT';
     const NUMBER_FORMAT_DECIMAL_COMMA = 'DECIMAL_COMMA';
     const NUMBER_FORMAT_CENTS = 'CENTS';
+    const STATE_NEW = 'NEW';
+    const STATE_IN_PROGRESS = 'IN_PROGRESS';
+    const STATE_DONE = 'DONE';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStateAllowableValues()
-    {
-        return [
-            self::STATE_NEW,
-            self::STATE_IN_PROGRESS,
-            self::STATE_DONE,
-        ];
-    }
     
     /**
      * Gets allowable values of the enum
@@ -245,6 +232,19 @@ class RepricingCSVRequestDTO implements ArrayAccess
         ];
     }
     
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_NEW,
+            self::STATE_IN_PROGRESS,
+            self::STATE_DONE,
+        ];
+    }
+    
 
     /**
      * Associative array for storing property values
@@ -258,11 +258,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['csv_download_url'] = isset($data['csv_download_url']) ? $data['csv_download_url'] : null;
         $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
         $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
-        $this->container['csv_download_url'] = isset($data['csv_download_url']) ? $data['csv_download_url'] : null;
         $this->container['public_csv_file_name'] = isset($data['public_csv_file_name']) ? $data['public_csv_file_name'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
     }
 
     /**
@@ -274,14 +274,14 @@ class RepricingCSVRequestDTO implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = ["NEW", "IN_PROGRESS", "DONE"];
-        if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'NEW', 'IN_PROGRESS', 'DONE'.";
-        }
-
         $allowed_values = ["DECIMAL_DOT", "DECIMAL_COMMA", "CENTS"];
         if (!in_array($this->container['number_format'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'number_format', must be one of 'DECIMAL_DOT', 'DECIMAL_COMMA', 'CENTS'.";
+        }
+
+        $allowed_values = ["NEW", "IN_PROGRESS", "DONE"];
+        if (!in_array($this->container['state'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'state', must be one of 'NEW', 'IN_PROGRESS', 'DONE'.";
         }
 
         return $invalid_properties;
@@ -296,12 +296,12 @@ class RepricingCSVRequestDTO implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = ["NEW", "IN_PROGRESS", "DONE"];
-        if (!in_array($this->container['state'], $allowed_values)) {
-            return false;
-        }
         $allowed_values = ["DECIMAL_DOT", "DECIMAL_COMMA", "CENTS"];
         if (!in_array($this->container['number_format'], $allowed_values)) {
+            return false;
+        }
+        $allowed_values = ["NEW", "IN_PROGRESS", "DONE"];
+        if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
         return true;
@@ -309,26 +309,22 @@ class RepricingCSVRequestDTO implements ArrayAccess
 
 
     /**
-     * Gets state
+     * Gets csv_download_url
      * @return string
      */
-    public function getState()
+    public function getCsvDownloadUrl()
     {
-        return $this->container['state'];
+        return $this->container['csv_download_url'];
     }
 
     /**
-     * Sets state
-     * @param string $state
+     * Sets csv_download_url
+     * @param string $csv_download_url
      * @return $this
      */
-    public function setState($state)
+    public function setCsvDownloadUrl($csv_download_url)
     {
-        $allowed_values = array('NEW', 'IN_PROGRESS', 'DONE');
-        if (!is_null($state) && (!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'NEW', 'IN_PROGRESS', 'DONE'");
-        }
-        $this->container['state'] = $state;
+        $this->container['csv_download_url'] = $csv_download_url;
 
         return $this;
     }
@@ -384,27 +380,6 @@ class RepricingCSVRequestDTO implements ArrayAccess
     }
 
     /**
-     * Gets csv_download_url
-     * @return string
-     */
-    public function getCsvDownloadUrl()
-    {
-        return $this->container['csv_download_url'];
-    }
-
-    /**
-     * Sets csv_download_url
-     * @param string $csv_download_url
-     * @return $this
-     */
-    public function setCsvDownloadUrl($csv_download_url)
-    {
-        $this->container['csv_download_url'] = $csv_download_url;
-
-        return $this;
-    }
-
-    /**
      * Gets public_csv_file_name
      * @return string
      */
@@ -421,6 +396,31 @@ class RepricingCSVRequestDTO implements ArrayAccess
     public function setPublicCsvFileName($public_csv_file_name)
     {
         $this->container['public_csv_file_name'] = $public_csv_file_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     * @param string $state
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $allowed_values = array('NEW', 'IN_PROGRESS', 'DONE');
+        if (!is_null($state) && (!in_array($state, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'NEW', 'IN_PROGRESS', 'DONE'");
+        }
+        $this->container['state'] = $state;
 
         return $this;
     }

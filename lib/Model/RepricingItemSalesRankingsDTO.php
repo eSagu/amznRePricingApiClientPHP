@@ -56,10 +56,10 @@ class RepricingItemSalesRankingsDTO implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'inserted' => '\DateTime',
-        'updated' => '\DateTime',
-        'lowest_display_on_website_sales_rank_name' => 'string',
         'lowest_display_on_website_sales_rank' => 'int',
-        'sales_rankings' => 'map[string,int]'
+        'lowest_display_on_website_sales_rank_name' => 'string',
+        'sales_rankings' => 'map[string,int]',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -73,10 +73,10 @@ class RepricingItemSalesRankingsDTO implements ArrayAccess
      */
     protected static $attributeMap = [
         'inserted' => 'inserted',
-        'updated' => 'updated',
-        'lowest_display_on_website_sales_rank_name' => 'lowestDisplayOnWebsiteSalesRankName',
         'lowest_display_on_website_sales_rank' => 'lowestDisplayOnWebsiteSalesRank',
-        'sales_rankings' => 'salesRankings'
+        'lowest_display_on_website_sales_rank_name' => 'lowestDisplayOnWebsiteSalesRankName',
+        'sales_rankings' => 'salesRankings',
+        'updated' => 'updated'
     ];
 
 
@@ -86,10 +86,10 @@ class RepricingItemSalesRankingsDTO implements ArrayAccess
      */
     protected static $setters = [
         'inserted' => 'setInserted',
-        'updated' => 'setUpdated',
-        'lowest_display_on_website_sales_rank_name' => 'setLowestDisplayOnWebsiteSalesRankName',
         'lowest_display_on_website_sales_rank' => 'setLowestDisplayOnWebsiteSalesRank',
-        'sales_rankings' => 'setSalesRankings'
+        'lowest_display_on_website_sales_rank_name' => 'setLowestDisplayOnWebsiteSalesRankName',
+        'sales_rankings' => 'setSalesRankings',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -99,10 +99,10 @@ class RepricingItemSalesRankingsDTO implements ArrayAccess
      */
     protected static $getters = [
         'inserted' => 'getInserted',
-        'updated' => 'getUpdated',
-        'lowest_display_on_website_sales_rank_name' => 'getLowestDisplayOnWebsiteSalesRankName',
         'lowest_display_on_website_sales_rank' => 'getLowestDisplayOnWebsiteSalesRank',
-        'sales_rankings' => 'getSalesRankings'
+        'lowest_display_on_website_sales_rank_name' => 'getLowestDisplayOnWebsiteSalesRankName',
+        'sales_rankings' => 'getSalesRankings',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -137,10 +137,10 @@ class RepricingItemSalesRankingsDTO implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
-        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
-        $this->container['lowest_display_on_website_sales_rank_name'] = isset($data['lowest_display_on_website_sales_rank_name']) ? $data['lowest_display_on_website_sales_rank_name'] : null;
         $this->container['lowest_display_on_website_sales_rank'] = isset($data['lowest_display_on_website_sales_rank']) ? $data['lowest_display_on_website_sales_rank'] : null;
+        $this->container['lowest_display_on_website_sales_rank_name'] = isset($data['lowest_display_on_website_sales_rank_name']) ? $data['lowest_display_on_website_sales_rank_name'] : null;
         $this->container['sales_rankings'] = isset($data['sales_rankings']) ? $data['sales_rankings'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -190,22 +190,22 @@ class RepricingItemSalesRankingsDTO implements ArrayAccess
     }
 
     /**
-     * Gets updated
-     * @return \DateTime
+     * Gets lowest_display_on_website_sales_rank
+     * @return int
      */
-    public function getUpdated()
+    public function getLowestDisplayOnWebsiteSalesRank()
     {
-        return $this->container['updated'];
+        return $this->container['lowest_display_on_website_sales_rank'];
     }
 
     /**
-     * Sets updated
-     * @param \DateTime $updated
+     * Sets lowest_display_on_website_sales_rank
+     * @param int $lowest_display_on_website_sales_rank
      * @return $this
      */
-    public function setUpdated($updated)
+    public function setLowestDisplayOnWebsiteSalesRank($lowest_display_on_website_sales_rank)
     {
-        $this->container['updated'] = $updated;
+        $this->container['lowest_display_on_website_sales_rank'] = $lowest_display_on_website_sales_rank;
 
         return $this;
     }
@@ -232,27 +232,6 @@ class RepricingItemSalesRankingsDTO implements ArrayAccess
     }
 
     /**
-     * Gets lowest_display_on_website_sales_rank
-     * @return int
-     */
-    public function getLowestDisplayOnWebsiteSalesRank()
-    {
-        return $this->container['lowest_display_on_website_sales_rank'];
-    }
-
-    /**
-     * Sets lowest_display_on_website_sales_rank
-     * @param int $lowest_display_on_website_sales_rank
-     * @return $this
-     */
-    public function setLowestDisplayOnWebsiteSalesRank($lowest_display_on_website_sales_rank)
-    {
-        $this->container['lowest_display_on_website_sales_rank'] = $lowest_display_on_website_sales_rank;
-
-        return $this;
-    }
-
-    /**
      * Gets sales_rankings
      * @return map[string,int]
      */
@@ -269,6 +248,27 @@ class RepricingItemSalesRankingsDTO implements ArrayAccess
     public function setSalesRankings($sales_rankings)
     {
         $this->container['sales_rankings'] = $sales_rankings;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

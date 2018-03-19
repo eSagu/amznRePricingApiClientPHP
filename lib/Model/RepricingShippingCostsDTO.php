@@ -55,9 +55,9 @@ class RepricingShippingCostsDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'is_default_mfn' => 'bool',
         'is_default_fba' => 'bool',
+        'is_default_mfn' => 'bool',
+        'name' => 'string',
         'shipping_costs' => '\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]'
     ];
 
@@ -71,9 +71,9 @@ class RepricingShippingCostsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'is_default_mfn' => 'isDefaultMFN',
         'is_default_fba' => 'isDefaultFBA',
+        'is_default_mfn' => 'isDefaultMFN',
+        'name' => 'name',
         'shipping_costs' => 'shippingCosts'
     ];
 
@@ -83,9 +83,9 @@ class RepricingShippingCostsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'is_default_mfn' => 'setIsDefaultMfn',
         'is_default_fba' => 'setIsDefaultFba',
+        'is_default_mfn' => 'setIsDefaultMfn',
+        'name' => 'setName',
         'shipping_costs' => 'setShippingCosts'
     ];
 
@@ -95,9 +95,9 @@ class RepricingShippingCostsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'is_default_mfn' => 'getIsDefaultMfn',
         'is_default_fba' => 'getIsDefaultFba',
+        'is_default_mfn' => 'getIsDefaultMfn',
+        'name' => 'getName',
         'shipping_costs' => 'getShippingCosts'
     ];
 
@@ -132,9 +132,9 @@ class RepricingShippingCostsDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
         $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
+        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['shipping_costs'] = isset($data['shipping_costs']) ? $data['shipping_costs'] : null;
     }
 
@@ -164,22 +164,22 @@ class RepricingShippingCostsDTO implements ArrayAccess
 
 
     /**
-     * Gets name
-     * @return string
+     * Gets is_default_fba
+     * @return bool
      */
-    public function getName()
+    public function getIsDefaultFba()
     {
-        return $this->container['name'];
+        return $this->container['is_default_fba'];
     }
 
     /**
-     * Sets name
-     * @param string $name
+     * Sets is_default_fba
+     * @param bool $is_default_fba
      * @return $this
      */
-    public function setName($name)
+    public function setIsDefaultFba($is_default_fba)
     {
-        $this->container['name'] = $name;
+        $this->container['is_default_fba'] = $is_default_fba;
 
         return $this;
     }
@@ -206,22 +206,22 @@ class RepricingShippingCostsDTO implements ArrayAccess
     }
 
     /**
-     * Gets is_default_fba
-     * @return bool
+     * Gets name
+     * @return string
      */
-    public function getIsDefaultFba()
+    public function getName()
     {
-        return $this->container['is_default_fba'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets is_default_fba
-     * @param bool $is_default_fba
+     * Sets name
+     * @param string $name
      * @return $this
      */
-    public function setIsDefaultFba($is_default_fba)
+    public function setName($name)
     {
-        $this->container['is_default_fba'] = $is_default_fba;
+        $this->container['name'] = $name;
 
         return $this;
     }

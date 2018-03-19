@@ -55,8 +55,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
         'fields' => 'string[]',
+        'name' => 'string',
         'number_format' => 'string'
     ];
 
@@ -70,8 +70,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
         'fields' => 'fields',
+        'name' => 'name',
         'number_format' => 'numberFormat'
     ];
 
@@ -81,8 +81,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'fields' => 'setFields',
+        'name' => 'setName',
         'number_format' => 'setNumberFormat'
     ];
 
@@ -92,8 +92,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'fields' => 'getFields',
+        'name' => 'getName',
         'number_format' => 'getNumberFormat'
     ];
 
@@ -234,8 +234,8 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
     }
 
@@ -274,27 +274,6 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
 
 
     /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     * @param string $name
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets fields
      * @return string[]
      */
@@ -315,6 +294,27 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'fields', must be one of 'SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID', 'ITEM_ORDERS_LAST_SEVEN_DAYS', 'ITEM_ORDERS_LAST_FOURTEEN_DAYS', 'ITEM_ORDERS_LAST_THIRTY_DAYS', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE', 'SALES_RANKINGS'");
         }
         $this->container['fields'] = $fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

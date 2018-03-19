@@ -54,10 +54,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'quantity_total' => 'int',
-        'item_price_total' => 'int',
+        'currency_code' => 'string',
         'date' => 'string',
-        'currency_code' => 'string'
+        'item_price_total' => 'int',
+        'quantity_total' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -70,10 +70,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'quantity_total' => 'quantityTotal',
-        'item_price_total' => 'itemPriceTotal',
+        'currency_code' => 'currencyCode',
         'date' => 'date',
-        'currency_code' => 'currencyCode'
+        'item_price_total' => 'itemPriceTotal',
+        'quantity_total' => 'quantityTotal'
     ];
 
 
@@ -82,10 +82,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'quantity_total' => 'setQuantityTotal',
-        'item_price_total' => 'setItemPriceTotal',
+        'currency_code' => 'setCurrencyCode',
         'date' => 'setDate',
-        'currency_code' => 'setCurrencyCode'
+        'item_price_total' => 'setItemPriceTotal',
+        'quantity_total' => 'setQuantityTotal'
     ];
 
 
@@ -94,10 +94,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'quantity_total' => 'getQuantityTotal',
-        'item_price_total' => 'getItemPriceTotal',
+        'currency_code' => 'getCurrencyCode',
         'date' => 'getDate',
-        'currency_code' => 'getCurrencyCode'
+        'item_price_total' => 'getItemPriceTotal',
+        'quantity_total' => 'getQuantityTotal'
     ];
 
     public static function attributeMap()
@@ -131,10 +131,10 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['quantity_total'] = isset($data['quantity_total']) ? $data['quantity_total'] : null;
-        $this->container['item_price_total'] = isset($data['item_price_total']) ? $data['item_price_total'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
         $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['item_price_total'] = isset($data['item_price_total']) ? $data['item_price_total'] : null;
+        $this->container['quantity_total'] = isset($data['quantity_total']) ? $data['quantity_total'] : null;
     }
 
     /**
@@ -163,43 +163,22 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
 
 
     /**
-     * Gets quantity_total
-     * @return int
+     * Gets currency_code
+     * @return string
      */
-    public function getQuantityTotal()
+    public function getCurrencyCode()
     {
-        return $this->container['quantity_total'];
+        return $this->container['currency_code'];
     }
 
     /**
-     * Sets quantity_total
-     * @param int $quantity_total
+     * Sets currency_code
+     * @param string $currency_code
      * @return $this
      */
-    public function setQuantityTotal($quantity_total)
+    public function setCurrencyCode($currency_code)
     {
-        $this->container['quantity_total'] = $quantity_total;
-
-        return $this;
-    }
-
-    /**
-     * Gets item_price_total
-     * @return int
-     */
-    public function getItemPriceTotal()
-    {
-        return $this->container['item_price_total'];
-    }
-
-    /**
-     * Sets item_price_total
-     * @param int $item_price_total
-     * @return $this
-     */
-    public function setItemPriceTotal($item_price_total)
-    {
-        $this->container['item_price_total'] = $item_price_total;
+        $this->container['currency_code'] = $currency_code;
 
         return $this;
     }
@@ -226,22 +205,43 @@ class RepricingAmazonOrderHistoryDTO implements ArrayAccess
     }
 
     /**
-     * Gets currency_code
-     * @return string
+     * Gets item_price_total
+     * @return int
      */
-    public function getCurrencyCode()
+    public function getItemPriceTotal()
     {
-        return $this->container['currency_code'];
+        return $this->container['item_price_total'];
     }
 
     /**
-     * Sets currency_code
-     * @param string $currency_code
+     * Sets item_price_total
+     * @param int $item_price_total
      * @return $this
      */
-    public function setCurrencyCode($currency_code)
+    public function setItemPriceTotal($item_price_total)
     {
-        $this->container['currency_code'] = $currency_code;
+        $this->container['item_price_total'] = $item_price_total;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity_total
+     * @return int
+     */
+    public function getQuantityTotal()
+    {
+        return $this->container['quantity_total'];
+    }
+
+    /**
+     * Sets quantity_total
+     * @param int $quantity_total
+     * @return $this
+     */
+    public function setQuantityTotal($quantity_total)
+    {
+        $this->container['quantity_total'] = $quantity_total;
 
         return $this;
     }

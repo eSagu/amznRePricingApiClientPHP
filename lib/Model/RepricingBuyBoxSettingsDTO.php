@@ -56,10 +56,10 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
+        'potential_up_timeout' => 'int',
         'price_down_percent' => 'int',
         'price_up_percent' => 'int',
-        'strategy' => 'string',
-        'potential_up_timeout' => 'int'
+        'strategy' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -73,10 +73,10 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'potential_up_timeout' => 'potentialUpTimeout',
         'price_down_percent' => 'priceDownPercent',
         'price_up_percent' => 'priceUpPercent',
-        'strategy' => 'strategy',
-        'potential_up_timeout' => 'potentialUpTimeout'
+        'strategy' => 'strategy'
     ];
 
 
@@ -86,10 +86,10 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
+        'potential_up_timeout' => 'setPotentialUpTimeout',
         'price_down_percent' => 'setPriceDownPercent',
         'price_up_percent' => 'setPriceUpPercent',
-        'strategy' => 'setStrategy',
-        'potential_up_timeout' => 'setPotentialUpTimeout'
+        'strategy' => 'setStrategy'
     ];
 
 
@@ -99,10 +99,10 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
+        'potential_up_timeout' => 'getPotentialUpTimeout',
         'price_down_percent' => 'getPriceDownPercent',
         'price_up_percent' => 'getPriceUpPercent',
-        'strategy' => 'getStrategy',
-        'potential_up_timeout' => 'getPotentialUpTimeout'
+        'strategy' => 'getStrategy'
     ];
 
     public static function attributeMap()
@@ -120,6 +120,14 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         return self::$getters;
     }
 
+    const POTENTIAL_UP_TIMEOUT_1800 = 1800;
+    const POTENTIAL_UP_TIMEOUT_3600 = 3600;
+    const POTENTIAL_UP_TIMEOUT_5400 = 5400;
+    const POTENTIAL_UP_TIMEOUT_7200 = 7200;
+    const POTENTIAL_UP_TIMEOUT_14400 = 14400;
+    const POTENTIAL_UP_TIMEOUT_28800 = 28800;
+    const POTENTIAL_UP_TIMEOUT_57600 = 57600;
+    const POTENTIAL_UP_TIMEOUT_86400 = 86400;
     const PRICE_DOWN_PERCENT_25 = 25;
     const PRICE_DOWN_PERCENT_50 = 50;
     const PRICE_DOWN_PERCENT_100 = 100;
@@ -132,16 +140,26 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     const PRICE_DOWN_PERCENT_1500 = 1500;
     const STRATEGY_MARGIN = 'MARGIN';
     const STRATEGY_HOLD = 'HOLD';
-    const POTENTIAL_UP_TIMEOUT_1800 = 1800;
-    const POTENTIAL_UP_TIMEOUT_3600 = 3600;
-    const POTENTIAL_UP_TIMEOUT_5400 = 5400;
-    const POTENTIAL_UP_TIMEOUT_7200 = 7200;
-    const POTENTIAL_UP_TIMEOUT_14400 = 14400;
-    const POTENTIAL_UP_TIMEOUT_28800 = 28800;
-    const POTENTIAL_UP_TIMEOUT_57600 = 57600;
-    const POTENTIAL_UP_TIMEOUT_86400 = 86400;
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getPotentialUpTimeoutAllowableValues()
+    {
+        return [
+            self::POTENTIAL_UP_TIMEOUT_1800,
+            self::POTENTIAL_UP_TIMEOUT_3600,
+            self::POTENTIAL_UP_TIMEOUT_5400,
+            self::POTENTIAL_UP_TIMEOUT_7200,
+            self::POTENTIAL_UP_TIMEOUT_14400,
+            self::POTENTIAL_UP_TIMEOUT_28800,
+            self::POTENTIAL_UP_TIMEOUT_57600,
+            self::POTENTIAL_UP_TIMEOUT_86400,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -175,24 +193,6 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         ];
     }
     
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getPotentialUpTimeoutAllowableValues()
-    {
-        return [
-            self::POTENTIAL_UP_TIMEOUT_1800,
-            self::POTENTIAL_UP_TIMEOUT_3600,
-            self::POTENTIAL_UP_TIMEOUT_5400,
-            self::POTENTIAL_UP_TIMEOUT_7200,
-            self::POTENTIAL_UP_TIMEOUT_14400,
-            self::POTENTIAL_UP_TIMEOUT_28800,
-            self::POTENTIAL_UP_TIMEOUT_57600,
-            self::POTENTIAL_UP_TIMEOUT_86400,
-        ];
-    }
-    
 
     /**
      * Associative array for storing property values
@@ -207,10 +207,10 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['potential_up_timeout'] = isset($data['potential_up_timeout']) ? $data['potential_up_timeout'] : null;
         $this->container['price_down_percent'] = isset($data['price_down_percent']) ? $data['price_down_percent'] : null;
         $this->container['price_up_percent'] = isset($data['price_up_percent']) ? $data['price_up_percent'] : null;
         $this->container['strategy'] = isset($data['strategy']) ? $data['strategy'] : null;
-        $this->container['potential_up_timeout'] = isset($data['potential_up_timeout']) ? $data['potential_up_timeout'] : null;
     }
 
     /**
@@ -225,6 +225,14 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
+        if ($this->container['potential_up_timeout'] === null) {
+            $invalid_properties[] = "'potential_up_timeout' can't be null";
+        }
+        $allowed_values = ["1800", "3600", "5400", "7200", "14400", "28800", "57600", "86400"];
+        if (!in_array($this->container['potential_up_timeout'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'potential_up_timeout', must be one of '1800', '3600', '5400', '7200', '14400', '28800', '57600', '86400'.";
+        }
+
         if ($this->container['price_down_percent'] === null) {
             $invalid_properties[] = "'price_down_percent' can't be null";
         }
@@ -239,14 +247,6 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         $allowed_values = ["MARGIN", "HOLD"];
         if (!in_array($this->container['strategy'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'strategy', must be one of 'MARGIN', 'HOLD'.";
-        }
-
-        if ($this->container['potential_up_timeout'] === null) {
-            $invalid_properties[] = "'potential_up_timeout' can't be null";
-        }
-        $allowed_values = ["1800", "3600", "5400", "7200", "14400", "28800", "57600", "86400"];
-        if (!in_array($this->container['potential_up_timeout'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'potential_up_timeout', must be one of '1800', '3600', '5400', '7200', '14400', '28800', '57600', '86400'.";
         }
 
         return $invalid_properties;
@@ -264,6 +264,13 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         if ($this->container['name'] === null) {
             return false;
         }
+        if ($this->container['potential_up_timeout'] === null) {
+            return false;
+        }
+        $allowed_values = ["1800", "3600", "5400", "7200", "14400", "28800", "57600", "86400"];
+        if (!in_array($this->container['potential_up_timeout'], $allowed_values)) {
+            return false;
+        }
         if ($this->container['price_down_percent'] === null) {
             return false;
         }
@@ -276,13 +283,6 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         }
         $allowed_values = ["MARGIN", "HOLD"];
         if (!in_array($this->container['strategy'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['potential_up_timeout'] === null) {
-            return false;
-        }
-        $allowed_values = ["1800", "3600", "5400", "7200", "14400", "28800", "57600", "86400"];
-        if (!in_array($this->container['potential_up_timeout'], $allowed_values)) {
             return false;
         }
         return true;
@@ -306,6 +306,31 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets potential_up_timeout
+     * @return int
+     */
+    public function getPotentialUpTimeout()
+    {
+        return $this->container['potential_up_timeout'];
+    }
+
+    /**
+     * Sets potential_up_timeout
+     * @param int $potential_up_timeout
+     * @return $this
+     */
+    public function setPotentialUpTimeout($potential_up_timeout)
+    {
+        $allowed_values = array('1800', '3600', '5400', '7200', '14400', '28800', '57600', '86400');
+        if ((!in_array($potential_up_timeout, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'potential_up_timeout', must be one of '1800', '3600', '5400', '7200', '14400', '28800', '57600', '86400'");
+        }
+        $this->container['potential_up_timeout'] = $potential_up_timeout;
 
         return $this;
     }
@@ -377,31 +402,6 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'strategy', must be one of 'MARGIN', 'HOLD'");
         }
         $this->container['strategy'] = $strategy;
-
-        return $this;
-    }
-
-    /**
-     * Gets potential_up_timeout
-     * @return int
-     */
-    public function getPotentialUpTimeout()
-    {
-        return $this->container['potential_up_timeout'];
-    }
-
-    /**
-     * Sets potential_up_timeout
-     * @param int $potential_up_timeout
-     * @return $this
-     */
-    public function setPotentialUpTimeout($potential_up_timeout)
-    {
-        $allowed_values = array('1800', '3600', '5400', '7200', '14400', '28800', '57600', '86400');
-        if ((!in_array($potential_up_timeout, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'potential_up_timeout', must be one of '1800', '3600', '5400', '7200', '14400', '28800', '57600', '86400'");
-        }
-        $this->container['potential_up_timeout'] = $potential_up_timeout;
 
         return $this;
     }

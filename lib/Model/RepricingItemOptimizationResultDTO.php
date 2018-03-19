@@ -56,8 +56,8 @@ class RepricingItemOptimizationResultDTO implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'inserted' => '\DateTime',
-        'updated' => '\DateTime',
-        'optimized_price' => 'int'
+        'optimized_price' => 'int',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -71,8 +71,8 @@ class RepricingItemOptimizationResultDTO implements ArrayAccess
      */
     protected static $attributeMap = [
         'inserted' => 'inserted',
-        'updated' => 'updated',
-        'optimized_price' => 'optimizedPrice'
+        'optimized_price' => 'optimizedPrice',
+        'updated' => 'updated'
     ];
 
 
@@ -82,8 +82,8 @@ class RepricingItemOptimizationResultDTO implements ArrayAccess
      */
     protected static $setters = [
         'inserted' => 'setInserted',
-        'updated' => 'setUpdated',
-        'optimized_price' => 'setOptimizedPrice'
+        'optimized_price' => 'setOptimizedPrice',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -93,8 +93,8 @@ class RepricingItemOptimizationResultDTO implements ArrayAccess
      */
     protected static $getters = [
         'inserted' => 'getInserted',
-        'updated' => 'getUpdated',
-        'optimized_price' => 'getOptimizedPrice'
+        'optimized_price' => 'getOptimizedPrice',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -129,8 +129,8 @@ class RepricingItemOptimizationResultDTO implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
-        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
         $this->container['optimized_price'] = isset($data['optimized_price']) ? $data['optimized_price'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -180,27 +180,6 @@ class RepricingItemOptimizationResultDTO implements ArrayAccess
     }
 
     /**
-     * Gets updated
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->container['updated'];
-    }
-
-    /**
-     * Sets updated
-     * @param \DateTime $updated
-     * @return $this
-     */
-    public function setUpdated($updated)
-    {
-        $this->container['updated'] = $updated;
-
-        return $this;
-    }
-
-    /**
      * Gets optimized_price
      * @return int
      */
@@ -217,6 +196,27 @@ class RepricingItemOptimizationResultDTO implements ArrayAccess
     public function setOptimizedPrice($optimized_price)
     {
         $this->container['optimized_price'] = $optimized_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

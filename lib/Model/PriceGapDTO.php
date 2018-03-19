@@ -55,10 +55,10 @@ class PriceGapDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'fulfillment_type' => 'string',
         'gap' => 'int',
         'mode' => 'string',
-        'seller_id' => 'string',
-        'fulfillment_type' => 'string'
+        'seller_id' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -71,10 +71,10 @@ class PriceGapDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'fulfillment_type' => 'fulfillmentType',
         'gap' => 'gap',
         'mode' => 'mode',
-        'seller_id' => 'sellerId',
-        'fulfillment_type' => 'fulfillmentType'
+        'seller_id' => 'sellerId'
     ];
 
 
@@ -83,10 +83,10 @@ class PriceGapDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'fulfillment_type' => 'setFulfillmentType',
         'gap' => 'setGap',
         'mode' => 'setMode',
-        'seller_id' => 'setSellerId',
-        'fulfillment_type' => 'setFulfillmentType'
+        'seller_id' => 'setSellerId'
     ];
 
 
@@ -95,10 +95,10 @@ class PriceGapDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'fulfillment_type' => 'getFulfillmentType',
         'gap' => 'getGap',
         'mode' => 'getMode',
-        'seller_id' => 'getSellerId',
-        'fulfillment_type' => 'getFulfillmentType'
+        'seller_id' => 'getSellerId'
     ];
 
     public static function attributeMap()
@@ -116,24 +116,12 @@ class PriceGapDTO implements ArrayAccess
         return self::$getters;
     }
 
-    const MODE_ABSOLUTE = 'ABSOLUTE';
-    const MODE_PERCENTAGE = 'PERCENTAGE';
     const FULFILLMENT_TYPE_FBA = 'FBA';
     const FULFILLMENT_TYPE_MFN = 'MFN';
+    const MODE_ABSOLUTE = 'ABSOLUTE';
+    const MODE_PERCENTAGE = 'PERCENTAGE';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getModeAllowableValues()
-    {
-        return [
-            self::MODE_ABSOLUTE,
-            self::MODE_PERCENTAGE,
-        ];
-    }
     
     /**
      * Gets allowable values of the enum
@@ -144,6 +132,18 @@ class PriceGapDTO implements ArrayAccess
         return [
             self::FULFILLMENT_TYPE_FBA,
             self::FULFILLMENT_TYPE_MFN,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getModeAllowableValues()
+    {
+        return [
+            self::MODE_ABSOLUTE,
+            self::MODE_PERCENTAGE,
         ];
     }
     
@@ -160,10 +160,10 @@ class PriceGapDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['fulfillment_type'] = isset($data['fulfillment_type']) ? $data['fulfillment_type'] : null;
         $this->container['gap'] = isset($data['gap']) ? $data['gap'] : null;
         $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
         $this->container['seller_id'] = isset($data['seller_id']) ? $data['seller_id'] : null;
-        $this->container['fulfillment_type'] = isset($data['fulfillment_type']) ? $data['fulfillment_type'] : null;
     }
 
     /**
@@ -175,14 +175,14 @@ class PriceGapDTO implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = ["ABSOLUTE", "PERCENTAGE"];
-        if (!in_array($this->container['mode'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'mode', must be one of 'ABSOLUTE', 'PERCENTAGE'.";
-        }
-
         $allowed_values = ["FBA", "MFN"];
         if (!in_array($this->container['fulfillment_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'fulfillment_type', must be one of 'FBA', 'MFN'.";
+        }
+
+        $allowed_values = ["ABSOLUTE", "PERCENTAGE"];
+        if (!in_array($this->container['mode'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'mode', must be one of 'ABSOLUTE', 'PERCENTAGE'.";
         }
 
         return $invalid_properties;
@@ -197,17 +197,42 @@ class PriceGapDTO implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = ["ABSOLUTE", "PERCENTAGE"];
-        if (!in_array($this->container['mode'], $allowed_values)) {
-            return false;
-        }
         $allowed_values = ["FBA", "MFN"];
         if (!in_array($this->container['fulfillment_type'], $allowed_values)) {
+            return false;
+        }
+        $allowed_values = ["ABSOLUTE", "PERCENTAGE"];
+        if (!in_array($this->container['mode'], $allowed_values)) {
             return false;
         }
         return true;
     }
 
+
+    /**
+     * Gets fulfillment_type
+     * @return string
+     */
+    public function getFulfillmentType()
+    {
+        return $this->container['fulfillment_type'];
+    }
+
+    /**
+     * Sets fulfillment_type
+     * @param string $fulfillment_type
+     * @return $this
+     */
+    public function setFulfillmentType($fulfillment_type)
+    {
+        $allowed_values = array('FBA', 'MFN');
+        if (!is_null($fulfillment_type) && (!in_array($fulfillment_type, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'fulfillment_type', must be one of 'FBA', 'MFN'");
+        }
+        $this->container['fulfillment_type'] = $fulfillment_type;
+
+        return $this;
+    }
 
     /**
      * Gets gap
@@ -272,31 +297,6 @@ class PriceGapDTO implements ArrayAccess
     public function setSellerId($seller_id)
     {
         $this->container['seller_id'] = $seller_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets fulfillment_type
-     * @return string
-     */
-    public function getFulfillmentType()
-    {
-        return $this->container['fulfillment_type'];
-    }
-
-    /**
-     * Sets fulfillment_type
-     * @param string $fulfillment_type
-     * @return $this
-     */
-    public function setFulfillmentType($fulfillment_type)
-    {
-        $allowed_values = array('FBA', 'MFN');
-        if (!is_null($fulfillment_type) && (!in_array($fulfillment_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'fulfillment_type', must be one of 'FBA', 'MFN'");
-        }
-        $this->container['fulfillment_type'] = $fulfillment_type;
 
         return $this;
     }

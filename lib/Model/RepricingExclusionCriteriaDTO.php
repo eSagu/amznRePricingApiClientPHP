@@ -55,16 +55,16 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'is_default_mfn' => 'bool',
-        'is_default_fba' => 'bool',
-        'own_seller_id' => 'string',
-        'seller_fulfillment_type' => 'string',
-        'only_featured_merchant' => 'bool',
-        'criterion_seller_id' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO',
         'criterion_rating' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO',
+        'criterion_seller_id' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO',
         'criterion_shipping_time' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO',
-        'criterion_ships_from' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO'
+        'criterion_ships_from' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO',
+        'is_default_fba' => 'bool',
+        'is_default_mfn' => 'bool',
+        'name' => 'string',
+        'only_featured_merchant' => 'bool',
+        'own_seller_id' => 'string',
+        'seller_fulfillment_type' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -77,16 +77,16 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'is_default_mfn' => 'isDefaultMFN',
-        'is_default_fba' => 'isDefaultFBA',
-        'own_seller_id' => 'ownSellerId',
-        'seller_fulfillment_type' => 'sellerFulfillmentType',
-        'only_featured_merchant' => 'onlyFeaturedMerchant',
-        'criterion_seller_id' => 'criterionSellerId',
         'criterion_rating' => 'criterionRating',
+        'criterion_seller_id' => 'criterionSellerId',
         'criterion_shipping_time' => 'criterionShippingTime',
-        'criterion_ships_from' => 'criterionShipsFrom'
+        'criterion_ships_from' => 'criterionShipsFrom',
+        'is_default_fba' => 'isDefaultFBA',
+        'is_default_mfn' => 'isDefaultMFN',
+        'name' => 'name',
+        'only_featured_merchant' => 'onlyFeaturedMerchant',
+        'own_seller_id' => 'ownSellerId',
+        'seller_fulfillment_type' => 'sellerFulfillmentType'
     ];
 
 
@@ -95,16 +95,16 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'is_default_mfn' => 'setIsDefaultMfn',
-        'is_default_fba' => 'setIsDefaultFba',
-        'own_seller_id' => 'setOwnSellerId',
-        'seller_fulfillment_type' => 'setSellerFulfillmentType',
-        'only_featured_merchant' => 'setOnlyFeaturedMerchant',
-        'criterion_seller_id' => 'setCriterionSellerId',
         'criterion_rating' => 'setCriterionRating',
+        'criterion_seller_id' => 'setCriterionSellerId',
         'criterion_shipping_time' => 'setCriterionShippingTime',
-        'criterion_ships_from' => 'setCriterionShipsFrom'
+        'criterion_ships_from' => 'setCriterionShipsFrom',
+        'is_default_fba' => 'setIsDefaultFba',
+        'is_default_mfn' => 'setIsDefaultMfn',
+        'name' => 'setName',
+        'only_featured_merchant' => 'setOnlyFeaturedMerchant',
+        'own_seller_id' => 'setOwnSellerId',
+        'seller_fulfillment_type' => 'setSellerFulfillmentType'
     ];
 
 
@@ -113,16 +113,16 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'is_default_mfn' => 'getIsDefaultMfn',
-        'is_default_fba' => 'getIsDefaultFba',
-        'own_seller_id' => 'getOwnSellerId',
-        'seller_fulfillment_type' => 'getSellerFulfillmentType',
-        'only_featured_merchant' => 'getOnlyFeaturedMerchant',
-        'criterion_seller_id' => 'getCriterionSellerId',
         'criterion_rating' => 'getCriterionRating',
+        'criterion_seller_id' => 'getCriterionSellerId',
         'criterion_shipping_time' => 'getCriterionShippingTime',
-        'criterion_ships_from' => 'getCriterionShipsFrom'
+        'criterion_ships_from' => 'getCriterionShipsFrom',
+        'is_default_fba' => 'getIsDefaultFba',
+        'is_default_mfn' => 'getIsDefaultMfn',
+        'name' => 'getName',
+        'only_featured_merchant' => 'getOnlyFeaturedMerchant',
+        'own_seller_id' => 'getOwnSellerId',
+        'seller_fulfillment_type' => 'getSellerFulfillmentType'
     ];
 
     public static function attributeMap()
@@ -170,16 +170,16 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
-        $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
-        $this->container['own_seller_id'] = isset($data['own_seller_id']) ? $data['own_seller_id'] : null;
-        $this->container['seller_fulfillment_type'] = isset($data['seller_fulfillment_type']) ? $data['seller_fulfillment_type'] : null;
-        $this->container['only_featured_merchant'] = isset($data['only_featured_merchant']) ? $data['only_featured_merchant'] : null;
-        $this->container['criterion_seller_id'] = isset($data['criterion_seller_id']) ? $data['criterion_seller_id'] : null;
         $this->container['criterion_rating'] = isset($data['criterion_rating']) ? $data['criterion_rating'] : null;
+        $this->container['criterion_seller_id'] = isset($data['criterion_seller_id']) ? $data['criterion_seller_id'] : null;
         $this->container['criterion_shipping_time'] = isset($data['criterion_shipping_time']) ? $data['criterion_shipping_time'] : null;
         $this->container['criterion_ships_from'] = isset($data['criterion_ships_from']) ? $data['criterion_ships_from'] : null;
+        $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
+        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['only_featured_merchant'] = isset($data['only_featured_merchant']) ? $data['only_featured_merchant'] : null;
+        $this->container['own_seller_id'] = isset($data['own_seller_id']) ? $data['own_seller_id'] : null;
+        $this->container['seller_fulfillment_type'] = isset($data['seller_fulfillment_type']) ? $data['seller_fulfillment_type'] : null;
     }
 
     /**
@@ -217,22 +217,106 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
 
     /**
-     * Gets name
-     * @return string
+     * Gets criterion_rating
+     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO
      */
-    public function getName()
+    public function getCriterionRating()
     {
-        return $this->container['name'];
+        return $this->container['criterion_rating'];
     }
 
     /**
-     * Sets name
-     * @param string $name
+     * Sets criterion_rating
+     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO $criterion_rating
      * @return $this
      */
-    public function setName($name)
+    public function setCriterionRating($criterion_rating)
     {
-        $this->container['name'] = $name;
+        $this->container['criterion_rating'] = $criterion_rating;
+
+        return $this;
+    }
+
+    /**
+     * Gets criterion_seller_id
+     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO
+     */
+    public function getCriterionSellerId()
+    {
+        return $this->container['criterion_seller_id'];
+    }
+
+    /**
+     * Sets criterion_seller_id
+     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO $criterion_seller_id
+     * @return $this
+     */
+    public function setCriterionSellerId($criterion_seller_id)
+    {
+        $this->container['criterion_seller_id'] = $criterion_seller_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets criterion_shipping_time
+     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO
+     */
+    public function getCriterionShippingTime()
+    {
+        return $this->container['criterion_shipping_time'];
+    }
+
+    /**
+     * Sets criterion_shipping_time
+     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO $criterion_shipping_time
+     * @return $this
+     */
+    public function setCriterionShippingTime($criterion_shipping_time)
+    {
+        $this->container['criterion_shipping_time'] = $criterion_shipping_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets criterion_ships_from
+     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO
+     */
+    public function getCriterionShipsFrom()
+    {
+        return $this->container['criterion_ships_from'];
+    }
+
+    /**
+     * Sets criterion_ships_from
+     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO $criterion_ships_from
+     * @return $this
+     */
+    public function setCriterionShipsFrom($criterion_ships_from)
+    {
+        $this->container['criterion_ships_from'] = $criterion_ships_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_default_fba
+     * @return bool
+     */
+    public function getIsDefaultFba()
+    {
+        return $this->container['is_default_fba'];
+    }
+
+    /**
+     * Sets is_default_fba
+     * @param bool $is_default_fba
+     * @return $this
+     */
+    public function setIsDefaultFba($is_default_fba)
+    {
+        $this->container['is_default_fba'] = $is_default_fba;
 
         return $this;
     }
@@ -259,22 +343,43 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
     }
 
     /**
-     * Gets is_default_fba
-     * @return bool
+     * Gets name
+     * @return string
      */
-    public function getIsDefaultFba()
+    public function getName()
     {
-        return $this->container['is_default_fba'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets is_default_fba
-     * @param bool $is_default_fba
+     * Sets name
+     * @param string $name
      * @return $this
      */
-    public function setIsDefaultFba($is_default_fba)
+    public function setName($name)
     {
-        $this->container['is_default_fba'] = $is_default_fba;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets only_featured_merchant
+     * @return bool
+     */
+    public function getOnlyFeaturedMerchant()
+    {
+        return $this->container['only_featured_merchant'];
+    }
+
+    /**
+     * Sets only_featured_merchant
+     * @param bool $only_featured_merchant
+     * @return $this
+     */
+    public function setOnlyFeaturedMerchant($only_featured_merchant)
+    {
+        $this->container['only_featured_merchant'] = $only_featured_merchant;
 
         return $this;
     }
@@ -321,111 +426,6 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'seller_fulfillment_type', must be one of 'FBA', 'MFN'");
         }
         $this->container['seller_fulfillment_type'] = $seller_fulfillment_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets only_featured_merchant
-     * @return bool
-     */
-    public function getOnlyFeaturedMerchant()
-    {
-        return $this->container['only_featured_merchant'];
-    }
-
-    /**
-     * Sets only_featured_merchant
-     * @param bool $only_featured_merchant
-     * @return $this
-     */
-    public function setOnlyFeaturedMerchant($only_featured_merchant)
-    {
-        $this->container['only_featured_merchant'] = $only_featured_merchant;
-
-        return $this;
-    }
-
-    /**
-     * Gets criterion_seller_id
-     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO
-     */
-    public function getCriterionSellerId()
-    {
-        return $this->container['criterion_seller_id'];
-    }
-
-    /**
-     * Sets criterion_seller_id
-     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO $criterion_seller_id
-     * @return $this
-     */
-    public function setCriterionSellerId($criterion_seller_id)
-    {
-        $this->container['criterion_seller_id'] = $criterion_seller_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets criterion_rating
-     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO
-     */
-    public function getCriterionRating()
-    {
-        return $this->container['criterion_rating'];
-    }
-
-    /**
-     * Sets criterion_rating
-     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionRatingDTO $criterion_rating
-     * @return $this
-     */
-    public function setCriterionRating($criterion_rating)
-    {
-        $this->container['criterion_rating'] = $criterion_rating;
-
-        return $this;
-    }
-
-    /**
-     * Gets criterion_shipping_time
-     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO
-     */
-    public function getCriterionShippingTime()
-    {
-        return $this->container['criterion_shipping_time'];
-    }
-
-    /**
-     * Sets criterion_shipping_time
-     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO $criterion_shipping_time
-     * @return $this
-     */
-    public function setCriterionShippingTime($criterion_shipping_time)
-    {
-        $this->container['criterion_shipping_time'] = $criterion_shipping_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets criterion_ships_from
-     * @return \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO
-     */
-    public function getCriterionShipsFrom()
-    {
-        return $this->container['criterion_ships_from'];
-    }
-
-    /**
-     * Sets criterion_ships_from
-     * @param \eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO $criterion_ships_from
-     * @return $this
-     */
-    public function setCriterionShipsFrom($criterion_ships_from)
-    {
-        $this->container['criterion_ships_from'] = $criterion_ships_from;
 
         return $this;
     }

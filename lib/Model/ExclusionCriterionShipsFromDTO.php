@@ -54,8 +54,8 @@ class ExclusionCriterionShipsFromDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'mode' => 'string',
-        'countries' => 'string[]'
+        'countries' => 'string[]',
+        'mode' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class ExclusionCriterionShipsFromDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'mode' => 'mode',
-        'countries' => 'countries'
+        'countries' => 'countries',
+        'mode' => 'mode'
     ];
 
 
@@ -78,8 +78,8 @@ class ExclusionCriterionShipsFromDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'mode' => 'setMode',
-        'countries' => 'setCountries'
+        'countries' => 'setCountries',
+        'mode' => 'setMode'
     ];
 
 
@@ -88,8 +88,8 @@ class ExclusionCriterionShipsFromDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'mode' => 'getMode',
-        'countries' => 'getCountries'
+        'countries' => 'getCountries',
+        'mode' => 'getMode'
     ];
 
     public static function attributeMap()
@@ -137,8 +137,8 @@ class ExclusionCriterionShipsFromDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
         $this->container['countries'] = isset($data['countries']) ? $data['countries'] : null;
+        $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
     }
 
     /**
@@ -176,6 +176,27 @@ class ExclusionCriterionShipsFromDTO implements ArrayAccess
 
 
     /**
+     * Gets countries
+     * @return string[]
+     */
+    public function getCountries()
+    {
+        return $this->container['countries'];
+    }
+
+    /**
+     * Sets countries
+     * @param string[] $countries
+     * @return $this
+     */
+    public function setCountries($countries)
+    {
+        $this->container['countries'] = $countries;
+
+        return $this;
+    }
+
+    /**
      * Gets mode
      * @return string
      */
@@ -196,27 +217,6 @@ class ExclusionCriterionShipsFromDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'mode', must be one of 'WHITE', 'BLACK'");
         }
         $this->container['mode'] = $mode;
-
-        return $this;
-    }
-
-    /**
-     * Gets countries
-     * @return string[]
-     */
-    public function getCountries()
-    {
-        return $this->container['countries'];
-    }
-
-    /**
-     * Sets countries
-     * @param string[] $countries
-     * @return $this
-     */
-    public function setCountries($countries)
-    {
-        $this->container['countries'] = $countries;
 
         return $this;
     }

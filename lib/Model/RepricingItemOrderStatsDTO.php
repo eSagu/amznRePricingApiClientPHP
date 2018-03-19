@@ -1,6 +1,6 @@
 <?php
 /**
- * ExclusionCriterionShippingTimeDTO
+ * RepricingItemOrderStatsDTO
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ namespace eSagu\Amzn\RePricing\V1\Model;
 use \ArrayAccess;
 
 /**
- * ExclusionCriterionShippingTimeDTO Class Doc Comment
+ * RepricingItemOrderStatsDTO Class Doc Comment
  *
  * @category    Class
+ * @description The repricing item&#39;s order stats.
  * @package     eSagu\Amzn\RePricing\V1
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ExclusionCriterionShippingTimeDTO implements ArrayAccess
+class RepricingItemOrderStatsDTO implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +48,17 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ExclusionCriterionShippingTimeDTO';
+    protected static $swaggerModelName = 'RepricingItemOrderStatsDTO';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'max' => 'int',
-        'min' => 'int'
+        'last_fourteen_days' => 'int',
+        'last_seven_days' => 'int',
+        'last_thirty_days' => 'int',
+        'repricing_item_id' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +71,10 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'max' => 'max',
-        'min' => 'min'
+        'last_fourteen_days' => 'lastFourteenDays',
+        'last_seven_days' => 'lastSevenDays',
+        'last_thirty_days' => 'lastThirtyDays',
+        'repricing_item_id' => 'repricingItemId'
     ];
 
 
@@ -78,8 +83,10 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'max' => 'setMax',
-        'min' => 'setMin'
+        'last_fourteen_days' => 'setLastFourteenDays',
+        'last_seven_days' => 'setLastSevenDays',
+        'last_thirty_days' => 'setLastThirtyDays',
+        'repricing_item_id' => 'setRepricingItemId'
     ];
 
 
@@ -88,8 +95,10 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'max' => 'getMax',
-        'min' => 'getMin'
+        'last_fourteen_days' => 'getLastFourteenDays',
+        'last_seven_days' => 'getLastSevenDays',
+        'last_thirty_days' => 'getLastThirtyDays',
+        'repricing_item_id' => 'getRepricingItemId'
     ];
 
     public static function attributeMap()
@@ -123,8 +132,10 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['max'] = isset($data['max']) ? $data['max'] : null;
-        $this->container['min'] = isset($data['min']) ? $data['min'] : null;
+        $this->container['last_fourteen_days'] = isset($data['last_fourteen_days']) ? $data['last_fourteen_days'] : null;
+        $this->container['last_seven_days'] = isset($data['last_seven_days']) ? $data['last_seven_days'] : null;
+        $this->container['last_thirty_days'] = isset($data['last_thirty_days']) ? $data['last_thirty_days'] : null;
+        $this->container['repricing_item_id'] = isset($data['repricing_item_id']) ? $data['repricing_item_id'] : null;
     }
 
     /**
@@ -135,14 +146,6 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-
-        if (!is_null($this->container['max']) && ($this->container['max'] < 0)) {
-            $invalid_properties[] = "invalid value for 'max', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['min']) && ($this->container['min'] < 0)) {
-            $invalid_properties[] = "invalid value for 'min', must be bigger than or equal to 0.";
-        }
 
         return $invalid_properties;
     }
@@ -156,64 +159,90 @@ class ExclusionCriterionShippingTimeDTO implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['max'] < 0) {
-            return false;
-        }
-        if ($this->container['min'] < 0) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets max
+     * Gets last_fourteen_days
      * @return int
      */
-    public function getMax()
+    public function getLastFourteenDays()
     {
-        return $this->container['max'];
+        return $this->container['last_fourteen_days'];
     }
 
     /**
-     * Sets max
-     * @param int $max
+     * Sets last_fourteen_days
+     * @param int $last_fourteen_days
      * @return $this
      */
-    public function setMax($max)
+    public function setLastFourteenDays($last_fourteen_days)
     {
-
-        if (!is_null($max) && ($max < 0)) {
-            throw new \InvalidArgumentException('invalid value for $max when calling ExclusionCriterionShippingTimeDTO., must be bigger than or equal to 0.');
-        }
-
-        $this->container['max'] = $max;
+        $this->container['last_fourteen_days'] = $last_fourteen_days;
 
         return $this;
     }
 
     /**
-     * Gets min
+     * Gets last_seven_days
      * @return int
      */
-    public function getMin()
+    public function getLastSevenDays()
     {
-        return $this->container['min'];
+        return $this->container['last_seven_days'];
     }
 
     /**
-     * Sets min
-     * @param int $min
+     * Sets last_seven_days
+     * @param int $last_seven_days
      * @return $this
      */
-    public function setMin($min)
+    public function setLastSevenDays($last_seven_days)
     {
+        $this->container['last_seven_days'] = $last_seven_days;
 
-        if (!is_null($min) && ($min < 0)) {
-            throw new \InvalidArgumentException('invalid value for $min when calling ExclusionCriterionShippingTimeDTO., must be bigger than or equal to 0.');
-        }
+        return $this;
+    }
 
-        $this->container['min'] = $min;
+    /**
+     * Gets last_thirty_days
+     * @return int
+     */
+    public function getLastThirtyDays()
+    {
+        return $this->container['last_thirty_days'];
+    }
+
+    /**
+     * Sets last_thirty_days
+     * @param int $last_thirty_days
+     * @return $this
+     */
+    public function setLastThirtyDays($last_thirty_days)
+    {
+        $this->container['last_thirty_days'] = $last_thirty_days;
+
+        return $this;
+    }
+
+    /**
+     * Gets repricing_item_id
+     * @return int
+     */
+    public function getRepricingItemId()
+    {
+        return $this->container['repricing_item_id'];
+    }
+
+    /**
+     * Sets repricing_item_id
+     * @param int $repricing_item_id
+     * @return $this
+     */
+    public function setRepricingItemId($repricing_item_id)
+    {
+        $this->container['repricing_item_id'] = $repricing_item_id;
 
         return $this;
     }
