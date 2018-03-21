@@ -57,8 +57,7 @@ class RepricingItemOrderStatsDTO implements ArrayAccess
     protected static $swaggerTypes = [
         'last_fourteen_days' => 'int',
         'last_seven_days' => 'int',
-        'last_thirty_days' => 'int',
-        'repricing_item_id' => 'int'
+        'last_thirty_days' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -73,8 +72,7 @@ class RepricingItemOrderStatsDTO implements ArrayAccess
     protected static $attributeMap = [
         'last_fourteen_days' => 'lastFourteenDays',
         'last_seven_days' => 'lastSevenDays',
-        'last_thirty_days' => 'lastThirtyDays',
-        'repricing_item_id' => 'repricingItemId'
+        'last_thirty_days' => 'lastThirtyDays'
     ];
 
 
@@ -85,8 +83,7 @@ class RepricingItemOrderStatsDTO implements ArrayAccess
     protected static $setters = [
         'last_fourteen_days' => 'setLastFourteenDays',
         'last_seven_days' => 'setLastSevenDays',
-        'last_thirty_days' => 'setLastThirtyDays',
-        'repricing_item_id' => 'setRepricingItemId'
+        'last_thirty_days' => 'setLastThirtyDays'
     ];
 
 
@@ -97,8 +94,7 @@ class RepricingItemOrderStatsDTO implements ArrayAccess
     protected static $getters = [
         'last_fourteen_days' => 'getLastFourteenDays',
         'last_seven_days' => 'getLastSevenDays',
-        'last_thirty_days' => 'getLastThirtyDays',
-        'repricing_item_id' => 'getRepricingItemId'
+        'last_thirty_days' => 'getLastThirtyDays'
     ];
 
     public static function attributeMap()
@@ -135,7 +131,6 @@ class RepricingItemOrderStatsDTO implements ArrayAccess
         $this->container['last_fourteen_days'] = isset($data['last_fourteen_days']) ? $data['last_fourteen_days'] : null;
         $this->container['last_seven_days'] = isset($data['last_seven_days']) ? $data['last_seven_days'] : null;
         $this->container['last_thirty_days'] = isset($data['last_thirty_days']) ? $data['last_thirty_days'] : null;
-        $this->container['repricing_item_id'] = isset($data['repricing_item_id']) ? $data['repricing_item_id'] : null;
     }
 
     /**
@@ -222,27 +217,6 @@ class RepricingItemOrderStatsDTO implements ArrayAccess
     public function setLastThirtyDays($last_thirty_days)
     {
         $this->container['last_thirty_days'] = $last_thirty_days;
-
-        return $this;
-    }
-
-    /**
-     * Gets repricing_item_id
-     * @return int
-     */
-    public function getRepricingItemId()
-    {
-        return $this->container['repricing_item_id'];
-    }
-
-    /**
-     * Sets repricing_item_id
-     * @param int $repricing_item_id
-     * @return $this
-     */
-    public function setRepricingItemId($repricing_item_id)
-    {
-        $this->container['repricing_item_id'] = $repricing_item_id;
 
         return $this;
     }
