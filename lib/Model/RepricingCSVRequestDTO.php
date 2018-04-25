@@ -57,9 +57,13 @@ class RepricingCSVRequestDTO implements ArrayAccess
     protected static $swaggerTypes = [
         'csv_download_url' => 'string',
         'fields' => 'string[]',
+        'id' => 'int',
+        'inserted' => '\DateTime',
         'number_format' => 'string',
         'public_csv_file_name' => 'string',
-        'state' => 'string'
+        'state' => 'string',
+        'type' => 'string',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -74,9 +78,13 @@ class RepricingCSVRequestDTO implements ArrayAccess
     protected static $attributeMap = [
         'csv_download_url' => 'csvDownloadUrl',
         'fields' => 'fields',
+        'id' => 'id',
+        'inserted' => 'inserted',
         'number_format' => 'numberFormat',
         'public_csv_file_name' => 'publicCsvFileName',
-        'state' => 'state'
+        'state' => 'state',
+        'type' => 'type',
+        'updated' => 'updated'
     ];
 
 
@@ -87,9 +95,13 @@ class RepricingCSVRequestDTO implements ArrayAccess
     protected static $setters = [
         'csv_download_url' => 'setCsvDownloadUrl',
         'fields' => 'setFields',
+        'id' => 'setId',
+        'inserted' => 'setInserted',
         'number_format' => 'setNumberFormat',
         'public_csv_file_name' => 'setPublicCsvFileName',
-        'state' => 'setState'
+        'state' => 'setState',
+        'type' => 'setType',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -100,9 +112,13 @@ class RepricingCSVRequestDTO implements ArrayAccess
     protected static $getters = [
         'csv_download_url' => 'getCsvDownloadUrl',
         'fields' => 'getFields',
+        'id' => 'getId',
+        'inserted' => 'getInserted',
         'number_format' => 'getNumberFormat',
         'public_csv_file_name' => 'getPublicCsvFileName',
-        'state' => 'getState'
+        'state' => 'getState',
+        'type' => 'getType',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -166,6 +182,8 @@ class RepricingCSVRequestDTO implements ArrayAccess
     const STATE_NEW = 'NEW';
     const STATE_IN_PROGRESS = 'IN_PROGRESS';
     const STATE_DONE = 'DONE';
+    const TYPE_SCHEDULED = 'SCHEDULED';
+    const TYPE_MANUAL = 'MANUAL';
     
 
     
@@ -245,6 +263,18 @@ class RepricingCSVRequestDTO implements ArrayAccess
         ];
     }
     
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_SCHEDULED,
+            self::TYPE_MANUAL,
+        ];
+    }
+    
 
     /**
      * Associative array for storing property values
@@ -260,9 +290,13 @@ class RepricingCSVRequestDTO implements ArrayAccess
     {
         $this->container['csv_download_url'] = isset($data['csv_download_url']) ? $data['csv_download_url'] : null;
         $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
         $this->container['public_csv_file_name'] = isset($data['public_csv_file_name']) ? $data['public_csv_file_name'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -284,6 +318,11 @@ class RepricingCSVRequestDTO implements ArrayAccess
             $invalid_properties[] = "invalid value for 'state', must be one of 'NEW', 'IN_PROGRESS', 'DONE'.";
         }
 
+        $allowed_values = ["SCHEDULED", "MANUAL"];
+        if (!in_array($this->container['type'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'type', must be one of 'SCHEDULED', 'MANUAL'.";
+        }
+
         return $invalid_properties;
     }
 
@@ -302,6 +341,10 @@ class RepricingCSVRequestDTO implements ArrayAccess
         }
         $allowed_values = ["NEW", "IN_PROGRESS", "DONE"];
         if (!in_array($this->container['state'], $allowed_values)) {
+            return false;
+        }
+        $allowed_values = ["SCHEDULED", "MANUAL"];
+        if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -350,6 +393,48 @@ class RepricingCSVRequestDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'fields', must be one of 'SKU', 'ASIN', 'TITLE', 'MIN_PRICE', 'MAX_PRICE', 'FIXED_PRICE', 'PRICE_MODE', 'OPTIMIZED_PRICE', 'EXCLUSION_CRITERIA_NAME', 'PRICE_GAPS_NAME', 'SHIPPING_COSTS_NAME', 'BUY_BOX_SETTINGS_NAME', 'NO_COMPETITOR_PRICE', 'AMAZON_PRICE', 'INITIAL_PRICE', 'QUANTITY', 'FULFILLMENT_TYPE', 'CHEAPEST_COMPETITOR_SELLER_ID', 'CHEAPEST_COMPETITOR_PRICE', 'CHEAPEST_COMPETITOR_SHIPPING', 'CHEAPEST_COMPETITOR_FULFILLMENT_TYPE', 'OFFER_COUNT', 'BUY_BOX_OWNER_SELLER_ID', 'BUY_BOX_OWNER_PRICE', 'BUY_BOX_OWNER_SHIPPING', 'BUY_BOX_OWNER_FULFILLMENT_TYPE', 'BUY_BOX_COUNT', 'AMAZON_IN_TOP_20', 'CUSTOM_CODE_SNIPPET_NAME', 'CUSTOM_CODE_PAYLOAD', 'LEAD_TIME_FROM', 'LEAD_TIME_TO', 'SHIPPING_COSTS', 'ESAGU_ITEM_ID', 'ITEM_ORDERS_LAST_SEVEN_DAYS', 'ITEM_ORDERS_LAST_FOURTEEN_DAYS', 'ITEM_ORDERS_LAST_THIRTY_DAYS', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE_NAME', 'LOWEST_SALES_RANK_DISPLAY_ON_WEBSITE', 'SALES_RANKINGS'");
         }
         $this->container['fields'] = $fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param int $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
 
         return $this;
     }
@@ -421,6 +506,52 @@ class RepricingCSVRequestDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'NEW', 'IN_PROGRESS', 'DONE'");
         }
         $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $allowed_values = array('SCHEDULED', 'MANUAL');
+        if (!is_null($type) && (!in_array($type, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'SCHEDULED', 'MANUAL'");
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

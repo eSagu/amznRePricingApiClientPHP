@@ -61,6 +61,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'bool',
         'fba_quantity_update_enabled' => 'bool',
         'fba_quantity_update_max_age' => 'int',
+        'inserted' => '\DateTime',
         'maximum_concurrent_uploads' => 'int',
         'maximum_items_per_upload' => 'int',
         'maximum_uploads_per_hour' => 'int',
@@ -69,6 +70,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'time_zone' => 'string',
         'trigger_enabled' => 'bool',
         'trigger_limit' => 'int',
+        'updated' => '\DateTime',
         'upload_enabled' => 'bool'
     ];
 
@@ -88,6 +90,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'downloadEnabled',
         'fba_quantity_update_enabled' => 'fbaQuantityUpdateEnabled',
         'fba_quantity_update_max_age' => 'fbaQuantityUpdateMaxAge',
+        'inserted' => 'inserted',
         'maximum_concurrent_uploads' => 'maximumConcurrentUploads',
         'maximum_items_per_upload' => 'maximumItemsPerUpload',
         'maximum_uploads_per_hour' => 'maximumUploadsPerHour',
@@ -96,6 +99,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'time_zone' => 'timeZone',
         'trigger_enabled' => 'triggerEnabled',
         'trigger_limit' => 'triggerLimit',
+        'updated' => 'updated',
         'upload_enabled' => 'uploadEnabled'
     ];
 
@@ -111,6 +115,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'setDownloadEnabled',
         'fba_quantity_update_enabled' => 'setFbaQuantityUpdateEnabled',
         'fba_quantity_update_max_age' => 'setFbaQuantityUpdateMaxAge',
+        'inserted' => 'setInserted',
         'maximum_concurrent_uploads' => 'setMaximumConcurrentUploads',
         'maximum_items_per_upload' => 'setMaximumItemsPerUpload',
         'maximum_uploads_per_hour' => 'setMaximumUploadsPerHour',
@@ -119,6 +124,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'time_zone' => 'setTimeZone',
         'trigger_enabled' => 'setTriggerEnabled',
         'trigger_limit' => 'setTriggerLimit',
+        'updated' => 'setUpdated',
         'upload_enabled' => 'setUploadEnabled'
     ];
 
@@ -134,6 +140,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'getDownloadEnabled',
         'fba_quantity_update_enabled' => 'getFbaQuantityUpdateEnabled',
         'fba_quantity_update_max_age' => 'getFbaQuantityUpdateMaxAge',
+        'inserted' => 'getInserted',
         'maximum_concurrent_uploads' => 'getMaximumConcurrentUploads',
         'maximum_items_per_upload' => 'getMaximumItemsPerUpload',
         'maximum_uploads_per_hour' => 'getMaximumUploadsPerHour',
@@ -142,6 +149,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'time_zone' => 'getTimeZone',
         'trigger_enabled' => 'getTriggerEnabled',
         'trigger_limit' => 'getTriggerLimit',
+        'updated' => 'getUpdated',
         'upload_enabled' => 'getUploadEnabled'
     ];
 
@@ -282,6 +290,7 @@ class RepricingSettingsDTO implements ArrayAccess
         $this->container['download_enabled'] = isset($data['download_enabled']) ? $data['download_enabled'] : null;
         $this->container['fba_quantity_update_enabled'] = isset($data['fba_quantity_update_enabled']) ? $data['fba_quantity_update_enabled'] : null;
         $this->container['fba_quantity_update_max_age'] = isset($data['fba_quantity_update_max_age']) ? $data['fba_quantity_update_max_age'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['maximum_concurrent_uploads'] = isset($data['maximum_concurrent_uploads']) ? $data['maximum_concurrent_uploads'] : null;
         $this->container['maximum_items_per_upload'] = isset($data['maximum_items_per_upload']) ? $data['maximum_items_per_upload'] : null;
         $this->container['maximum_uploads_per_hour'] = isset($data['maximum_uploads_per_hour']) ? $data['maximum_uploads_per_hour'] : null;
@@ -290,6 +299,7 @@ class RepricingSettingsDTO implements ArrayAccess
         $this->container['time_zone'] = isset($data['time_zone']) ? $data['time_zone'] : null;
         $this->container['trigger_enabled'] = isset($data['trigger_enabled']) ? $data['trigger_enabled'] : null;
         $this->container['trigger_limit'] = isset($data['trigger_limit']) ? $data['trigger_limit'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
         $this->container['upload_enabled'] = isset($data['upload_enabled']) ? $data['upload_enabled'] : null;
     }
 
@@ -549,6 +559,27 @@ class RepricingSettingsDTO implements ArrayAccess
     }
 
     /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
      * Gets maximum_concurrent_uploads
      * @return int
      */
@@ -748,6 +779,27 @@ class RepricingSettingsDTO implements ArrayAccess
         }
 
         $this->container['trigger_limit'] = $trigger_limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

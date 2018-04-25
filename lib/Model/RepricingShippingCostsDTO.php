@@ -55,10 +55,13 @@ class RepricingShippingCostsDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'id' => 'int',
+        'inserted' => '\DateTime',
         'is_default_fba' => 'bool',
         'is_default_mfn' => 'bool',
         'name' => 'string',
-        'shipping_costs' => '\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]'
+        'shipping_costs' => '\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -71,10 +74,13 @@ class RepricingShippingCostsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'inserted' => 'inserted',
         'is_default_fba' => 'isDefaultFBA',
         'is_default_mfn' => 'isDefaultMFN',
         'name' => 'name',
-        'shipping_costs' => 'shippingCosts'
+        'shipping_costs' => 'shippingCosts',
+        'updated' => 'updated'
     ];
 
 
@@ -83,10 +89,13 @@ class RepricingShippingCostsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'inserted' => 'setInserted',
         'is_default_fba' => 'setIsDefaultFba',
         'is_default_mfn' => 'setIsDefaultMfn',
         'name' => 'setName',
-        'shipping_costs' => 'setShippingCosts'
+        'shipping_costs' => 'setShippingCosts',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -95,10 +104,13 @@ class RepricingShippingCostsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'inserted' => 'getInserted',
         'is_default_fba' => 'getIsDefaultFba',
         'is_default_mfn' => 'getIsDefaultMfn',
         'name' => 'getName',
-        'shipping_costs' => 'getShippingCosts'
+        'shipping_costs' => 'getShippingCosts',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -132,10 +144,13 @@ class RepricingShippingCostsDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
         $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['shipping_costs'] = isset($data['shipping_costs']) ? $data['shipping_costs'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -162,6 +177,48 @@ class RepricingShippingCostsDTO implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets id
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param int $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
 
     /**
      * Gets is_default_fba
@@ -243,6 +300,27 @@ class RepricingShippingCostsDTO implements ArrayAccess
     public function setShippingCosts($shipping_costs)
     {
         $this->container['shipping_costs'] = $shipping_costs;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

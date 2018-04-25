@@ -59,12 +59,15 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'criterion_seller_id' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionSellerIdDTO',
         'criterion_shipping_time' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShippingTimeDTO',
         'criterion_ships_from' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO',
+        'id' => 'int',
+        'inserted' => '\DateTime',
         'is_default_fba' => 'bool',
         'is_default_mfn' => 'bool',
         'name' => 'string',
         'only_featured_merchant' => 'bool',
         'own_seller_id' => 'string',
-        'seller_fulfillment_type' => 'string'
+        'seller_fulfillment_type' => 'string',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -81,12 +84,15 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'criterion_seller_id' => 'criterionSellerId',
         'criterion_shipping_time' => 'criterionShippingTime',
         'criterion_ships_from' => 'criterionShipsFrom',
+        'id' => 'id',
+        'inserted' => 'inserted',
         'is_default_fba' => 'isDefaultFBA',
         'is_default_mfn' => 'isDefaultMFN',
         'name' => 'name',
         'only_featured_merchant' => 'onlyFeaturedMerchant',
         'own_seller_id' => 'ownSellerId',
-        'seller_fulfillment_type' => 'sellerFulfillmentType'
+        'seller_fulfillment_type' => 'sellerFulfillmentType',
+        'updated' => 'updated'
     ];
 
 
@@ -99,12 +105,15 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'criterion_seller_id' => 'setCriterionSellerId',
         'criterion_shipping_time' => 'setCriterionShippingTime',
         'criterion_ships_from' => 'setCriterionShipsFrom',
+        'id' => 'setId',
+        'inserted' => 'setInserted',
         'is_default_fba' => 'setIsDefaultFba',
         'is_default_mfn' => 'setIsDefaultMfn',
         'name' => 'setName',
         'only_featured_merchant' => 'setOnlyFeaturedMerchant',
         'own_seller_id' => 'setOwnSellerId',
-        'seller_fulfillment_type' => 'setSellerFulfillmentType'
+        'seller_fulfillment_type' => 'setSellerFulfillmentType',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -117,12 +126,15 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'criterion_seller_id' => 'getCriterionSellerId',
         'criterion_shipping_time' => 'getCriterionShippingTime',
         'criterion_ships_from' => 'getCriterionShipsFrom',
+        'id' => 'getId',
+        'inserted' => 'getInserted',
         'is_default_fba' => 'getIsDefaultFba',
         'is_default_mfn' => 'getIsDefaultMfn',
         'name' => 'getName',
         'only_featured_merchant' => 'getOnlyFeaturedMerchant',
         'own_seller_id' => 'getOwnSellerId',
-        'seller_fulfillment_type' => 'getSellerFulfillmentType'
+        'seller_fulfillment_type' => 'getSellerFulfillmentType',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -174,12 +186,15 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         $this->container['criterion_seller_id'] = isset($data['criterion_seller_id']) ? $data['criterion_seller_id'] : null;
         $this->container['criterion_shipping_time'] = isset($data['criterion_shipping_time']) ? $data['criterion_shipping_time'] : null;
         $this->container['criterion_ships_from'] = isset($data['criterion_ships_from']) ? $data['criterion_ships_from'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
         $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['only_featured_merchant'] = isset($data['only_featured_merchant']) ? $data['only_featured_merchant'] : null;
         $this->container['own_seller_id'] = isset($data['own_seller_id']) ? $data['own_seller_id'] : null;
         $this->container['seller_fulfillment_type'] = isset($data['seller_fulfillment_type']) ? $data['seller_fulfillment_type'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -296,6 +311,48 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
     public function setCriterionShipsFrom($criterion_ships_from)
     {
         $this->container['criterion_ships_from'] = $criterion_ships_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param int $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
 
         return $this;
     }
@@ -426,6 +483,27 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'seller_fulfillment_type', must be one of 'FBA', 'MFN'");
         }
         $this->container['seller_fulfillment_type'] = $seller_fulfillment_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

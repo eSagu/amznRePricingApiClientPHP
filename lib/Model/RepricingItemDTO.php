@@ -74,7 +74,8 @@ class RepricingItemDTO implements ArrayAccess
         'sku' => 'string',
         'strategy' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO',
         'title' => 'string',
-        'updated' => '\DateTime'
+        'updated' => '\DateTime',
+        'user_service_id' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -106,7 +107,8 @@ class RepricingItemDTO implements ArrayAccess
         'sku' => 'sku',
         'strategy' => 'strategy',
         'title' => 'title',
-        'updated' => 'updated'
+        'updated' => 'updated',
+        'user_service_id' => 'userServiceId'
     ];
 
 
@@ -134,7 +136,8 @@ class RepricingItemDTO implements ArrayAccess
         'sku' => 'setSku',
         'strategy' => 'setStrategy',
         'title' => 'setTitle',
-        'updated' => 'setUpdated'
+        'updated' => 'setUpdated',
+        'user_service_id' => 'setUserServiceId'
     ];
 
 
@@ -162,7 +165,8 @@ class RepricingItemDTO implements ArrayAccess
         'sku' => 'getSku',
         'strategy' => 'getStrategy',
         'title' => 'getTitle',
-        'updated' => 'getUpdated'
+        'updated' => 'getUpdated',
+        'user_service_id' => 'getUserServiceId'
     ];
 
     public static function attributeMap()
@@ -250,6 +254,7 @@ class RepricingItemDTO implements ArrayAccess
         $this->container['strategy'] = isset($data['strategy']) ? $data['strategy'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
+        $this->container['user_service_id'] = isset($data['user_service_id']) ? $data['user_service_id'] : null;
     }
 
     /**
@@ -706,6 +711,27 @@ class RepricingItemDTO implements ArrayAccess
     public function setUpdated($updated)
     {
         $this->container['updated'] = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_service_id
+     * @return int
+     */
+    public function getUserServiceId()
+    {
+        return $this->container['user_service_id'];
+    }
+
+    /**
+     * Sets user_service_id
+     * @param int $user_service_id
+     * @return $this
+     */
+    public function setUserServiceId($user_service_id)
+    {
+        $this->container['user_service_id'] = $user_service_id;
 
         return $this;
     }

@@ -5,9 +5,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **csv_download_url** | **string** |  | [optional] 
 **fields** | **string[]** |  | [optional] 
+**id** | **int** |  | [optional] 
+**inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **number_format** | **string** |  | [optional] 
 **public_csv_file_name** | **string** |  | [optional] 
 **state** | **string** |  | [optional] 
+**type** | **string** |  | [optional] 
+**updated** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

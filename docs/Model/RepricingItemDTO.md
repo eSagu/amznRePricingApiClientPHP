@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **strategy** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingItemStrategyDTO**](RepricingItemStrategyDTO.md) |  | [optional] 
 **title** | **string** |  | [optional] 
 **updated** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**user_service_id** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

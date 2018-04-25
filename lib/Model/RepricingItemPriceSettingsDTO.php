@@ -56,9 +56,12 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'fixed_price' => 'int',
+        'inserted' => '\DateTime',
         'max_price' => 'int',
         'min_price' => 'int',
-        'mode' => 'string'
+        'mode' => 'string',
+        'repricing_item_id' => 'int',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -72,9 +75,12 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
      */
     protected static $attributeMap = [
         'fixed_price' => 'fixedPrice',
+        'inserted' => 'inserted',
         'max_price' => 'maxPrice',
         'min_price' => 'minPrice',
-        'mode' => 'mode'
+        'mode' => 'mode',
+        'repricing_item_id' => 'repricingItemId',
+        'updated' => 'updated'
     ];
 
 
@@ -84,9 +90,12 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
      */
     protected static $setters = [
         'fixed_price' => 'setFixedPrice',
+        'inserted' => 'setInserted',
         'max_price' => 'setMaxPrice',
         'min_price' => 'setMinPrice',
-        'mode' => 'setMode'
+        'mode' => 'setMode',
+        'repricing_item_id' => 'setRepricingItemId',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -96,9 +105,12 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
      */
     protected static $getters = [
         'fixed_price' => 'getFixedPrice',
+        'inserted' => 'getInserted',
         'max_price' => 'getMaxPrice',
         'min_price' => 'getMinPrice',
-        'mode' => 'getMode'
+        'mode' => 'getMode',
+        'repricing_item_id' => 'getRepricingItemId',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -155,9 +167,12 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['fixed_price'] = isset($data['fixed_price']) ? $data['fixed_price'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['max_price'] = isset($data['max_price']) ? $data['max_price'] : null;
         $this->container['min_price'] = isset($data['min_price']) ? $data['min_price'] : null;
         $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
+        $this->container['repricing_item_id'] = isset($data['repricing_item_id']) ? $data['repricing_item_id'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -240,6 +255,27 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
     }
 
     /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
      * Gets max_price
      * @return int
      */
@@ -302,6 +338,48 @@ class RepricingItemPriceSettingsDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'mode', must be one of 'UNDEFINED', 'FIXED_PRICE', 'OPTIMIZATION', 'DISABLED', 'BUY_BOX', 'CUSTOM_CODE'");
         }
         $this->container['mode'] = $mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets repricing_item_id
+     * @return int
+     */
+    public function getRepricingItemId()
+    {
+        return $this->container['repricing_item_id'];
+    }
+
+    /**
+     * Sets repricing_item_id
+     * @param int $repricing_item_id
+     * @return $this
+     */
+    public function setRepricingItemId($repricing_item_id)
+    {
+        $this->container['repricing_item_id'] = $repricing_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

@@ -55,11 +55,14 @@ class RepricingPriceGapsDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'id' => 'int',
+        'inserted' => '\DateTime',
         'is_default_fba' => 'bool',
         'is_default_mfn' => 'bool',
         'name' => 'string',
         'price_gaps' => '\eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[]',
-        'shipping_included' => 'bool'
+        'shipping_included' => 'bool',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -72,11 +75,14 @@ class RepricingPriceGapsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'inserted' => 'inserted',
         'is_default_fba' => 'isDefaultFBA',
         'is_default_mfn' => 'isDefaultMFN',
         'name' => 'name',
         'price_gaps' => 'priceGaps',
-        'shipping_included' => 'shippingIncluded'
+        'shipping_included' => 'shippingIncluded',
+        'updated' => 'updated'
     ];
 
 
@@ -85,11 +91,14 @@ class RepricingPriceGapsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'inserted' => 'setInserted',
         'is_default_fba' => 'setIsDefaultFba',
         'is_default_mfn' => 'setIsDefaultMfn',
         'name' => 'setName',
         'price_gaps' => 'setPriceGaps',
-        'shipping_included' => 'setShippingIncluded'
+        'shipping_included' => 'setShippingIncluded',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -98,11 +107,14 @@ class RepricingPriceGapsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'inserted' => 'getInserted',
         'is_default_fba' => 'getIsDefaultFba',
         'is_default_mfn' => 'getIsDefaultMfn',
         'name' => 'getName',
         'price_gaps' => 'getPriceGaps',
-        'shipping_included' => 'getShippingIncluded'
+        'shipping_included' => 'getShippingIncluded',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -136,11 +148,14 @@ class RepricingPriceGapsDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
         $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['price_gaps'] = isset($data['price_gaps']) ? $data['price_gaps'] : null;
         $this->container['shipping_included'] = isset($data['shipping_included']) ? $data['shipping_included'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -167,6 +182,48 @@ class RepricingPriceGapsDTO implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets id
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param int $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
 
     /**
      * Gets is_default_fba
@@ -269,6 +326,27 @@ class RepricingPriceGapsDTO implements ArrayAccess
     public function setShippingIncluded($shipping_included)
     {
         $this->container['shipping_included'] = $shipping_included;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

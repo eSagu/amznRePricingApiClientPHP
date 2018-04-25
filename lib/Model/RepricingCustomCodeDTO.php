@@ -55,6 +55,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'code' => 'string',
         'id' => 'int',
         'inserted' => '\DateTime',
         'name' => 'string',
@@ -63,6 +64,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
         'use_exclusion_criteria' => 'bool',
         'use_price_gaps' => 'bool',
         'use_shipping_costs' => 'bool',
+        'user_service_id' => 'int',
         'verified' => 'bool'
     ];
 
@@ -76,6 +78,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'code' => 'code',
         'id' => 'id',
         'inserted' => 'inserted',
         'name' => 'name',
@@ -84,6 +87,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
         'use_exclusion_criteria' => 'useExclusionCriteria',
         'use_price_gaps' => 'usePriceGaps',
         'use_shipping_costs' => 'useShippingCosts',
+        'user_service_id' => 'userServiceId',
         'verified' => 'verified'
     ];
 
@@ -93,6 +97,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'code' => 'setCode',
         'id' => 'setId',
         'inserted' => 'setInserted',
         'name' => 'setName',
@@ -101,6 +106,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
         'use_exclusion_criteria' => 'setUseExclusionCriteria',
         'use_price_gaps' => 'setUsePriceGaps',
         'use_shipping_costs' => 'setUseShippingCosts',
+        'user_service_id' => 'setUserServiceId',
         'verified' => 'setVerified'
     ];
 
@@ -110,6 +116,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'code' => 'getCode',
         'id' => 'getId',
         'inserted' => 'getInserted',
         'name' => 'getName',
@@ -118,6 +125,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
         'use_exclusion_criteria' => 'getUseExclusionCriteria',
         'use_price_gaps' => 'getUsePriceGaps',
         'use_shipping_costs' => 'getUseShippingCosts',
+        'user_service_id' => 'getUserServiceId',
         'verified' => 'getVerified'
     ];
 
@@ -152,6 +160,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
@@ -160,6 +169,7 @@ class RepricingCustomCodeDTO implements ArrayAccess
         $this->container['use_exclusion_criteria'] = isset($data['use_exclusion_criteria']) ? $data['use_exclusion_criteria'] : null;
         $this->container['use_price_gaps'] = isset($data['use_price_gaps']) ? $data['use_price_gaps'] : null;
         $this->container['use_shipping_costs'] = isset($data['use_shipping_costs']) ? $data['use_shipping_costs'] : null;
+        $this->container['user_service_id'] = isset($data['user_service_id']) ? $data['user_service_id'] : null;
         $this->container['verified'] = isset($data['verified']) ? $data['verified'] : null;
     }
 
@@ -187,6 +197,27 @@ class RepricingCustomCodeDTO implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets code
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     * @param string $code
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -352,6 +383,27 @@ class RepricingCustomCodeDTO implements ArrayAccess
     public function setUseShippingCosts($use_shipping_costs)
     {
         $this->container['use_shipping_costs'] = $use_shipping_costs;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_service_id
+     * @return int
+     */
+    public function getUserServiceId()
+    {
+        return $this->container['user_service_id'];
+    }
+
+    /**
+     * Sets user_service_id
+     * @param int $user_service_id
+     * @return $this
+     */
+    public function setUserServiceId($user_service_id)
+    {
+        $this->container['user_service_id'] = $user_service_id;
 
         return $this;
     }

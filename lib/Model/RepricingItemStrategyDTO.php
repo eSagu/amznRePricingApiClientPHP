@@ -60,7 +60,9 @@ class RepricingItemStrategyDTO implements ArrayAccess
         'exclusion_criteria_id' => 'int',
         'price_gap_id' => 'int',
         'price_settings' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemPriceSettingsDTO',
-        'shipping_costs_id' => 'int'
+        'shipping_costs_id' => 'int',
+        'inserted' => '\DateTime',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -78,7 +80,9 @@ class RepricingItemStrategyDTO implements ArrayAccess
         'exclusion_criteria_id' => 'exclusionCriteriaId',
         'price_gap_id' => 'priceGapId',
         'price_settings' => 'priceSettings',
-        'shipping_costs_id' => 'shippingCostsId'
+        'shipping_costs_id' => 'shippingCostsId',
+        'inserted' => 'inserted',
+        'updated' => 'updated'
     ];
 
 
@@ -92,7 +96,9 @@ class RepricingItemStrategyDTO implements ArrayAccess
         'exclusion_criteria_id' => 'setExclusionCriteriaId',
         'price_gap_id' => 'setPriceGapId',
         'price_settings' => 'setPriceSettings',
-        'shipping_costs_id' => 'setShippingCostsId'
+        'shipping_costs_id' => 'setShippingCostsId',
+        'inserted' => 'setInserted',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -106,7 +112,9 @@ class RepricingItemStrategyDTO implements ArrayAccess
         'exclusion_criteria_id' => 'getExclusionCriteriaId',
         'price_gap_id' => 'getPriceGapId',
         'price_settings' => 'getPriceSettings',
-        'shipping_costs_id' => 'getShippingCostsId'
+        'shipping_costs_id' => 'getShippingCostsId',
+        'inserted' => 'getInserted',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -146,6 +154,8 @@ class RepricingItemStrategyDTO implements ArrayAccess
         $this->container['price_gap_id'] = isset($data['price_gap_id']) ? $data['price_gap_id'] : null;
         $this->container['price_settings'] = isset($data['price_settings']) ? $data['price_settings'] : null;
         $this->container['shipping_costs_id'] = isset($data['shipping_costs_id']) ? $data['shipping_costs_id'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -295,6 +305,48 @@ class RepricingItemStrategyDTO implements ArrayAccess
     public function setShippingCostsId($shipping_costs_id)
     {
         $this->container['shipping_costs_id'] = $shipping_costs_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

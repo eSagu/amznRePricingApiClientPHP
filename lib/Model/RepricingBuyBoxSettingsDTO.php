@@ -55,11 +55,14 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'id' => 'int',
+        'inserted' => '\DateTime',
         'name' => 'string',
         'potential_up_timeout' => 'int',
         'price_down_percent' => 'int',
         'price_up_percent' => 'int',
-        'strategy' => 'string'
+        'strategy' => 'string',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -72,11 +75,14 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'inserted' => 'inserted',
         'name' => 'name',
         'potential_up_timeout' => 'potentialUpTimeout',
         'price_down_percent' => 'priceDownPercent',
         'price_up_percent' => 'priceUpPercent',
-        'strategy' => 'strategy'
+        'strategy' => 'strategy',
+        'updated' => 'updated'
     ];
 
 
@@ -85,11 +91,14 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'inserted' => 'setInserted',
         'name' => 'setName',
         'potential_up_timeout' => 'setPotentialUpTimeout',
         'price_down_percent' => 'setPriceDownPercent',
         'price_up_percent' => 'setPriceUpPercent',
-        'strategy' => 'setStrategy'
+        'strategy' => 'setStrategy',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -98,11 +107,14 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'inserted' => 'getInserted',
         'name' => 'getName',
         'potential_up_timeout' => 'getPotentialUpTimeout',
         'price_down_percent' => 'getPriceDownPercent',
         'price_up_percent' => 'getPriceUpPercent',
-        'strategy' => 'getStrategy'
+        'strategy' => 'getStrategy',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -206,11 +218,14 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['potential_up_timeout'] = isset($data['potential_up_timeout']) ? $data['potential_up_timeout'] : null;
         $this->container['price_down_percent'] = isset($data['price_down_percent']) ? $data['price_down_percent'] : null;
         $this->container['price_up_percent'] = isset($data['price_up_percent']) ? $data['price_up_percent'] : null;
         $this->container['strategy'] = isset($data['strategy']) ? $data['strategy'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -288,6 +303,48 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets id
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param int $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -402,6 +459,27 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'strategy', must be one of 'MARGIN', 'HOLD'");
         }
         $this->container['strategy'] = $strategy;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }

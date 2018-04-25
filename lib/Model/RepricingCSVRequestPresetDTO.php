@@ -56,8 +56,12 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'fields' => 'string[]',
+        'id' => 'int',
+        'inserted' => '\DateTime',
+        'is_default' => 'bool',
         'name' => 'string',
-        'number_format' => 'string'
+        'number_format' => 'string',
+        'updated' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -71,8 +75,12 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      */
     protected static $attributeMap = [
         'fields' => 'fields',
+        'id' => 'id',
+        'inserted' => 'inserted',
+        'is_default' => 'isDefault',
         'name' => 'name',
-        'number_format' => 'numberFormat'
+        'number_format' => 'numberFormat',
+        'updated' => 'updated'
     ];
 
 
@@ -82,8 +90,12 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      */
     protected static $setters = [
         'fields' => 'setFields',
+        'id' => 'setId',
+        'inserted' => 'setInserted',
+        'is_default' => 'setIsDefault',
         'name' => 'setName',
-        'number_format' => 'setNumberFormat'
+        'number_format' => 'setNumberFormat',
+        'updated' => 'setUpdated'
     ];
 
 
@@ -93,8 +105,12 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
      */
     protected static $getters = [
         'fields' => 'getFields',
+        'id' => 'getId',
+        'inserted' => 'getInserted',
+        'is_default' => 'getIsDefault',
         'name' => 'getName',
-        'number_format' => 'getNumberFormat'
+        'number_format' => 'getNumberFormat',
+        'updated' => 'getUpdated'
     ];
 
     public static function attributeMap()
@@ -235,8 +251,12 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
+        $this->container['is_default'] = isset($data['is_default']) ? $data['is_default'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['number_format'] = isset($data['number_format']) ? $data['number_format'] : null;
+        $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
     }
 
     /**
@@ -299,6 +319,69 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
     }
 
     /**
+     * Gets id
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param int $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets inserted
+     * @return \DateTime
+     */
+    public function getInserted()
+    {
+        return $this->container['inserted'];
+    }
+
+    /**
+     * Sets inserted
+     * @param \DateTime $inserted
+     * @return $this
+     */
+    public function setInserted($inserted)
+    {
+        $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_default
+     * @return bool
+     */
+    public function getIsDefault()
+    {
+        return $this->container['is_default'];
+    }
+
+    /**
+     * Sets is_default
+     * @param bool $is_default
+     * @return $this
+     */
+    public function setIsDefault($is_default)
+    {
+        $this->container['is_default'] = $is_default;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      * @return string
      */
@@ -340,6 +423,27 @@ class RepricingCSVRequestPresetDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'number_format', must be one of 'DECIMAL_DOT', 'DECIMAL_COMMA', 'CENTS'");
         }
         $this->container['number_format'] = $number_format;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->container['updated'];
+    }
+
+    /**
+     * Sets updated
+     * @param \DateTime $updated
+     * @return $this
+     */
+    public function setUpdated($updated)
+    {
+        $this->container['updated'] = $updated;
 
         return $this;
     }
