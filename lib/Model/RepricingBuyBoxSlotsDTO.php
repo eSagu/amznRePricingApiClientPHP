@@ -58,6 +58,7 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
         'end_date' => '\DateTime',
         'id' => 'int',
         'inserted' => '\DateTime',
+        'is_active' => 'bool',
         'slot_count' => 'int',
         'start_date' => '\DateTime',
         'updated' => '\DateTime',
@@ -77,6 +78,7 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
         'end_date' => 'endDate',
         'id' => 'id',
         'inserted' => 'inserted',
+        'is_active' => 'isActive',
         'slot_count' => 'slotCount',
         'start_date' => 'startDate',
         'updated' => 'updated',
@@ -92,6 +94,7 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
         'end_date' => 'setEndDate',
         'id' => 'setId',
         'inserted' => 'setInserted',
+        'is_active' => 'setIsActive',
         'slot_count' => 'setSlotCount',
         'start_date' => 'setStartDate',
         'updated' => 'setUpdated',
@@ -107,6 +110,7 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
         'end_date' => 'getEndDate',
         'id' => 'getId',
         'inserted' => 'getInserted',
+        'is_active' => 'getIsActive',
         'slot_count' => 'getSlotCount',
         'start_date' => 'getStartDate',
         'updated' => 'getUpdated',
@@ -147,6 +151,7 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
+        $this->container['is_active'] = isset($data['is_active']) ? $data['is_active'] : null;
         $this->container['slot_count'] = isset($data['slot_count']) ? $data['slot_count'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
@@ -237,6 +242,27 @@ class RepricingBuyBoxSlotsDTO implements ArrayAccess
     public function setInserted($inserted)
     {
         $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_active
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['is_active'];
+    }
+
+    /**
+     * Sets is_active
+     * @param bool $is_active
+     * @return $this
+     */
+    public function setIsActive($is_active)
+    {
+        $this->container['is_active'] = $is_active;
 
         return $this;
     }

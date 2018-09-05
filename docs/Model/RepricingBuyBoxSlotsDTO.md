@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **id** | **int** |  | [optional] 
 **inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**is_active** | **bool** |  | [optional] 
 **slot_count** | **int** |  | [optional] 
 **start_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated** | [**\DateTime**](\DateTime.md) |  | [optional] 

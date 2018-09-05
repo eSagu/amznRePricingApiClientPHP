@@ -55,7 +55,7 @@ class RepricingItemDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amazon_open_date' => 'int',
+        'amazon_open_date' => '\DateTime',
         'amazon_price' => 'int',
         'asin' => 'string',
         'condition' => 'string',
@@ -293,7 +293,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Gets amazon_open_date
-     * @return int
+     * @return \DateTime
      */
     public function getAmazonOpenDate()
     {
@@ -302,7 +302,7 @@ class RepricingItemDTO implements ArrayAccess
 
     /**
      * Sets amazon_open_date
-     * @param int $amazon_open_date
+     * @param \DateTime $amazon_open_date
      * @return $this
      */
     public function setAmazonOpenDate($amazon_open_date)

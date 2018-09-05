@@ -161,6 +161,8 @@ class ItemOfferDTO implements ArrayAccess
     const FLAGS_IS_FEATURED_MERCHANT = 'IS_FEATURED_MERCHANT';
     const FLAGS_SHIPS_DOMESTICALLY = 'SHIPS_DOMESTICALLY';
     const FLAGS_SHIPS_INTERNATIONALLY = 'SHIPS_INTERNATIONALLY';
+    const FLAGS_IS_PRIME = 'IS_PRIME';
+    const FLAGS_IS_NATIONAL_PRIME = 'IS_NATIONAL_PRIME';
     const ITEM_CONDITION_UNKNOWN = 'UNKNOWN';
     const ITEM_CONDITION_USED_LIKE_NEW = 'USED_LIKE_NEW';
     const ITEM_CONDITION_USED_VERY_GOOD = 'USED_VERY_GOOD';
@@ -206,6 +208,8 @@ class ItemOfferDTO implements ArrayAccess
             self::FLAGS_IS_FEATURED_MERCHANT,
             self::FLAGS_SHIPS_DOMESTICALLY,
             self::FLAGS_SHIPS_INTERNATIONALLY,
+            self::FLAGS_IS_PRIME,
+            self::FLAGS_IS_NATIONAL_PRIME,
         ];
     }
     
@@ -375,9 +379,9 @@ class ItemOfferDTO implements ArrayAccess
      */
     public function setFlags($flags)
     {
-        $allowed_values = array('IS_FULFILLED_BY_AMAZON', 'IS_BUY_BOX_WINNER', 'IS_EXPEDITED_SHIPPING_AVAILABLE', 'IS_FEATURED_MERCHANT', 'SHIPS_DOMESTICALLY', 'SHIPS_INTERNATIONALLY');
+        $allowed_values = array('IS_FULFILLED_BY_AMAZON', 'IS_BUY_BOX_WINNER', 'IS_EXPEDITED_SHIPPING_AVAILABLE', 'IS_FEATURED_MERCHANT', 'SHIPS_DOMESTICALLY', 'SHIPS_INTERNATIONALLY', 'IS_PRIME', 'IS_NATIONAL_PRIME');
         if (!is_null($flags) && (array_diff($flags, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'flags', must be one of 'IS_FULFILLED_BY_AMAZON', 'IS_BUY_BOX_WINNER', 'IS_EXPEDITED_SHIPPING_AVAILABLE', 'IS_FEATURED_MERCHANT', 'SHIPS_DOMESTICALLY', 'SHIPS_INTERNATIONALLY'");
+            throw new \InvalidArgumentException("Invalid value for 'flags', must be one of 'IS_FULFILLED_BY_AMAZON', 'IS_BUY_BOX_WINNER', 'IS_EXPEDITED_SHIPPING_AVAILABLE', 'IS_FEATURED_MERCHANT', 'SHIPS_DOMESTICALLY', 'SHIPS_INTERNATIONALLY', 'IS_PRIME', 'IS_NATIONAL_PRIME'");
         }
         $this->container['flags'] = $flags;
 

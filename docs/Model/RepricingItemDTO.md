@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amazon_open_date** | **int** |  | [optional] 
+**amazon_open_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **amazon_price** | **int** |  | [optional] 
 **asin** | **string** |  | [optional] 
 **condition** | **string** |  | [optional] 
