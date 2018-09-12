@@ -57,6 +57,9 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'inserted' => '\DateTime',
+        'margin_protection_active' => 'bool',
+        'margin_protection_time' => 'int',
+        'margin_protection_timeout' => 'int',
         'name' => 'string',
         'potential_up_timeout' => 'int',
         'price_down_percent' => 'int',
@@ -77,6 +80,9 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'inserted' => 'inserted',
+        'margin_protection_active' => 'marginProtectionActive',
+        'margin_protection_time' => 'marginProtectionTime',
+        'margin_protection_timeout' => 'marginProtectionTimeout',
         'name' => 'name',
         'potential_up_timeout' => 'potentialUpTimeout',
         'price_down_percent' => 'priceDownPercent',
@@ -93,6 +99,9 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'inserted' => 'setInserted',
+        'margin_protection_active' => 'setMarginProtectionActive',
+        'margin_protection_time' => 'setMarginProtectionTime',
+        'margin_protection_timeout' => 'setMarginProtectionTimeout',
         'name' => 'setName',
         'potential_up_timeout' => 'setPotentialUpTimeout',
         'price_down_percent' => 'setPriceDownPercent',
@@ -109,6 +118,9 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'inserted' => 'getInserted',
+        'margin_protection_active' => 'getMarginProtectionActive',
+        'margin_protection_time' => 'getMarginProtectionTime',
+        'margin_protection_timeout' => 'getMarginProtectionTimeout',
         'name' => 'getName',
         'potential_up_timeout' => 'getPotentialUpTimeout',
         'price_down_percent' => 'getPriceDownPercent',
@@ -132,6 +144,16 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         return self::$getters;
     }
 
+    const MARGIN_PROTECTION_TIME_3600 = 3600;
+    const MARGIN_PROTECTION_TIME_7200 = 7200;
+    const MARGIN_PROTECTION_TIME_14400 = 14400;
+    const MARGIN_PROTECTION_TIME_28800 = 28800;
+    const MARGIN_PROTECTION_TIME_57600 = 57600;
+    const MARGIN_PROTECTION_TIME_86400 = 86400;
+    const MARGIN_PROTECTION_TIMEOUT_3600 = 3600;
+    const MARGIN_PROTECTION_TIMEOUT_7200 = 7200;
+    const MARGIN_PROTECTION_TIMEOUT_10800 = 10800;
+    const MARGIN_PROTECTION_TIMEOUT_14400 = 14400;
     const POTENTIAL_UP_TIMEOUT_1800 = 1800;
     const POTENTIAL_UP_TIMEOUT_3600 = 3600;
     const POTENTIAL_UP_TIMEOUT_5400 = 5400;
@@ -154,6 +176,36 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     const STRATEGY_HOLD = 'HOLD';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getMarginProtectionTimeAllowableValues()
+    {
+        return [
+            self::MARGIN_PROTECTION_TIME_3600,
+            self::MARGIN_PROTECTION_TIME_7200,
+            self::MARGIN_PROTECTION_TIME_14400,
+            self::MARGIN_PROTECTION_TIME_28800,
+            self::MARGIN_PROTECTION_TIME_57600,
+            self::MARGIN_PROTECTION_TIME_86400,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getMarginProtectionTimeoutAllowableValues()
+    {
+        return [
+            self::MARGIN_PROTECTION_TIMEOUT_3600,
+            self::MARGIN_PROTECTION_TIMEOUT_7200,
+            self::MARGIN_PROTECTION_TIMEOUT_10800,
+            self::MARGIN_PROTECTION_TIMEOUT_14400,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -220,6 +272,9 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
+        $this->container['margin_protection_active'] = isset($data['margin_protection_active']) ? $data['margin_protection_active'] : null;
+        $this->container['margin_protection_time'] = isset($data['margin_protection_time']) ? $data['margin_protection_time'] : null;
+        $this->container['margin_protection_timeout'] = isset($data['margin_protection_timeout']) ? $data['margin_protection_timeout'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['potential_up_timeout'] = isset($data['potential_up_timeout']) ? $data['potential_up_timeout'] : null;
         $this->container['price_down_percent'] = isset($data['price_down_percent']) ? $data['price_down_percent'] : null;
@@ -236,6 +291,22 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if ($this->container['margin_protection_time'] === null) {
+            $invalid_properties[] = "'margin_protection_time' can't be null";
+        }
+        $allowed_values = ["3600", "7200", "14400", "28800", "57600", "86400"];
+        if (!in_array($this->container['margin_protection_time'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'margin_protection_time', must be one of '3600', '7200', '14400', '28800', '57600', '86400'.";
+        }
+
+        if ($this->container['margin_protection_timeout'] === null) {
+            $invalid_properties[] = "'margin_protection_timeout' can't be null";
+        }
+        $allowed_values = ["3600", "7200", "10800", "14400"];
+        if (!in_array($this->container['margin_protection_timeout'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'margin_protection_timeout', must be one of '3600', '7200', '10800', '14400'.";
+        }
 
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
@@ -276,6 +347,20 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['margin_protection_time'] === null) {
+            return false;
+        }
+        $allowed_values = ["3600", "7200", "14400", "28800", "57600", "86400"];
+        if (!in_array($this->container['margin_protection_time'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['margin_protection_timeout'] === null) {
+            return false;
+        }
+        $allowed_values = ["3600", "7200", "10800", "14400"];
+        if (!in_array($this->container['margin_protection_timeout'], $allowed_values)) {
+            return false;
+        }
         if ($this->container['name'] === null) {
             return false;
         }
@@ -342,6 +427,77 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
     public function setInserted($inserted)
     {
         $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
+     * Gets margin_protection_active
+     * @return bool
+     */
+    public function getMarginProtectionActive()
+    {
+        return $this->container['margin_protection_active'];
+    }
+
+    /**
+     * Sets margin_protection_active
+     * @param bool $margin_protection_active
+     * @return $this
+     */
+    public function setMarginProtectionActive($margin_protection_active)
+    {
+        $this->container['margin_protection_active'] = $margin_protection_active;
+
+        return $this;
+    }
+
+    /**
+     * Gets margin_protection_time
+     * @return int
+     */
+    public function getMarginProtectionTime()
+    {
+        return $this->container['margin_protection_time'];
+    }
+
+    /**
+     * Sets margin_protection_time
+     * @param int $margin_protection_time
+     * @return $this
+     */
+    public function setMarginProtectionTime($margin_protection_time)
+    {
+        $allowed_values = array('3600', '7200', '14400', '28800', '57600', '86400');
+        if ((!in_array($margin_protection_time, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'margin_protection_time', must be one of '3600', '7200', '14400', '28800', '57600', '86400'");
+        }
+        $this->container['margin_protection_time'] = $margin_protection_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets margin_protection_timeout
+     * @return int
+     */
+    public function getMarginProtectionTimeout()
+    {
+        return $this->container['margin_protection_timeout'];
+    }
+
+    /**
+     * Sets margin_protection_timeout
+     * @param int $margin_protection_timeout
+     * @return $this
+     */
+    public function setMarginProtectionTimeout($margin_protection_timeout)
+    {
+        $allowed_values = array('3600', '7200', '10800', '14400');
+        if ((!in_array($margin_protection_timeout, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'margin_protection_timeout', must be one of '3600', '7200', '10800', '14400'");
+        }
+        $this->container['margin_protection_timeout'] = $margin_protection_timeout;
 
         return $this;
     }
