@@ -65,10 +65,12 @@ class RepricingItemDTO implements ArrayAccess
         'initial_price' => 'int',
         'inserted' => '\DateTime',
         'listed' => 'bool',
+        'merchant_shipping_group' => 'string',
         'offers' => '\eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]',
         'offers_updated' => 'int',
         'optimization_result' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO',
         'order_stats' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemOrderStatsDTO',
+        'prime' => 'bool',
         'quantity' => 'int',
         'sales_rankings' => '\eSagu\Amzn\RePricing\V1\Model\RepricingItemSalesRankingsDTO',
         'sku' => 'string',
@@ -98,10 +100,12 @@ class RepricingItemDTO implements ArrayAccess
         'initial_price' => 'initialPrice',
         'inserted' => 'inserted',
         'listed' => 'listed',
+        'merchant_shipping_group' => 'merchantShippingGroup',
         'offers' => 'offers',
         'offers_updated' => 'offersUpdated',
         'optimization_result' => 'optimizationResult',
         'order_stats' => 'orderStats',
+        'prime' => 'prime',
         'quantity' => 'quantity',
         'sales_rankings' => 'salesRankings',
         'sku' => 'sku',
@@ -127,10 +131,12 @@ class RepricingItemDTO implements ArrayAccess
         'initial_price' => 'setInitialPrice',
         'inserted' => 'setInserted',
         'listed' => 'setListed',
+        'merchant_shipping_group' => 'setMerchantShippingGroup',
         'offers' => 'setOffers',
         'offers_updated' => 'setOffersUpdated',
         'optimization_result' => 'setOptimizationResult',
         'order_stats' => 'setOrderStats',
+        'prime' => 'setPrime',
         'quantity' => 'setQuantity',
         'sales_rankings' => 'setSalesRankings',
         'sku' => 'setSku',
@@ -156,10 +162,12 @@ class RepricingItemDTO implements ArrayAccess
         'initial_price' => 'getInitialPrice',
         'inserted' => 'getInserted',
         'listed' => 'getListed',
+        'merchant_shipping_group' => 'getMerchantShippingGroup',
         'offers' => 'getOffers',
         'offers_updated' => 'getOffersUpdated',
         'optimization_result' => 'getOptimizationResult',
         'order_stats' => 'getOrderStats',
+        'prime' => 'getPrime',
         'quantity' => 'getQuantity',
         'sales_rankings' => 'getSalesRankings',
         'sku' => 'getSku',
@@ -244,10 +252,12 @@ class RepricingItemDTO implements ArrayAccess
         $this->container['initial_price'] = isset($data['initial_price']) ? $data['initial_price'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['listed'] = isset($data['listed']) ? $data['listed'] : null;
+        $this->container['merchant_shipping_group'] = isset($data['merchant_shipping_group']) ? $data['merchant_shipping_group'] : null;
         $this->container['offers'] = isset($data['offers']) ? $data['offers'] : null;
         $this->container['offers_updated'] = isset($data['offers_updated']) ? $data['offers_updated'] : null;
         $this->container['optimization_result'] = isset($data['optimization_result']) ? $data['optimization_result'] : null;
         $this->container['order_stats'] = isset($data['order_stats']) ? $data['order_stats'] : null;
+        $this->container['prime'] = isset($data['prime']) ? $data['prime'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['sales_rankings'] = isset($data['sales_rankings']) ? $data['sales_rankings'] : null;
         $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
@@ -506,6 +516,27 @@ class RepricingItemDTO implements ArrayAccess
     }
 
     /**
+     * Gets merchant_shipping_group
+     * @return string
+     */
+    public function getMerchantShippingGroup()
+    {
+        return $this->container['merchant_shipping_group'];
+    }
+
+    /**
+     * Sets merchant_shipping_group
+     * @param string $merchant_shipping_group
+     * @return $this
+     */
+    public function setMerchantShippingGroup($merchant_shipping_group)
+    {
+        $this->container['merchant_shipping_group'] = $merchant_shipping_group;
+
+        return $this;
+    }
+
+    /**
      * Gets offers
      * @return \eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]
      */
@@ -585,6 +616,27 @@ class RepricingItemDTO implements ArrayAccess
     public function setOrderStats($order_stats)
     {
         $this->container['order_stats'] = $order_stats;
+
+        return $this;
+    }
+
+    /**
+     * Gets prime
+     * @return bool
+     */
+    public function getPrime()
+    {
+        return $this->container['prime'];
+    }
+
+    /**
+     * Sets prime
+     * @param bool $prime
+     * @return $this
+     */
+    public function setPrime($prime)
+    {
+        $this->container['prime'] = $prime;
 
         return $this;
     }

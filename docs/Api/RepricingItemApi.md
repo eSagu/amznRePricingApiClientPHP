@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **callList**
-> \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[] callList($by_sku, $by_sku_exact, $by_title, $by_title_exact, $by_asin, $by_search_term, $by_amazon_price_from, $by_amazon_price_to, $by_price_mode, $by_price_state, $by_condition, $by_fulfillment_type, $by_no_price_settings, $by_buy_box_strategy, $by_price_gaps, $by_exclusion_criteria, $by_shipping_costs, $by_buy_box, $by_missing_rules, $by_quantity_greater_zero, $by_quantity_equal_zero, $by_id_greater_than, $has_buy_box, $by_custom_code, $sort, $order, $offset, $limit, $count_items, $return_items)
+> \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[] callList($by_sku, $by_sku_exact, $by_title, $by_title_exact, $by_asin, $by_search_term, $by_amazon_price_from, $by_amazon_price_to, $by_price_mode, $by_price_state, $by_condition, $by_fulfillment_type, $by_prime, $by_no_price_settings, $by_buy_box_strategy, $by_price_gaps, $by_exclusion_criteria, $by_shipping_costs, $by_buy_box, $by_missing_rules, $by_quantity_greater_zero, $by_quantity_equal_zero, $by_id_greater_than, $has_buy_box, $by_custom_code, $sort, $order, $offset, $limit, $count_items, $return_items)
 
 Gets a list of repricing items.
 
@@ -38,6 +38,7 @@ $by_price_mode = "by_price_mode_example"; // string |
 $by_price_state = "by_price_state_example"; // string | 
 $by_condition = "by_condition_example"; // string | 
 $by_fulfillment_type = "by_fulfillment_type_example"; // string | 
+$by_prime = "IGNORE"; // string | 
 $by_no_price_settings = false; // bool | 
 $by_buy_box_strategy = "by_buy_box_strategy_example"; // string | 
 $by_price_gaps = 789; // int | 
@@ -58,7 +59,7 @@ $count_items = false; // bool |
 $return_items = true; // bool | 
 
 try {
-    $result = $api_instance->callList($by_sku, $by_sku_exact, $by_title, $by_title_exact, $by_asin, $by_search_term, $by_amazon_price_from, $by_amazon_price_to, $by_price_mode, $by_price_state, $by_condition, $by_fulfillment_type, $by_no_price_settings, $by_buy_box_strategy, $by_price_gaps, $by_exclusion_criteria, $by_shipping_costs, $by_buy_box, $by_missing_rules, $by_quantity_greater_zero, $by_quantity_equal_zero, $by_id_greater_than, $has_buy_box, $by_custom_code, $sort, $order, $offset, $limit, $count_items, $return_items);
+    $result = $api_instance->callList($by_sku, $by_sku_exact, $by_title, $by_title_exact, $by_asin, $by_search_term, $by_amazon_price_from, $by_amazon_price_to, $by_price_mode, $by_price_state, $by_condition, $by_fulfillment_type, $by_prime, $by_no_price_settings, $by_buy_box_strategy, $by_price_gaps, $by_exclusion_criteria, $by_shipping_costs, $by_buy_box, $by_missing_rules, $by_quantity_greater_zero, $by_quantity_equal_zero, $by_id_greater_than, $has_buy_box, $by_custom_code, $sort, $order, $offset, $limit, $count_items, $return_items);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RepricingItemApi->callList: ', $e->getMessage(), PHP_EOL;
@@ -82,6 +83,7 @@ Name | Type | Description  | Notes
  **by_price_state** | **string**|  | [optional]
  **by_condition** | **string**|  | [optional]
  **by_fulfillment_type** | **string**|  | [optional]
+ **by_prime** | **string**|  | [optional] [default to IGNORE]
  **by_no_price_settings** | **bool**|  | [optional] [default to false]
  **by_buy_box_strategy** | **string**|  | [optional]
  **by_price_gaps** | **int**|  | [optional]

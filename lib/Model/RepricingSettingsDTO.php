@@ -65,13 +65,15 @@ class RepricingSettingsDTO implements ArrayAccess
         'maximum_concurrent_uploads' => 'int',
         'maximum_items_per_upload' => 'int',
         'maximum_uploads_per_hour' => 'int',
+        'merchant_shipping_groups' => 'string[]',
         'show_expert_settings' => 'bool',
         'stock_update_max_age' => 'int',
         'time_zone' => 'string',
         'trigger_enabled' => 'bool',
         'trigger_limit' => 'int',
         'updated' => '\DateTime',
-        'upload_enabled' => 'bool'
+        'upload_enabled' => 'bool',
+        'uses_amazon_business' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -94,13 +96,15 @@ class RepricingSettingsDTO implements ArrayAccess
         'maximum_concurrent_uploads' => 'maximumConcurrentUploads',
         'maximum_items_per_upload' => 'maximumItemsPerUpload',
         'maximum_uploads_per_hour' => 'maximumUploadsPerHour',
+        'merchant_shipping_groups' => 'merchantShippingGroups',
         'show_expert_settings' => 'showExpertSettings',
         'stock_update_max_age' => 'stockUpdateMaxAge',
         'time_zone' => 'timeZone',
         'trigger_enabled' => 'triggerEnabled',
         'trigger_limit' => 'triggerLimit',
         'updated' => 'updated',
-        'upload_enabled' => 'uploadEnabled'
+        'upload_enabled' => 'uploadEnabled',
+        'uses_amazon_business' => 'usesAmazonBusiness'
     ];
 
 
@@ -119,13 +123,15 @@ class RepricingSettingsDTO implements ArrayAccess
         'maximum_concurrent_uploads' => 'setMaximumConcurrentUploads',
         'maximum_items_per_upload' => 'setMaximumItemsPerUpload',
         'maximum_uploads_per_hour' => 'setMaximumUploadsPerHour',
+        'merchant_shipping_groups' => 'setMerchantShippingGroups',
         'show_expert_settings' => 'setShowExpertSettings',
         'stock_update_max_age' => 'setStockUpdateMaxAge',
         'time_zone' => 'setTimeZone',
         'trigger_enabled' => 'setTriggerEnabled',
         'trigger_limit' => 'setTriggerLimit',
         'updated' => 'setUpdated',
-        'upload_enabled' => 'setUploadEnabled'
+        'upload_enabled' => 'setUploadEnabled',
+        'uses_amazon_business' => 'setUsesAmazonBusiness'
     ];
 
 
@@ -144,13 +150,15 @@ class RepricingSettingsDTO implements ArrayAccess
         'maximum_concurrent_uploads' => 'getMaximumConcurrentUploads',
         'maximum_items_per_upload' => 'getMaximumItemsPerUpload',
         'maximum_uploads_per_hour' => 'getMaximumUploadsPerHour',
+        'merchant_shipping_groups' => 'getMerchantShippingGroups',
         'show_expert_settings' => 'getShowExpertSettings',
         'stock_update_max_age' => 'getStockUpdateMaxAge',
         'time_zone' => 'getTimeZone',
         'trigger_enabled' => 'getTriggerEnabled',
         'trigger_limit' => 'getTriggerLimit',
         'updated' => 'getUpdated',
-        'upload_enabled' => 'getUploadEnabled'
+        'upload_enabled' => 'getUploadEnabled',
+        'uses_amazon_business' => 'getUsesAmazonBusiness'
     ];
 
     public static function attributeMap()
@@ -294,6 +302,7 @@ class RepricingSettingsDTO implements ArrayAccess
         $this->container['maximum_concurrent_uploads'] = isset($data['maximum_concurrent_uploads']) ? $data['maximum_concurrent_uploads'] : null;
         $this->container['maximum_items_per_upload'] = isset($data['maximum_items_per_upload']) ? $data['maximum_items_per_upload'] : null;
         $this->container['maximum_uploads_per_hour'] = isset($data['maximum_uploads_per_hour']) ? $data['maximum_uploads_per_hour'] : null;
+        $this->container['merchant_shipping_groups'] = isset($data['merchant_shipping_groups']) ? $data['merchant_shipping_groups'] : null;
         $this->container['show_expert_settings'] = isset($data['show_expert_settings']) ? $data['show_expert_settings'] : null;
         $this->container['stock_update_max_age'] = isset($data['stock_update_max_age']) ? $data['stock_update_max_age'] : null;
         $this->container['time_zone'] = isset($data['time_zone']) ? $data['time_zone'] : null;
@@ -301,6 +310,7 @@ class RepricingSettingsDTO implements ArrayAccess
         $this->container['trigger_limit'] = isset($data['trigger_limit']) ? $data['trigger_limit'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
         $this->container['upload_enabled'] = isset($data['upload_enabled']) ? $data['upload_enabled'] : null;
+        $this->container['uses_amazon_business'] = isset($data['uses_amazon_business']) ? $data['uses_amazon_business'] : null;
     }
 
     /**
@@ -667,6 +677,27 @@ class RepricingSettingsDTO implements ArrayAccess
     }
 
     /**
+     * Gets merchant_shipping_groups
+     * @return string[]
+     */
+    public function getMerchantShippingGroups()
+    {
+        return $this->container['merchant_shipping_groups'];
+    }
+
+    /**
+     * Sets merchant_shipping_groups
+     * @param string[] $merchant_shipping_groups
+     * @return $this
+     */
+    public function setMerchantShippingGroups($merchant_shipping_groups)
+    {
+        $this->container['merchant_shipping_groups'] = $merchant_shipping_groups;
+
+        return $this;
+    }
+
+    /**
      * Gets show_expert_settings
      * @return bool
      */
@@ -821,6 +852,27 @@ class RepricingSettingsDTO implements ArrayAccess
     public function setUploadEnabled($upload_enabled)
     {
         $this->container['upload_enabled'] = $upload_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets uses_amazon_business
+     * @return bool
+     */
+    public function getUsesAmazonBusiness()
+    {
+        return $this->container['uses_amazon_business'];
+    }
+
+    /**
+     * Sets uses_amazon_business
+     * @param bool $uses_amazon_business
+     * @return $this
+     */
+    public function setUsesAmazonBusiness($uses_amazon_business)
+    {
+        $this->container['uses_amazon_business'] = $uses_amazon_business;
 
         return $this;
     }
