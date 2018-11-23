@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **maximum_concurrent_uploads** | **int** |  | [optional] 
 **maximum_items_per_upload** | **int** |  | [optional] 
 **maximum_uploads_per_hour** | **int** |  | [optional] 
+**merchant_shipping_groups** | **string[]** |  | [optional] 
 **show_expert_settings** | **bool** |  | [optional] 
 **stock_update_max_age** | **int** |  | [optional] 
 **time_zone** | **string** |  | [optional] 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **trigger_limit** | **int** |  | [optional] 
 **updated** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **upload_enabled** | **bool** |  | [optional] 
+**uses_amazon_business** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

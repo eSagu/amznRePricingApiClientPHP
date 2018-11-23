@@ -5,6 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**margin_protection_active** | **bool** |  | [optional] 
+**margin_protection_rest_time** | **int** |  | 
+**margin_protection_time** | **int** |  | 
+**margin_protection_timeout** | **int** |  | 
 **name** | **string** |  | 
 **potential_up_timeout** | **int** |  | 
 **price_down_percent** | **int** |  | 

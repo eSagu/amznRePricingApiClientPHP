@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amazon_open_date** | **int** |  | [optional] 
+**amazon_open_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **amazon_price** | **int** |  | [optional] 
 **asin** | **string** |  | [optional] 
 **condition** | **string** |  | [optional] 
@@ -13,10 +13,12 @@ Name | Type | Description | Notes
 **initial_price** | **int** |  | [optional] 
 **inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **listed** | **bool** |  | [optional] 
+**merchant_shipping_group** | **string** |  | [optional] 
 **offers** | [**\eSagu\Amzn\RePricing\V1\Model\ItemOfferDTO[]**](ItemOfferDTO.md) |  | [optional] 
 **offers_updated** | **int** |  | [optional] 
 **optimization_result** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingItemOptimizationResultDTO**](RepricingItemOptimizationResultDTO.md) |  | [optional] 
 **order_stats** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingItemOrderStatsDTO**](RepricingItemOrderStatsDTO.md) |  | [optional] 
+**prime** | **bool** |  | [optional] 
 **quantity** | **int** |  | [optional] 
 **sales_rankings** | [**\eSagu\Amzn\RePricing\V1\Model\RepricingItemSalesRankingsDTO**](RepricingItemSalesRankingsDTO.md) |  | [optional] 
 **sku** | **string** |  | [optional] 

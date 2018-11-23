@@ -118,6 +118,8 @@ class PriceGapDTO implements ArrayAccess
 
     const FULFILLMENT_TYPE_FBA = 'FBA';
     const FULFILLMENT_TYPE_MFN = 'MFN';
+    const FULFILLMENT_TYPE_MFN_PRIME = 'MFN_PRIME';
+    const FULFILLMENT_TYPE_PRIME = 'PRIME';
     const MODE_ABSOLUTE = 'ABSOLUTE';
     const MODE_PERCENTAGE = 'PERCENTAGE';
     
@@ -132,6 +134,8 @@ class PriceGapDTO implements ArrayAccess
         return [
             self::FULFILLMENT_TYPE_FBA,
             self::FULFILLMENT_TYPE_MFN,
+            self::FULFILLMENT_TYPE_MFN_PRIME,
+            self::FULFILLMENT_TYPE_PRIME,
         ];
     }
     
@@ -175,9 +179,9 @@ class PriceGapDTO implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = ["FBA", "MFN"];
+        $allowed_values = ["FBA", "MFN", "MFN_PRIME", "PRIME"];
         if (!in_array($this->container['fulfillment_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'fulfillment_type', must be one of 'FBA', 'MFN'.";
+            $invalid_properties[] = "invalid value for 'fulfillment_type', must be one of 'FBA', 'MFN', 'MFN_PRIME', 'PRIME'.";
         }
 
         $allowed_values = ["ABSOLUTE", "PERCENTAGE"];
@@ -197,7 +201,7 @@ class PriceGapDTO implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = ["FBA", "MFN"];
+        $allowed_values = ["FBA", "MFN", "MFN_PRIME", "PRIME"];
         if (!in_array($this->container['fulfillment_type'], $allowed_values)) {
             return false;
         }
@@ -225,9 +229,9 @@ class PriceGapDTO implements ArrayAccess
      */
     public function setFulfillmentType($fulfillment_type)
     {
-        $allowed_values = array('FBA', 'MFN');
+        $allowed_values = array('FBA', 'MFN', 'MFN_PRIME', 'PRIME');
         if (!is_null($fulfillment_type) && (!in_array($fulfillment_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'fulfillment_type', must be one of 'FBA', 'MFN'");
+            throw new \InvalidArgumentException("Invalid value for 'fulfillment_type', must be one of 'FBA', 'MFN', 'MFN_PRIME', 'PRIME'");
         }
         $this->container['fulfillment_type'] = $fulfillment_type;
 
