@@ -72,8 +72,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'trigger_enabled' => 'bool',
         'trigger_limit' => 'int',
         'updated' => '\DateTime',
-        'upload_enabled' => 'bool',
-        'uses_amazon_business' => 'bool'
+        'upload_enabled' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -103,8 +102,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'trigger_enabled' => 'triggerEnabled',
         'trigger_limit' => 'triggerLimit',
         'updated' => 'updated',
-        'upload_enabled' => 'uploadEnabled',
-        'uses_amazon_business' => 'usesAmazonBusiness'
+        'upload_enabled' => 'uploadEnabled'
     ];
 
 
@@ -130,8 +128,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'trigger_enabled' => 'setTriggerEnabled',
         'trigger_limit' => 'setTriggerLimit',
         'updated' => 'setUpdated',
-        'upload_enabled' => 'setUploadEnabled',
-        'uses_amazon_business' => 'setUsesAmazonBusiness'
+        'upload_enabled' => 'setUploadEnabled'
     ];
 
 
@@ -157,8 +154,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'trigger_enabled' => 'getTriggerEnabled',
         'trigger_limit' => 'getTriggerLimit',
         'updated' => 'getUpdated',
-        'upload_enabled' => 'getUploadEnabled',
-        'uses_amazon_business' => 'getUsesAmazonBusiness'
+        'upload_enabled' => 'getUploadEnabled'
     ];
 
     public static function attributeMap()
@@ -310,7 +306,6 @@ class RepricingSettingsDTO implements ArrayAccess
         $this->container['trigger_limit'] = isset($data['trigger_limit']) ? $data['trigger_limit'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
         $this->container['upload_enabled'] = isset($data['upload_enabled']) ? $data['upload_enabled'] : null;
-        $this->container['uses_amazon_business'] = isset($data['uses_amazon_business']) ? $data['uses_amazon_business'] : null;
     }
 
     /**
@@ -852,27 +847,6 @@ class RepricingSettingsDTO implements ArrayAccess
     public function setUploadEnabled($upload_enabled)
     {
         $this->container['upload_enabled'] = $upload_enabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets uses_amazon_business
-     * @return bool
-     */
-    public function getUsesAmazonBusiness()
-    {
-        return $this->container['uses_amazon_business'];
-    }
-
-    /**
-     * Sets uses_amazon_business
-     * @param bool $uses_amazon_business
-     * @return $this
-     */
-    public function setUsesAmazonBusiness($uses_amazon_business)
-    {
-        $this->container['uses_amazon_business'] = $uses_amazon_business;
 
         return $this;
     }

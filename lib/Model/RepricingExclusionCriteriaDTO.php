@@ -61,8 +61,6 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'criterion_ships_from' => '\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO',
         'id' => 'int',
         'inserted' => '\DateTime',
-        'is_default_fba' => 'bool',
-        'is_default_mfn' => 'bool',
         'name' => 'string',
         'only_featured_merchant' => 'bool',
         'own_seller_id' => 'string',
@@ -86,8 +84,6 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'criterion_ships_from' => 'criterionShipsFrom',
         'id' => 'id',
         'inserted' => 'inserted',
-        'is_default_fba' => 'isDefaultFBA',
-        'is_default_mfn' => 'isDefaultMFN',
         'name' => 'name',
         'only_featured_merchant' => 'onlyFeaturedMerchant',
         'own_seller_id' => 'ownSellerId',
@@ -107,8 +103,6 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'criterion_ships_from' => 'setCriterionShipsFrom',
         'id' => 'setId',
         'inserted' => 'setInserted',
-        'is_default_fba' => 'setIsDefaultFba',
-        'is_default_mfn' => 'setIsDefaultMfn',
         'name' => 'setName',
         'only_featured_merchant' => 'setOnlyFeaturedMerchant',
         'own_seller_id' => 'setOwnSellerId',
@@ -128,8 +122,6 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'criterion_ships_from' => 'getCriterionShipsFrom',
         'id' => 'getId',
         'inserted' => 'getInserted',
-        'is_default_fba' => 'getIsDefaultFba',
-        'is_default_mfn' => 'getIsDefaultMfn',
         'name' => 'getName',
         'only_featured_merchant' => 'getOnlyFeaturedMerchant',
         'own_seller_id' => 'getOwnSellerId',
@@ -154,6 +146,8 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
 
     const SELLER_FULFILLMENT_TYPE_FBA = 'FBA';
     const SELLER_FULFILLMENT_TYPE_MFN = 'MFN';
+    const SELLER_FULFILLMENT_TYPE_MFN_PRIME = 'MFN_PRIME';
+    const SELLER_FULFILLMENT_TYPE_PRIME = 'PRIME';
     
 
     
@@ -166,6 +160,8 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         return [
             self::SELLER_FULFILLMENT_TYPE_FBA,
             self::SELLER_FULFILLMENT_TYPE_MFN,
+            self::SELLER_FULFILLMENT_TYPE_MFN_PRIME,
+            self::SELLER_FULFILLMENT_TYPE_PRIME,
         ];
     }
     
@@ -188,8 +184,6 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         $this->container['criterion_ships_from'] = isset($data['criterion_ships_from']) ? $data['criterion_ships_from'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
-        $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
-        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['only_featured_merchant'] = isset($data['only_featured_merchant']) ? $data['only_featured_merchant'] : null;
         $this->container['own_seller_id'] = isset($data['own_seller_id']) ? $data['own_seller_id'] : null;
@@ -206,9 +200,9 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = ["FBA", "MFN"];
+        $allowed_values = ["FBA", "MFN", "MFN_PRIME", "PRIME"];
         if (!in_array($this->container['seller_fulfillment_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'seller_fulfillment_type', must be one of 'FBA', 'MFN'.";
+            $invalid_properties[] = "invalid value for 'seller_fulfillment_type', must be one of 'FBA', 'MFN', 'MFN_PRIME', 'PRIME'.";
         }
 
         return $invalid_properties;
@@ -223,7 +217,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = ["FBA", "MFN"];
+        $allowed_values = ["FBA", "MFN", "MFN_PRIME", "PRIME"];
         if (!in_array($this->container['seller_fulfillment_type'], $allowed_values)) {
             return false;
         }
@@ -358,48 +352,6 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
     }
 
     /**
-     * Gets is_default_fba
-     * @return bool
-     */
-    public function getIsDefaultFba()
-    {
-        return $this->container['is_default_fba'];
-    }
-
-    /**
-     * Sets is_default_fba
-     * @param bool $is_default_fba
-     * @return $this
-     */
-    public function setIsDefaultFba($is_default_fba)
-    {
-        $this->container['is_default_fba'] = $is_default_fba;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_default_mfn
-     * @return bool
-     */
-    public function getIsDefaultMfn()
-    {
-        return $this->container['is_default_mfn'];
-    }
-
-    /**
-     * Sets is_default_mfn
-     * @param bool $is_default_mfn
-     * @return $this
-     */
-    public function setIsDefaultMfn($is_default_mfn)
-    {
-        $this->container['is_default_mfn'] = $is_default_mfn;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      * @return string
      */
@@ -478,9 +430,9 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
      */
     public function setSellerFulfillmentType($seller_fulfillment_type)
     {
-        $allowed_values = array('FBA', 'MFN');
+        $allowed_values = array('FBA', 'MFN', 'MFN_PRIME', 'PRIME');
         if (!is_null($seller_fulfillment_type) && (!in_array($seller_fulfillment_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'seller_fulfillment_type', must be one of 'FBA', 'MFN'");
+            throw new \InvalidArgumentException("Invalid value for 'seller_fulfillment_type', must be one of 'FBA', 'MFN', 'MFN_PRIME', 'PRIME'");
         }
         $this->container['seller_fulfillment_type'] = $seller_fulfillment_type;
 

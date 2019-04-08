@@ -61,6 +61,7 @@ class RepricingCSVImportDTO implements ArrayAccess
         'id' => 'int',
         'inserted' => '\DateTime',
         'md5' => 'string',
+        'min_price_protect_in_percent' => 'int',
         'state' => 'string',
         'type' => 'string',
         'updated' => '\DateTime'
@@ -82,6 +83,7 @@ class RepricingCSVImportDTO implements ArrayAccess
         'id' => 'id',
         'inserted' => 'inserted',
         'md5' => 'md5',
+        'min_price_protect_in_percent' => 'minPriceProtectInPercent',
         'state' => 'state',
         'type' => 'type',
         'updated' => 'updated'
@@ -99,6 +101,7 @@ class RepricingCSVImportDTO implements ArrayAccess
         'id' => 'setId',
         'inserted' => 'setInserted',
         'md5' => 'setMd5',
+        'min_price_protect_in_percent' => 'setMinPriceProtectInPercent',
         'state' => 'setState',
         'type' => 'setType',
         'updated' => 'setUpdated'
@@ -116,6 +119,7 @@ class RepricingCSVImportDTO implements ArrayAccess
         'id' => 'getId',
         'inserted' => 'getInserted',
         'md5' => 'getMd5',
+        'min_price_protect_in_percent' => 'getMinPriceProtectInPercent',
         'state' => 'getState',
         'type' => 'getType',
         'updated' => 'getUpdated'
@@ -200,6 +204,7 @@ class RepricingCSVImportDTO implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['md5'] = isset($data['md5']) ? $data['md5'] : null;
+        $this->container['min_price_protect_in_percent'] = isset($data['min_price_protect_in_percent']) ? $data['min_price_protect_in_percent'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
@@ -370,6 +375,27 @@ class RepricingCSVImportDTO implements ArrayAccess
     public function setMd5($md5)
     {
         $this->container['md5'] = $md5;
+
+        return $this;
+    }
+
+    /**
+     * Gets min_price_protect_in_percent
+     * @return int
+     */
+    public function getMinPriceProtectInPercent()
+    {
+        return $this->container['min_price_protect_in_percent'];
+    }
+
+    /**
+     * Sets min_price_protect_in_percent
+     * @param int $min_price_protect_in_percent
+     * @return $this
+     */
+    public function setMinPriceProtectInPercent($min_price_protect_in_percent)
+    {
+        $this->container['min_price_protect_in_percent'] = $min_price_protect_in_percent;
 
         return $this;
     }

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **md5** | **string** |  | [optional] 
+**min_price_protect_in_percent** | **int** |  | [optional] 
 **state** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **updated** | [**\DateTime**](\DateTime.md) |  | [optional] 

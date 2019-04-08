@@ -57,8 +57,6 @@ class RepricingShippingCostsDTO implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'inserted' => '\DateTime',
-        'is_default_fba' => 'bool',
-        'is_default_mfn' => 'bool',
         'name' => 'string',
         'shipping_costs' => '\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]',
         'updated' => '\DateTime'
@@ -76,8 +74,6 @@ class RepricingShippingCostsDTO implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'inserted' => 'inserted',
-        'is_default_fba' => 'isDefaultFBA',
-        'is_default_mfn' => 'isDefaultMFN',
         'name' => 'name',
         'shipping_costs' => 'shippingCosts',
         'updated' => 'updated'
@@ -91,8 +87,6 @@ class RepricingShippingCostsDTO implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'inserted' => 'setInserted',
-        'is_default_fba' => 'setIsDefaultFba',
-        'is_default_mfn' => 'setIsDefaultMfn',
         'name' => 'setName',
         'shipping_costs' => 'setShippingCosts',
         'updated' => 'setUpdated'
@@ -106,8 +100,6 @@ class RepricingShippingCostsDTO implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'inserted' => 'getInserted',
-        'is_default_fba' => 'getIsDefaultFba',
-        'is_default_mfn' => 'getIsDefaultMfn',
         'name' => 'getName',
         'shipping_costs' => 'getShippingCosts',
         'updated' => 'getUpdated'
@@ -146,8 +138,6 @@ class RepricingShippingCostsDTO implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
-        $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
-        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['shipping_costs'] = isset($data['shipping_costs']) ? $data['shipping_costs'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
@@ -216,48 +206,6 @@ class RepricingShippingCostsDTO implements ArrayAccess
     public function setInserted($inserted)
     {
         $this->container['inserted'] = $inserted;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_default_fba
-     * @return bool
-     */
-    public function getIsDefaultFba()
-    {
-        return $this->container['is_default_fba'];
-    }
-
-    /**
-     * Sets is_default_fba
-     * @param bool $is_default_fba
-     * @return $this
-     */
-    public function setIsDefaultFba($is_default_fba)
-    {
-        $this->container['is_default_fba'] = $is_default_fba;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_default_mfn
-     * @return bool
-     */
-    public function getIsDefaultMfn()
-    {
-        return $this->container['is_default_mfn'];
-    }
-
-    /**
-     * Sets is_default_mfn
-     * @param bool $is_default_mfn
-     * @return $this
-     */
-    public function setIsDefaultMfn($is_default_mfn)
-    {
-        $this->container['is_default_mfn'] = $is_default_mfn;
 
         return $this;
     }

@@ -57,8 +57,6 @@ class RepricingPriceGapsDTO implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'inserted' => '\DateTime',
-        'is_default_fba' => 'bool',
-        'is_default_mfn' => 'bool',
         'name' => 'string',
         'price_gaps' => '\eSagu\Amzn\RePricing\V1\Model\PriceGapDTO[]',
         'shipping_included' => 'bool',
@@ -77,8 +75,6 @@ class RepricingPriceGapsDTO implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'inserted' => 'inserted',
-        'is_default_fba' => 'isDefaultFBA',
-        'is_default_mfn' => 'isDefaultMFN',
         'name' => 'name',
         'price_gaps' => 'priceGaps',
         'shipping_included' => 'shippingIncluded',
@@ -93,8 +89,6 @@ class RepricingPriceGapsDTO implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'inserted' => 'setInserted',
-        'is_default_fba' => 'setIsDefaultFba',
-        'is_default_mfn' => 'setIsDefaultMfn',
         'name' => 'setName',
         'price_gaps' => 'setPriceGaps',
         'shipping_included' => 'setShippingIncluded',
@@ -109,8 +103,6 @@ class RepricingPriceGapsDTO implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'inserted' => 'getInserted',
-        'is_default_fba' => 'getIsDefaultFba',
-        'is_default_mfn' => 'getIsDefaultMfn',
         'name' => 'getName',
         'price_gaps' => 'getPriceGaps',
         'shipping_included' => 'getShippingIncluded',
@@ -150,8 +142,6 @@ class RepricingPriceGapsDTO implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
-        $this->container['is_default_fba'] = isset($data['is_default_fba']) ? $data['is_default_fba'] : null;
-        $this->container['is_default_mfn'] = isset($data['is_default_mfn']) ? $data['is_default_mfn'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['price_gaps'] = isset($data['price_gaps']) ? $data['price_gaps'] : null;
         $this->container['shipping_included'] = isset($data['shipping_included']) ? $data['shipping_included'] : null;
@@ -221,48 +211,6 @@ class RepricingPriceGapsDTO implements ArrayAccess
     public function setInserted($inserted)
     {
         $this->container['inserted'] = $inserted;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_default_fba
-     * @return bool
-     */
-    public function getIsDefaultFba()
-    {
-        return $this->container['is_default_fba'];
-    }
-
-    /**
-     * Sets is_default_fba
-     * @param bool $is_default_fba
-     * @return $this
-     */
-    public function setIsDefaultFba($is_default_fba)
-    {
-        $this->container['is_default_fba'] = $is_default_fba;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_default_mfn
-     * @return bool
-     */
-    public function getIsDefaultMfn()
-    {
-        return $this->container['is_default_mfn'];
-    }
-
-    /**
-     * Sets is_default_mfn
-     * @param bool $is_default_mfn
-     * @return $this
-     */
-    public function setIsDefaultMfn($is_default_mfn)
-    {
-        $this->container['is_default_mfn'] = $is_default_mfn;
 
         return $this;
     }

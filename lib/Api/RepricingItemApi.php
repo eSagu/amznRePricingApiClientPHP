@@ -116,6 +116,7 @@ class RepricingItemApi
      * @param bool $by_quantity_equal_zero  (optional, default to false)
      * @param int $by_id_greater_than  (optional)
      * @param bool $has_buy_box  (optional, default to false)
+     * @param bool $has_only_own_offers  (optional, default to false)
      * @param int $by_custom_code  (optional)
      * @param string $sort  (optional, default to ITEM_ID)
      * @param string $order  (optional, default to ASC)
@@ -126,9 +127,9 @@ class RepricingItemApi
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[]
      */
-    public function callList($by_sku = null, $by_sku_exact = null, $by_title = null, $by_title_exact = null, $by_asin = null, $by_search_term = null, $by_amazon_price_from = null, $by_amazon_price_to = null, $by_price_mode = null, $by_price_state = null, $by_condition = null, $by_fulfillment_type = null, $by_prime = null, $by_no_price_settings = null, $by_buy_box_strategy = null, $by_price_gaps = null, $by_exclusion_criteria = null, $by_shipping_costs = null, $by_buy_box = null, $by_missing_rules = null, $by_quantity_greater_zero = null, $by_quantity_equal_zero = null, $by_id_greater_than = null, $has_buy_box = null, $by_custom_code = null, $sort = null, $order = null, $offset = null, $limit = null, $count_items = null, $return_items = null)
+    public function callList($by_sku = null, $by_sku_exact = null, $by_title = null, $by_title_exact = null, $by_asin = null, $by_search_term = null, $by_amazon_price_from = null, $by_amazon_price_to = null, $by_price_mode = null, $by_price_state = null, $by_condition = null, $by_fulfillment_type = null, $by_prime = null, $by_no_price_settings = null, $by_buy_box_strategy = null, $by_price_gaps = null, $by_exclusion_criteria = null, $by_shipping_costs = null, $by_buy_box = null, $by_missing_rules = null, $by_quantity_greater_zero = null, $by_quantity_equal_zero = null, $by_id_greater_than = null, $has_buy_box = null, $has_only_own_offers = null, $by_custom_code = null, $sort = null, $order = null, $offset = null, $limit = null, $count_items = null, $return_items = null)
     {
-        list($response) = $this->callListWithHttpInfo($by_sku, $by_sku_exact, $by_title, $by_title_exact, $by_asin, $by_search_term, $by_amazon_price_from, $by_amazon_price_to, $by_price_mode, $by_price_state, $by_condition, $by_fulfillment_type, $by_prime, $by_no_price_settings, $by_buy_box_strategy, $by_price_gaps, $by_exclusion_criteria, $by_shipping_costs, $by_buy_box, $by_missing_rules, $by_quantity_greater_zero, $by_quantity_equal_zero, $by_id_greater_than, $has_buy_box, $by_custom_code, $sort, $order, $offset, $limit, $count_items, $return_items);
+        list($response) = $this->callListWithHttpInfo($by_sku, $by_sku_exact, $by_title, $by_title_exact, $by_asin, $by_search_term, $by_amazon_price_from, $by_amazon_price_to, $by_price_mode, $by_price_state, $by_condition, $by_fulfillment_type, $by_prime, $by_no_price_settings, $by_buy_box_strategy, $by_price_gaps, $by_exclusion_criteria, $by_shipping_costs, $by_buy_box, $by_missing_rules, $by_quantity_greater_zero, $by_quantity_equal_zero, $by_id_greater_than, $has_buy_box, $has_only_own_offers, $by_custom_code, $sort, $order, $offset, $limit, $count_items, $return_items);
         return $response;
     }
 
@@ -161,6 +162,7 @@ class RepricingItemApi
      * @param bool $by_quantity_equal_zero  (optional, default to false)
      * @param int $by_id_greater_than  (optional)
      * @param bool $has_buy_box  (optional, default to false)
+     * @param bool $has_only_own_offers  (optional, default to false)
      * @param int $by_custom_code  (optional)
      * @param string $sort  (optional, default to ITEM_ID)
      * @param string $order  (optional, default to ASC)
@@ -171,7 +173,7 @@ class RepricingItemApi
      * @throws \eSagu\Amzn\RePricing\V1\ApiException on non-2xx response
      * @return array of \eSagu\Amzn\RePricing\V1\Model\RepricingItemDTO[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function callListWithHttpInfo($by_sku = null, $by_sku_exact = null, $by_title = null, $by_title_exact = null, $by_asin = null, $by_search_term = null, $by_amazon_price_from = null, $by_amazon_price_to = null, $by_price_mode = null, $by_price_state = null, $by_condition = null, $by_fulfillment_type = null, $by_prime = null, $by_no_price_settings = null, $by_buy_box_strategy = null, $by_price_gaps = null, $by_exclusion_criteria = null, $by_shipping_costs = null, $by_buy_box = null, $by_missing_rules = null, $by_quantity_greater_zero = null, $by_quantity_equal_zero = null, $by_id_greater_than = null, $has_buy_box = null, $by_custom_code = null, $sort = null, $order = null, $offset = null, $limit = null, $count_items = null, $return_items = null)
+    public function callListWithHttpInfo($by_sku = null, $by_sku_exact = null, $by_title = null, $by_title_exact = null, $by_asin = null, $by_search_term = null, $by_amazon_price_from = null, $by_amazon_price_to = null, $by_price_mode = null, $by_price_state = null, $by_condition = null, $by_fulfillment_type = null, $by_prime = null, $by_no_price_settings = null, $by_buy_box_strategy = null, $by_price_gaps = null, $by_exclusion_criteria = null, $by_shipping_costs = null, $by_buy_box = null, $by_missing_rules = null, $by_quantity_greater_zero = null, $by_quantity_equal_zero = null, $by_id_greater_than = null, $has_buy_box = null, $has_only_own_offers = null, $by_custom_code = null, $sort = null, $order = null, $offset = null, $limit = null, $count_items = null, $return_items = null)
     {
         // parse inputs
         $resourcePath = "/item";
@@ -280,6 +282,10 @@ class RepricingItemApi
         // query params
         if ($has_buy_box !== null) {
             $queryParams['has-buy-box'] = $this->apiClient->getSerializer()->toQueryValue($has_buy_box);
+        }
+        // query params
+        if ($has_only_own_offers !== null) {
+            $queryParams['has-only-own-offers'] = $this->apiClient->getSerializer()->toQueryValue($has_only_own_offers);
         }
         // query params
         if ($by_custom_code !== null) {

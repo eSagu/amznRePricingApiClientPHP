@@ -4,9 +4,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **string** |  | [optional] 
+**code_is_hidden** | **bool** |  | [optional] 
 **id** | **int** |  | [optional] 
 **inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **name** | **string** |  | [optional] 
+**scripting_language** | **string** |  | [optional] 
+**settings** | **object** |  | [optional] 
 **trigger_price_change** | **bool** |  | [optional] 
 **updated** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **use_exclusion_criteria** | **bool** |  | [optional] 

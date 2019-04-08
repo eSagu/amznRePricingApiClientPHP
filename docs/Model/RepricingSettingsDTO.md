@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 **trigger_limit** | **int** |  | [optional] 
 **updated** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **upload_enabled** | **bool** |  | [optional] 
-**uses_amazon_business** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

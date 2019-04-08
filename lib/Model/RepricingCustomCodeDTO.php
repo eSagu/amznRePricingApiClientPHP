@@ -56,9 +56,12 @@ class RepricingCustomCodeDTO implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'string',
+        'code_is_hidden' => 'bool',
         'id' => 'int',
         'inserted' => '\DateTime',
         'name' => 'string',
+        'scripting_language' => 'string',
+        'settings' => 'object',
         'trigger_price_change' => 'bool',
         'updated' => '\DateTime',
         'use_exclusion_criteria' => 'bool',
@@ -79,9 +82,12 @@ class RepricingCustomCodeDTO implements ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'code',
+        'code_is_hidden' => 'codeIsHidden',
         'id' => 'id',
         'inserted' => 'inserted',
         'name' => 'name',
+        'scripting_language' => 'scriptingLanguage',
+        'settings' => 'settings',
         'trigger_price_change' => 'triggerPriceChange',
         'updated' => 'updated',
         'use_exclusion_criteria' => 'useExclusionCriteria',
@@ -98,9 +104,12 @@ class RepricingCustomCodeDTO implements ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
+        'code_is_hidden' => 'setCodeIsHidden',
         'id' => 'setId',
         'inserted' => 'setInserted',
         'name' => 'setName',
+        'scripting_language' => 'setScriptingLanguage',
+        'settings' => 'setSettings',
         'trigger_price_change' => 'setTriggerPriceChange',
         'updated' => 'setUpdated',
         'use_exclusion_criteria' => 'setUseExclusionCriteria',
@@ -117,9 +126,12 @@ class RepricingCustomCodeDTO implements ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
+        'code_is_hidden' => 'getCodeIsHidden',
         'id' => 'getId',
         'inserted' => 'getInserted',
         'name' => 'getName',
+        'scripting_language' => 'getScriptingLanguage',
+        'settings' => 'getSettings',
         'trigger_price_change' => 'getTriggerPriceChange',
         'updated' => 'getUpdated',
         'use_exclusion_criteria' => 'getUseExclusionCriteria',
@@ -144,8 +156,24 @@ class RepricingCustomCodeDTO implements ArrayAccess
         return self::$getters;
     }
 
+    const SCRIPTING_LANGUAGE_JAVA_SCRIPT_NASHORN = 'JAVA_SCRIPT_NASHORN';
+    const SCRIPTING_LANGUAGE_GROOVY = 'GROOVY';
+    const SCRIPTING_LANGUAGE_NATIVE_CODE = 'NATIVE_CODE';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getScriptingLanguageAllowableValues()
+    {
+        return [
+            self::SCRIPTING_LANGUAGE_JAVA_SCRIPT_NASHORN,
+            self::SCRIPTING_LANGUAGE_GROOVY,
+            self::SCRIPTING_LANGUAGE_NATIVE_CODE,
+        ];
+    }
     
 
     /**
@@ -161,9 +189,12 @@ class RepricingCustomCodeDTO implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['code_is_hidden'] = isset($data['code_is_hidden']) ? $data['code_is_hidden'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['scripting_language'] = isset($data['scripting_language']) ? $data['scripting_language'] : null;
+        $this->container['settings'] = isset($data['settings']) ? $data['settings'] : null;
         $this->container['trigger_price_change'] = isset($data['trigger_price_change']) ? $data['trigger_price_change'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
         $this->container['use_exclusion_criteria'] = isset($data['use_exclusion_criteria']) ? $data['use_exclusion_criteria'] : null;
@@ -182,6 +213,11 @@ class RepricingCustomCodeDTO implements ArrayAccess
     {
         $invalid_properties = [];
 
+        $allowed_values = ["JAVA_SCRIPT_NASHORN", "GROOVY", "NATIVE_CODE"];
+        if (!in_array($this->container['scripting_language'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'scripting_language', must be one of 'JAVA_SCRIPT_NASHORN', 'GROOVY', 'NATIVE_CODE'.";
+        }
+
         return $invalid_properties;
     }
 
@@ -194,6 +230,10 @@ class RepricingCustomCodeDTO implements ArrayAccess
     public function valid()
     {
 
+        $allowed_values = ["JAVA_SCRIPT_NASHORN", "GROOVY", "NATIVE_CODE"];
+        if (!in_array($this->container['scripting_language'], $allowed_values)) {
+            return false;
+        }
         return true;
     }
 
@@ -215,6 +255,27 @@ class RepricingCustomCodeDTO implements ArrayAccess
     public function setCode($code)
     {
         $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets code_is_hidden
+     * @return bool
+     */
+    public function getCodeIsHidden()
+    {
+        return $this->container['code_is_hidden'];
+    }
+
+    /**
+     * Sets code_is_hidden
+     * @param bool $code_is_hidden
+     * @return $this
+     */
+    public function setCodeIsHidden($code_is_hidden)
+    {
+        $this->container['code_is_hidden'] = $code_is_hidden;
 
         return $this;
     }
@@ -278,6 +339,52 @@ class RepricingCustomCodeDTO implements ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets scripting_language
+     * @return string
+     */
+    public function getScriptingLanguage()
+    {
+        return $this->container['scripting_language'];
+    }
+
+    /**
+     * Sets scripting_language
+     * @param string $scripting_language
+     * @return $this
+     */
+    public function setScriptingLanguage($scripting_language)
+    {
+        $allowed_values = array('JAVA_SCRIPT_NASHORN', 'GROOVY', 'NATIVE_CODE');
+        if (!is_null($scripting_language) && (!in_array($scripting_language, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'scripting_language', must be one of 'JAVA_SCRIPT_NASHORN', 'GROOVY', 'NATIVE_CODE'");
+        }
+        $this->container['scripting_language'] = $scripting_language;
+
+        return $this;
+    }
+
+    /**
+     * Gets settings
+     * @return object
+     */
+    public function getSettings()
+    {
+        return $this->container['settings'];
+    }
+
+    /**
+     * Sets settings
+     * @param object $settings
+     * @return $this
+     */
+    public function setSettings($settings)
+    {
+        $this->container['settings'] = $settings;
 
         return $this;
     }

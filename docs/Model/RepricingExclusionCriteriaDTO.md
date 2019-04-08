@@ -9,8 +9,6 @@ Name | Type | Description | Notes
 **criterion_ships_from** | [**\eSagu\Amzn\RePricing\V1\Model\ExclusionCriterionShipsFromDTO**](ExclusionCriterionShipsFromDTO.md) |  | [optional] 
 **id** | **int** |  | [optional] 
 **inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**is_default_fba** | **bool** |  | [optional] 
-**is_default_mfn** | **bool** |  | [optional] 
 **name** | **string** |  | [optional] 
 **only_featured_merchant** | **bool** |  | [optional] 
 **own_seller_id** | **string** |  | [optional] 
