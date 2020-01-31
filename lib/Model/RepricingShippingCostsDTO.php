@@ -57,6 +57,7 @@ class RepricingShippingCostsDTO implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'inserted' => '\DateTime',
+        'is_merchant_shipping_group' => 'bool',
         'name' => 'string',
         'shipping_costs' => '\eSagu\Amzn\RePricing\V1\Model\ShippingCostDTO[]',
         'updated' => '\DateTime'
@@ -74,6 +75,7 @@ class RepricingShippingCostsDTO implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'inserted' => 'inserted',
+        'is_merchant_shipping_group' => 'isMerchantShippingGroup',
         'name' => 'name',
         'shipping_costs' => 'shippingCosts',
         'updated' => 'updated'
@@ -87,6 +89,7 @@ class RepricingShippingCostsDTO implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'inserted' => 'setInserted',
+        'is_merchant_shipping_group' => 'setIsMerchantShippingGroup',
         'name' => 'setName',
         'shipping_costs' => 'setShippingCosts',
         'updated' => 'setUpdated'
@@ -100,6 +103,7 @@ class RepricingShippingCostsDTO implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'inserted' => 'getInserted',
+        'is_merchant_shipping_group' => 'getIsMerchantShippingGroup',
         'name' => 'getName',
         'shipping_costs' => 'getShippingCosts',
         'updated' => 'getUpdated'
@@ -138,6 +142,7 @@ class RepricingShippingCostsDTO implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
+        $this->container['is_merchant_shipping_group'] = isset($data['is_merchant_shipping_group']) ? $data['is_merchant_shipping_group'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['shipping_costs'] = isset($data['shipping_costs']) ? $data['shipping_costs'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
@@ -206,6 +211,27 @@ class RepricingShippingCostsDTO implements ArrayAccess
     public function setInserted($inserted)
     {
         $this->container['inserted'] = $inserted;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_merchant_shipping_group
+     * @return bool
+     */
+    public function getIsMerchantShippingGroup()
+    {
+        return $this->container['is_merchant_shipping_group'];
+    }
+
+    /**
+     * Sets is_merchant_shipping_group
+     * @param bool $is_merchant_shipping_group
+     * @return $this
+     */
+    public function setIsMerchantShippingGroup($is_merchant_shipping_group)
+    {
+        $this->container['is_merchant_shipping_group'] = $is_merchant_shipping_group;
 
         return $this;
     }

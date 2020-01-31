@@ -61,6 +61,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'bool',
         'fba_quantity_update_enabled' => 'bool',
         'fba_quantity_update_max_age' => 'int',
+        'import_merchant_shipping_group_as_shipping_costs' => 'bool',
         'inserted' => '\DateTime',
         'maximum_concurrent_uploads' => 'int',
         'maximum_items_per_upload' => 'int',
@@ -91,6 +92,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'downloadEnabled',
         'fba_quantity_update_enabled' => 'fbaQuantityUpdateEnabled',
         'fba_quantity_update_max_age' => 'fbaQuantityUpdateMaxAge',
+        'import_merchant_shipping_group_as_shipping_costs' => 'importMerchantShippingGroupAsShippingCosts',
         'inserted' => 'inserted',
         'maximum_concurrent_uploads' => 'maximumConcurrentUploads',
         'maximum_items_per_upload' => 'maximumItemsPerUpload',
@@ -117,6 +119,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'setDownloadEnabled',
         'fba_quantity_update_enabled' => 'setFbaQuantityUpdateEnabled',
         'fba_quantity_update_max_age' => 'setFbaQuantityUpdateMaxAge',
+        'import_merchant_shipping_group_as_shipping_costs' => 'setImportMerchantShippingGroupAsShippingCosts',
         'inserted' => 'setInserted',
         'maximum_concurrent_uploads' => 'setMaximumConcurrentUploads',
         'maximum_items_per_upload' => 'setMaximumItemsPerUpload',
@@ -143,6 +146,7 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'getDownloadEnabled',
         'fba_quantity_update_enabled' => 'getFbaQuantityUpdateEnabled',
         'fba_quantity_update_max_age' => 'getFbaQuantityUpdateMaxAge',
+        'import_merchant_shipping_group_as_shipping_costs' => 'getImportMerchantShippingGroupAsShippingCosts',
         'inserted' => 'getInserted',
         'maximum_concurrent_uploads' => 'getMaximumConcurrentUploads',
         'maximum_items_per_upload' => 'getMaximumItemsPerUpload',
@@ -294,6 +298,7 @@ class RepricingSettingsDTO implements ArrayAccess
         $this->container['download_enabled'] = isset($data['download_enabled']) ? $data['download_enabled'] : null;
         $this->container['fba_quantity_update_enabled'] = isset($data['fba_quantity_update_enabled']) ? $data['fba_quantity_update_enabled'] : null;
         $this->container['fba_quantity_update_max_age'] = isset($data['fba_quantity_update_max_age']) ? $data['fba_quantity_update_max_age'] : null;
+        $this->container['import_merchant_shipping_group_as_shipping_costs'] = isset($data['import_merchant_shipping_group_as_shipping_costs']) ? $data['import_merchant_shipping_group_as_shipping_costs'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['maximum_concurrent_uploads'] = isset($data['maximum_concurrent_uploads']) ? $data['maximum_concurrent_uploads'] : null;
         $this->container['maximum_items_per_upload'] = isset($data['maximum_items_per_upload']) ? $data['maximum_items_per_upload'] : null;
@@ -559,6 +564,27 @@ class RepricingSettingsDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'fba_quantity_update_max_age', must be one of '3600', '7200', '14400', '28800', '57600', '86400'");
         }
         $this->container['fba_quantity_update_max_age'] = $fba_quantity_update_max_age;
+
+        return $this;
+    }
+
+    /**
+     * Gets import_merchant_shipping_group_as_shipping_costs
+     * @return bool
+     */
+    public function getImportMerchantShippingGroupAsShippingCosts()
+    {
+        return $this->container['import_merchant_shipping_group_as_shipping_costs'];
+    }
+
+    /**
+     * Sets import_merchant_shipping_group_as_shipping_costs
+     * @param bool $import_merchant_shipping_group_as_shipping_costs
+     * @return $this
+     */
+    public function setImportMerchantShippingGroupAsShippingCosts($import_merchant_shipping_group_as_shipping_costs)
+    {
+        $this->container['import_merchant_shipping_group_as_shipping_costs'] = $import_merchant_shipping_group_as_shipping_costs;
 
         return $this;
     }

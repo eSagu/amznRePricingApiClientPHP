@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **download_enabled** | **bool** |  | [optional] 
 **fba_quantity_update_enabled** | **bool** |  | [optional] 
 **fba_quantity_update_max_age** | **int** |  | [optional] 
+**import_merchant_shipping_group_as_shipping_costs** | **bool** |  | [optional] 
 **inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **maximum_concurrent_uploads** | **int** |  | [optional] 
 **maximum_items_per_upload** | **int** |  | [optional] 

@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 *RepricingExclusionCriteriaApi* | [**put**](docs/Api/RepricingExclusionCriteriaApi.md#put) | **PUT** /exclusion-criteria/{exclusionCriteriaId} | Edit the exclusion criteria.
 *RepricingItemApi* | [**callList**](docs/Api/RepricingItemApi.md#calllist) | **GET** /item | Gets a list of repricing items.
 *RepricingItemApi* | [**get**](docs/Api/RepricingItemApi.md#get) | **GET** /item/{itemId} | Get a single repricing item specified by it&#39;s id.
+*RepricingItemActivityApi* | [**callList**](docs/Api/RepricingItemActivityApi.md#calllist) | **GET** /item/{itemId}/activity | The repricing items optimization result activity as list.
 *RepricingItemStrategyApi* | [**get**](docs/Api/RepricingItemStrategyApi.md#get) | **GET** /item/{itemId}/strategy | Gets the item&#39;s strategy settings.
 *RepricingItemStrategyApi* | [**put**](docs/Api/RepricingItemStrategyApi.md#put) | **PUT** /item/{itemId}/strategy | Creates or updates the item&#39;s strategy settings.
 *RepricingOrderHistoryApi* | [**get**](docs/Api/RepricingOrderHistoryApi.md#get) | **GET** /order-history | Gets stats of the order history for given userService.
@@ -124,15 +125,18 @@ Class | Method | HTTP request | Description
 *RepricingShippingCostsApi* | [**post**](docs/Api/RepricingShippingCostsApi.md#post) | **POST** /shipping-costs | Adds new repricing shipping costs for service.
 *RepricingShippingCostsApi* | [**put**](docs/Api/RepricingShippingCostsApi.md#put) | **PUT** /shipping-costs/{shippingCostsId} | Edit the repricing shipping costs by id.
 *TimeZoneApi* | [**callList**](docs/Api/TimeZoneApi.md#calllist) | **GET** /time-zone | Gets all available TimeZones.
+*UserServiceMWSAccountApi* | [**get**](docs/Api/UserServiceMWSAccountApi.md#get) | **GET** /mws-account | Get a user service&#39;s Amazon MWS account.
 
 
 ## Documentation For Models
 
+ - [AmazonMWSEndpointDTO](docs/Model/AmazonMWSEndpointDTO.md)
  - [ExclusionCriterionRatingDTO](docs/Model/ExclusionCriterionRatingDTO.md)
  - [ExclusionCriterionSellerIdDTO](docs/Model/ExclusionCriterionSellerIdDTO.md)
  - [ExclusionCriterionShippingTimeDTO](docs/Model/ExclusionCriterionShippingTimeDTO.md)
  - [ExclusionCriterionShipsFromDTO](docs/Model/ExclusionCriterionShipsFromDTO.md)
  - [ItemOfferDTO](docs/Model/ItemOfferDTO.md)
+ - [OptimizationResultActivityDTO](docs/Model/OptimizationResultActivityDTO.md)
  - [PriceGapDTO](docs/Model/PriceGapDTO.md)
  - [RepricingAmazonOrderHistoryDTO](docs/Model/RepricingAmazonOrderHistoryDTO.md)
  - [RepricingBuyBoxSettingsDTO](docs/Model/RepricingBuyBoxSettingsDTO.md)
@@ -153,6 +157,7 @@ Class | Method | HTTP request | Description
  - [RepricingSettingsDTO](docs/Model/RepricingSettingsDTO.md)
  - [RepricingShippingCostsDTO](docs/Model/RepricingShippingCostsDTO.md)
  - [ShippingCostDTO](docs/Model/ShippingCostDTO.md)
+ - [UserServiceMWSAccountDTO](docs/Model/UserServiceMWSAccountDTO.md)
 
 
 ## Documentation For Authorization
