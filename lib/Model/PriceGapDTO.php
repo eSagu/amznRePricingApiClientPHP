@@ -35,7 +35,7 @@ use \ArrayAccess;
  * PriceGapDTO Class Doc Comment
  *
  * @category    Class
- * @description A single price gap rule. The gap defined the amount and can be negative for underbidding or positive for overbidding.The mode defined hwo the gap should be calculated if ABSOLUTE is set, the gap gets used without any calculation. If the mode is PERCENTAGE the competitors offers price will be used with or without shipping costs as base for the percentage gap calculation.The sellerId and fulfillmentType are optional and can be used in combination, too.
+ * @description A single price gap rule. The gap defined the amount and can be negative for underbidding or positive for overbidding.The mode defined hwo the gap should be calculated if ABSOLUTE is set, the gap gets used without any calculation. If the mode is PERCENTAGE the competitors offers price will be used with or without shipping costs as base for the percentage gap calculation.The sellerId, fulfillmentType and shippingTime are optional and can be used in combination, too.
  * @package     eSagu\Amzn\RePricing\V1
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -58,7 +58,8 @@ class PriceGapDTO implements ArrayAccess
         'fulfillment_type' => 'string',
         'gap' => 'int',
         'mode' => 'string',
-        'seller_id' => 'string'
+        'seller_id' => 'string',
+        'shipping_time' => '\eSagu\Amzn\RePricing\V1\Model\PriceGapShippingTimeDTO'
     ];
 
     public static function swaggerTypes()
@@ -74,7 +75,8 @@ class PriceGapDTO implements ArrayAccess
         'fulfillment_type' => 'fulfillmentType',
         'gap' => 'gap',
         'mode' => 'mode',
-        'seller_id' => 'sellerId'
+        'seller_id' => 'sellerId',
+        'shipping_time' => 'shippingTime'
     ];
 
 
@@ -86,7 +88,8 @@ class PriceGapDTO implements ArrayAccess
         'fulfillment_type' => 'setFulfillmentType',
         'gap' => 'setGap',
         'mode' => 'setMode',
-        'seller_id' => 'setSellerId'
+        'seller_id' => 'setSellerId',
+        'shipping_time' => 'setShippingTime'
     ];
 
 
@@ -98,7 +101,8 @@ class PriceGapDTO implements ArrayAccess
         'fulfillment_type' => 'getFulfillmentType',
         'gap' => 'getGap',
         'mode' => 'getMode',
-        'seller_id' => 'getSellerId'
+        'seller_id' => 'getSellerId',
+        'shipping_time' => 'getShippingTime'
     ];
 
     public static function attributeMap()
@@ -168,6 +172,7 @@ class PriceGapDTO implements ArrayAccess
         $this->container['gap'] = isset($data['gap']) ? $data['gap'] : null;
         $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
         $this->container['seller_id'] = isset($data['seller_id']) ? $data['seller_id'] : null;
+        $this->container['shipping_time'] = isset($data['shipping_time']) ? $data['shipping_time'] : null;
     }
 
     /**
@@ -301,6 +306,27 @@ class PriceGapDTO implements ArrayAccess
     public function setSellerId($seller_id)
     {
         $this->container['seller_id'] = $seller_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipping_time
+     * @return \eSagu\Amzn\RePricing\V1\Model\PriceGapShippingTimeDTO
+     */
+    public function getShippingTime()
+    {
+        return $this->container['shipping_time'];
+    }
+
+    /**
+     * Sets shipping_time
+     * @param \eSagu\Amzn\RePricing\V1\Model\PriceGapShippingTimeDTO $shipping_time
+     * @return $this
+     */
+    public function setShippingTime($shipping_time)
+    {
+        $this->container['shipping_time'] = $shipping_time;
 
         return $this;
     }

@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
  - [ItemOfferDTO](docs/Model/ItemOfferDTO.md)
  - [OptimizationResultActivityDTO](docs/Model/OptimizationResultActivityDTO.md)
  - [PriceGapDTO](docs/Model/PriceGapDTO.md)
+ - [PriceGapShippingTimeDTO](docs/Model/PriceGapShippingTimeDTO.md)
  - [RepricingAmazonOrderHistoryDTO](docs/Model/RepricingAmazonOrderHistoryDTO.md)
  - [RepricingBuyBoxSettingsDTO](docs/Model/RepricingBuyBoxSettingsDTO.md)
  - [RepricingBuyBoxSlotsDTO](docs/Model/RepricingBuyBoxSlotsDTO.md)
