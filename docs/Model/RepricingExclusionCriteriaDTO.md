@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **inserted** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **name** | **string** |  | [optional] 
+**only_available** | **bool** |  | [optional] 
 **only_featured_merchant** | **bool** |  | [optional] 
 **own_seller_id** | **string** |  | [optional] 
 **seller_fulfillment_type** | **string** |  | [optional] 

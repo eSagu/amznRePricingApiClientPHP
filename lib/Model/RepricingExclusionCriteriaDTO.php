@@ -62,6 +62,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'id' => 'int',
         'inserted' => '\DateTime',
         'name' => 'string',
+        'only_available' => 'bool',
         'only_featured_merchant' => 'bool',
         'own_seller_id' => 'string',
         'seller_fulfillment_type' => 'string',
@@ -85,6 +86,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'id' => 'id',
         'inserted' => 'inserted',
         'name' => 'name',
+        'only_available' => 'onlyAvailable',
         'only_featured_merchant' => 'onlyFeaturedMerchant',
         'own_seller_id' => 'ownSellerId',
         'seller_fulfillment_type' => 'sellerFulfillmentType',
@@ -104,6 +106,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'id' => 'setId',
         'inserted' => 'setInserted',
         'name' => 'setName',
+        'only_available' => 'setOnlyAvailable',
         'only_featured_merchant' => 'setOnlyFeaturedMerchant',
         'own_seller_id' => 'setOwnSellerId',
         'seller_fulfillment_type' => 'setSellerFulfillmentType',
@@ -123,6 +126,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         'id' => 'getId',
         'inserted' => 'getInserted',
         'name' => 'getName',
+        'only_available' => 'getOnlyAvailable',
         'only_featured_merchant' => 'getOnlyFeaturedMerchant',
         'own_seller_id' => 'getOwnSellerId',
         'seller_fulfillment_type' => 'getSellerFulfillmentType',
@@ -185,6 +189,7 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['only_available'] = isset($data['only_available']) ? $data['only_available'] : null;
         $this->container['only_featured_merchant'] = isset($data['only_featured_merchant']) ? $data['only_featured_merchant'] : null;
         $this->container['own_seller_id'] = isset($data['own_seller_id']) ? $data['own_seller_id'] : null;
         $this->container['seller_fulfillment_type'] = isset($data['seller_fulfillment_type']) ? $data['seller_fulfillment_type'] : null;
@@ -368,6 +373,27 @@ class RepricingExclusionCriteriaDTO implements ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets only_available
+     * @return bool
+     */
+    public function getOnlyAvailable()
+    {
+        return $this->container['only_available'];
+    }
+
+    /**
+     * Sets only_available
+     * @param bool $only_available
+     * @return $this
+     */
+    public function setOnlyAvailable($only_available)
+    {
+        $this->container['only_available'] = $only_available;
 
         return $this;
     }

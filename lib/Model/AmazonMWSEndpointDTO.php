@@ -131,14 +131,23 @@ class AmazonMWSEndpointDTO implements ArrayAccess
     const CHARSET_SHIFT_JIS = 'SHIFT_JIS';
     const CHARSET_UTF_8 = 'UTF_8';
     const CHARSET_UTF_16 = 'UTF_16';
+    const MARKETPLACE_BR = 'BR';
     const MARKETPLACE_CA = 'CA';
+    const MARKETPLACE_MX = 'MX';
     const MARKETPLACE_US = 'US';
+    const MARKETPLACE_AE = 'AE';
     const MARKETPLACE_DE = 'DE';
+    const MARKETPLACE_EG = 'EG';
     const MARKETPLACE_ES = 'ES';
     const MARKETPLACE_FR = 'FR';
+    const MARKETPLACE_UK = 'UK';
     const MARKETPLACE_IN = 'IN';
     const MARKETPLACE_IT = 'IT';
-    const MARKETPLACE_UK = 'UK';
+    const MARKETPLACE_NL = 'NL';
+    const MARKETPLACE_SA = 'SA';
+    const MARKETPLACE_TR = 'TR';
+    const MARKETPLACE_SG = 'SG';
+    const MARKETPLACE_AU = 'AU';
     const MARKETPLACE_JP = 'JP';
     const MARKETPLACE_CN = 'CN';
     const MARKETPLACE_UNKNOWN = 'UNKNOWN';
@@ -166,14 +175,23 @@ class AmazonMWSEndpointDTO implements ArrayAccess
     public function getMarketplaceAllowableValues()
     {
         return [
+            self::MARKETPLACE_BR,
             self::MARKETPLACE_CA,
+            self::MARKETPLACE_MX,
             self::MARKETPLACE_US,
+            self::MARKETPLACE_AE,
             self::MARKETPLACE_DE,
+            self::MARKETPLACE_EG,
             self::MARKETPLACE_ES,
             self::MARKETPLACE_FR,
+            self::MARKETPLACE_UK,
             self::MARKETPLACE_IN,
             self::MARKETPLACE_IT,
-            self::MARKETPLACE_UK,
+            self::MARKETPLACE_NL,
+            self::MARKETPLACE_SA,
+            self::MARKETPLACE_TR,
+            self::MARKETPLACE_SG,
+            self::MARKETPLACE_AU,
             self::MARKETPLACE_JP,
             self::MARKETPLACE_CN,
             self::MARKETPLACE_UNKNOWN,
@@ -216,9 +234,9 @@ class AmazonMWSEndpointDTO implements ArrayAccess
             $invalid_properties[] = "invalid value for 'charset', must be one of 'ISO_8859_1', 'SHIFT_JIS', 'UTF_8', 'UTF_16'.";
         }
 
-        $allowed_values = ["CA", "US", "DE", "ES", "FR", "IN", "IT", "UK", "JP", "CN", "UNKNOWN"];
+        $allowed_values = ["BR", "CA", "MX", "US", "AE", "DE", "EG", "ES", "FR", "UK", "IN", "IT", "NL", "SA", "TR", "SG", "AU", "JP", "CN", "UNKNOWN"];
         if (!in_array($this->container['marketplace'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'marketplace', must be one of 'CA', 'US', 'DE', 'ES', 'FR', 'IN', 'IT', 'UK', 'JP', 'CN', 'UNKNOWN'.";
+            $invalid_properties[] = "invalid value for 'marketplace', must be one of 'BR', 'CA', 'MX', 'US', 'AE', 'DE', 'EG', 'ES', 'FR', 'UK', 'IN', 'IT', 'NL', 'SA', 'TR', 'SG', 'AU', 'JP', 'CN', 'UNKNOWN'.";
         }
 
         return $invalid_properties;
@@ -237,7 +255,7 @@ class AmazonMWSEndpointDTO implements ArrayAccess
         if (!in_array($this->container['charset'], $allowed_values)) {
             return false;
         }
-        $allowed_values = ["CA", "US", "DE", "ES", "FR", "IN", "IT", "UK", "JP", "CN", "UNKNOWN"];
+        $allowed_values = ["BR", "CA", "MX", "US", "AE", "DE", "EG", "ES", "FR", "UK", "IN", "IT", "NL", "SA", "TR", "SG", "AU", "JP", "CN", "UNKNOWN"];
         if (!in_array($this->container['marketplace'], $allowed_values)) {
             return false;
         }
@@ -286,9 +304,9 @@ class AmazonMWSEndpointDTO implements ArrayAccess
      */
     public function setMarketplace($marketplace)
     {
-        $allowed_values = array('CA', 'US', 'DE', 'ES', 'FR', 'IN', 'IT', 'UK', 'JP', 'CN', 'UNKNOWN');
+        $allowed_values = array('BR', 'CA', 'MX', 'US', 'AE', 'DE', 'EG', 'ES', 'FR', 'UK', 'IN', 'IT', 'NL', 'SA', 'TR', 'SG', 'AU', 'JP', 'CN', 'UNKNOWN');
         if (!is_null($marketplace) && (!in_array($marketplace, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'marketplace', must be one of 'CA', 'US', 'DE', 'ES', 'FR', 'IN', 'IT', 'UK', 'JP', 'CN', 'UNKNOWN'");
+            throw new \InvalidArgumentException("Invalid value for 'marketplace', must be one of 'BR', 'CA', 'MX', 'US', 'AE', 'DE', 'EG', 'ES', 'FR', 'UK', 'IN', 'IT', 'NL', 'SA', 'TR', 'SG', 'AU', 'JP', 'CN', 'UNKNOWN'");
         }
         $this->container['marketplace'] = $marketplace;
 

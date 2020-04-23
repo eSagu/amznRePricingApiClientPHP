@@ -155,6 +155,7 @@ class ItemOfferDTO implements ArrayAccess
     const EXCLUSION_REASONS_ONLY_FEATURED_MERCHANT = 'ONLY_FEATURED_MERCHANT';
     const EXCLUSION_REASONS_SHIPS_FROM = 'SHIPS_FROM';
     const EXCLUSION_REASONS_MY_OWN_OFFER = 'MY_OWN_OFFER';
+    const EXCLUSION_REASONS_NOT_AVAILABLE = 'NOT_AVAILABLE';
     const FLAGS_IS_FULFILLED_BY_AMAZON = 'IS_FULFILLED_BY_AMAZON';
     const FLAGS_IS_BUY_BOX_WINNER = 'IS_BUY_BOX_WINNER';
     const FLAGS_IS_EXPEDITED_SHIPPING_AVAILABLE = 'IS_EXPEDITED_SHIPPING_AVAILABLE';
@@ -192,6 +193,7 @@ class ItemOfferDTO implements ArrayAccess
             self::EXCLUSION_REASONS_ONLY_FEATURED_MERCHANT,
             self::EXCLUSION_REASONS_SHIPS_FROM,
             self::EXCLUSION_REASONS_MY_OWN_OFFER,
+            self::EXCLUSION_REASONS_NOT_AVAILABLE,
         ];
     }
     
@@ -333,9 +335,9 @@ class ItemOfferDTO implements ArrayAccess
      */
     public function setExclusionReasons($exclusion_reasons)
     {
-        $allowed_values = array('SELLER_ID', 'FULFILLMENT_TYPE', 'RATING', 'SHIPPING_TIME', 'ONLY_FEATURED_MERCHANT', 'SHIPS_FROM', 'MY_OWN_OFFER');
+        $allowed_values = array('SELLER_ID', 'FULFILLMENT_TYPE', 'RATING', 'SHIPPING_TIME', 'ONLY_FEATURED_MERCHANT', 'SHIPS_FROM', 'MY_OWN_OFFER', 'NOT_AVAILABLE');
         if (!is_null($exclusion_reasons) && (array_diff($exclusion_reasons, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'exclusion_reasons', must be one of 'SELLER_ID', 'FULFILLMENT_TYPE', 'RATING', 'SHIPPING_TIME', 'ONLY_FEATURED_MERCHANT', 'SHIPS_FROM', 'MY_OWN_OFFER'");
+            throw new \InvalidArgumentException("Invalid value for 'exclusion_reasons', must be one of 'SELLER_ID', 'FULFILLMENT_TYPE', 'RATING', 'SHIPPING_TIME', 'ONLY_FEATURED_MERCHANT', 'SHIPS_FROM', 'MY_OWN_OFFER', 'NOT_AVAILABLE'");
         }
         $this->container['exclusion_reasons'] = $exclusion_reasons;
 
