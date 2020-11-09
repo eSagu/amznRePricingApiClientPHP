@@ -61,6 +61,8 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'bool',
         'fba_quantity_update_enabled' => 'bool',
         'fba_quantity_update_max_age' => 'int',
+        'force_overbid_own_fba' => 'bool',
+        'forced_overbid_own_fba_percentage' => 'int',
         'import_merchant_shipping_group_as_shipping_costs' => 'bool',
         'inserted' => '\DateTime',
         'maximum_concurrent_uploads' => 'int',
@@ -92,6 +94,8 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'downloadEnabled',
         'fba_quantity_update_enabled' => 'fbaQuantityUpdateEnabled',
         'fba_quantity_update_max_age' => 'fbaQuantityUpdateMaxAge',
+        'force_overbid_own_fba' => 'forceOverbidOwnFba',
+        'forced_overbid_own_fba_percentage' => 'forcedOverbidOwnFbaPercentage',
         'import_merchant_shipping_group_as_shipping_costs' => 'importMerchantShippingGroupAsShippingCosts',
         'inserted' => 'inserted',
         'maximum_concurrent_uploads' => 'maximumConcurrentUploads',
@@ -119,6 +123,8 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'setDownloadEnabled',
         'fba_quantity_update_enabled' => 'setFbaQuantityUpdateEnabled',
         'fba_quantity_update_max_age' => 'setFbaQuantityUpdateMaxAge',
+        'force_overbid_own_fba' => 'setForceOverbidOwnFba',
+        'forced_overbid_own_fba_percentage' => 'setForcedOverbidOwnFbaPercentage',
         'import_merchant_shipping_group_as_shipping_costs' => 'setImportMerchantShippingGroupAsShippingCosts',
         'inserted' => 'setInserted',
         'maximum_concurrent_uploads' => 'setMaximumConcurrentUploads',
@@ -146,6 +152,8 @@ class RepricingSettingsDTO implements ArrayAccess
         'download_enabled' => 'getDownloadEnabled',
         'fba_quantity_update_enabled' => 'getFbaQuantityUpdateEnabled',
         'fba_quantity_update_max_age' => 'getFbaQuantityUpdateMaxAge',
+        'force_overbid_own_fba' => 'getForceOverbidOwnFba',
+        'forced_overbid_own_fba_percentage' => 'getForcedOverbidOwnFbaPercentage',
         'import_merchant_shipping_group_as_shipping_costs' => 'getImportMerchantShippingGroupAsShippingCosts',
         'inserted' => 'getInserted',
         'maximum_concurrent_uploads' => 'getMaximumConcurrentUploads',
@@ -298,6 +306,8 @@ class RepricingSettingsDTO implements ArrayAccess
         $this->container['download_enabled'] = isset($data['download_enabled']) ? $data['download_enabled'] : null;
         $this->container['fba_quantity_update_enabled'] = isset($data['fba_quantity_update_enabled']) ? $data['fba_quantity_update_enabled'] : null;
         $this->container['fba_quantity_update_max_age'] = isset($data['fba_quantity_update_max_age']) ? $data['fba_quantity_update_max_age'] : null;
+        $this->container['force_overbid_own_fba'] = isset($data['force_overbid_own_fba']) ? $data['force_overbid_own_fba'] : null;
+        $this->container['forced_overbid_own_fba_percentage'] = isset($data['forced_overbid_own_fba_percentage']) ? $data['forced_overbid_own_fba_percentage'] : null;
         $this->container['import_merchant_shipping_group_as_shipping_costs'] = isset($data['import_merchant_shipping_group_as_shipping_costs']) ? $data['import_merchant_shipping_group_as_shipping_costs'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['maximum_concurrent_uploads'] = isset($data['maximum_concurrent_uploads']) ? $data['maximum_concurrent_uploads'] : null;
@@ -335,6 +345,14 @@ class RepricingSettingsDTO implements ArrayAccess
         $allowed_values = ["3600", "7200", "14400", "28800", "57600", "86400"];
         if (!in_array($this->container['fba_quantity_update_max_age'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'fba_quantity_update_max_age', must be one of '3600', '7200', '14400', '28800', '57600', '86400'.";
+        }
+
+        if (!is_null($this->container['forced_overbid_own_fba_percentage']) && ($this->container['forced_overbid_own_fba_percentage'] > 10000)) {
+            $invalid_properties[] = "invalid value for 'forced_overbid_own_fba_percentage', must be smaller than or equal to 10000.";
+        }
+
+        if (!is_null($this->container['forced_overbid_own_fba_percentage']) && ($this->container['forced_overbid_own_fba_percentage'] < 0)) {
+            $invalid_properties[] = "invalid value for 'forced_overbid_own_fba_percentage', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['maximum_concurrent_uploads']) && ($this->container['maximum_concurrent_uploads'] > 15)) {
@@ -396,6 +414,12 @@ class RepricingSettingsDTO implements ArrayAccess
         }
         $allowed_values = ["3600", "7200", "14400", "28800", "57600", "86400"];
         if (!in_array($this->container['fba_quantity_update_max_age'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['forced_overbid_own_fba_percentage'] > 10000) {
+            return false;
+        }
+        if ($this->container['forced_overbid_own_fba_percentage'] < 0) {
             return false;
         }
         if ($this->container['maximum_concurrent_uploads'] > 15) {
@@ -564,6 +588,56 @@ class RepricingSettingsDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'fba_quantity_update_max_age', must be one of '3600', '7200', '14400', '28800', '57600', '86400'");
         }
         $this->container['fba_quantity_update_max_age'] = $fba_quantity_update_max_age;
+
+        return $this;
+    }
+
+    /**
+     * Gets force_overbid_own_fba
+     * @return bool
+     */
+    public function getForceOverbidOwnFba()
+    {
+        return $this->container['force_overbid_own_fba'];
+    }
+
+    /**
+     * Sets force_overbid_own_fba
+     * @param bool $force_overbid_own_fba
+     * @return $this
+     */
+    public function setForceOverbidOwnFba($force_overbid_own_fba)
+    {
+        $this->container['force_overbid_own_fba'] = $force_overbid_own_fba;
+
+        return $this;
+    }
+
+    /**
+     * Gets forced_overbid_own_fba_percentage
+     * @return int
+     */
+    public function getForcedOverbidOwnFbaPercentage()
+    {
+        return $this->container['forced_overbid_own_fba_percentage'];
+    }
+
+    /**
+     * Sets forced_overbid_own_fba_percentage
+     * @param int $forced_overbid_own_fba_percentage
+     * @return $this
+     */
+    public function setForcedOverbidOwnFbaPercentage($forced_overbid_own_fba_percentage)
+    {
+
+        if (!is_null($forced_overbid_own_fba_percentage) && ($forced_overbid_own_fba_percentage > 10000)) {
+            throw new \InvalidArgumentException('invalid value for $forced_overbid_own_fba_percentage when calling RepricingSettingsDTO., must be smaller than or equal to 10000.');
+        }
+        if (!is_null($forced_overbid_own_fba_percentage) && ($forced_overbid_own_fba_percentage < 0)) {
+            throw new \InvalidArgumentException('invalid value for $forced_overbid_own_fba_percentage when calling RepricingSettingsDTO., must be bigger than or equal to 0.');
+        }
+
+        $this->container['forced_overbid_own_fba_percentage'] = $forced_overbid_own_fba_percentage;
 
         return $this;
     }

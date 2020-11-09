@@ -55,6 +55,7 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'ai_assist_active' => 'bool',
         'id' => 'int',
         'inserted' => '\DateTime',
         'margin_protection_active' => 'bool',
@@ -79,6 +80,7 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'ai_assist_active' => 'aiAssistActive',
         'id' => 'id',
         'inserted' => 'inserted',
         'margin_protection_active' => 'marginProtectionActive',
@@ -99,6 +101,7 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'ai_assist_active' => 'setAiAssistActive',
         'id' => 'setId',
         'inserted' => 'setInserted',
         'margin_protection_active' => 'setMarginProtectionActive',
@@ -119,6 +122,7 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'ai_assist_active' => 'getAiAssistActive',
         'id' => 'getId',
         'inserted' => 'getInserted',
         'margin_protection_active' => 'getMarginProtectionActive',
@@ -302,6 +306,7 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['ai_assist_active'] = isset($data['ai_assist_active']) ? $data['ai_assist_active'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['inserted'] = isset($data['inserted']) ? $data['inserted'] : null;
         $this->container['margin_protection_active'] = isset($data['margin_protection_active']) ? $data['margin_protection_active'] : null;
@@ -436,6 +441,27 @@ class RepricingBuyBoxSettingsDTO implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets ai_assist_active
+     * @return bool
+     */
+    public function getAiAssistActive()
+    {
+        return $this->container['ai_assist_active'];
+    }
+
+    /**
+     * Sets ai_assist_active
+     * @param bool $ai_assist_active
+     * @return $this
+     */
+    public function setAiAssistActive($ai_assist_active)
+    {
+        $this->container['ai_assist_active'] = $ai_assist_active;
+
+        return $this;
+    }
 
     /**
      * Gets id
