@@ -54,6 +54,7 @@ class AmazonMWSEndpointDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'business_prices' => 'bool',
         'charset' => 'string',
         'marketplace' => 'string',
         'marketplace_id' => 'string',
@@ -73,6 +74,7 @@ class AmazonMWSEndpointDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'business_prices' => 'businessPrices',
         'charset' => 'charset',
         'marketplace' => 'marketplace',
         'marketplace_id' => 'marketplaceId',
@@ -88,6 +90,7 @@ class AmazonMWSEndpointDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'business_prices' => 'setBusinessPrices',
         'charset' => 'setCharset',
         'marketplace' => 'setMarketplace',
         'marketplace_id' => 'setMarketplaceId',
@@ -103,6 +106,7 @@ class AmazonMWSEndpointDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'business_prices' => 'getBusinessPrices',
         'charset' => 'getCharset',
         'marketplace' => 'getMarketplace',
         'marketplace_id' => 'getMarketplaceId',
@@ -144,7 +148,9 @@ class AmazonMWSEndpointDTO implements ArrayAccess
     const MARKETPLACE_IN = 'IN';
     const MARKETPLACE_IT = 'IT';
     const MARKETPLACE_NL = 'NL';
+    const MARKETPLACE_PL = 'PL';
     const MARKETPLACE_SA = 'SA';
+    const MARKETPLACE_SE = 'SE';
     const MARKETPLACE_TR = 'TR';
     const MARKETPLACE_SG = 'SG';
     const MARKETPLACE_AU = 'AU';
@@ -188,7 +194,9 @@ class AmazonMWSEndpointDTO implements ArrayAccess
             self::MARKETPLACE_IN,
             self::MARKETPLACE_IT,
             self::MARKETPLACE_NL,
+            self::MARKETPLACE_PL,
             self::MARKETPLACE_SA,
+            self::MARKETPLACE_SE,
             self::MARKETPLACE_TR,
             self::MARKETPLACE_SG,
             self::MARKETPLACE_AU,
@@ -211,6 +219,7 @@ class AmazonMWSEndpointDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['business_prices'] = isset($data['business_prices']) ? $data['business_prices'] : null;
         $this->container['charset'] = isset($data['charset']) ? $data['charset'] : null;
         $this->container['marketplace'] = isset($data['marketplace']) ? $data['marketplace'] : null;
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
@@ -234,9 +243,9 @@ class AmazonMWSEndpointDTO implements ArrayAccess
             $invalid_properties[] = "invalid value for 'charset', must be one of 'ISO_8859_1', 'SHIFT_JIS', 'UTF_8', 'UTF_16'.";
         }
 
-        $allowed_values = ["BR", "CA", "MX", "US", "AE", "DE", "EG", "ES", "FR", "UK", "IN", "IT", "NL", "SA", "TR", "SG", "AU", "JP", "CN", "UNKNOWN"];
+        $allowed_values = ["BR", "CA", "MX", "US", "AE", "DE", "EG", "ES", "FR", "UK", "IN", "IT", "NL", "PL", "SA", "SE", "TR", "SG", "AU", "JP", "CN", "UNKNOWN"];
         if (!in_array($this->container['marketplace'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'marketplace', must be one of 'BR', 'CA', 'MX', 'US', 'AE', 'DE', 'EG', 'ES', 'FR', 'UK', 'IN', 'IT', 'NL', 'SA', 'TR', 'SG', 'AU', 'JP', 'CN', 'UNKNOWN'.";
+            $invalid_properties[] = "invalid value for 'marketplace', must be one of 'BR', 'CA', 'MX', 'US', 'AE', 'DE', 'EG', 'ES', 'FR', 'UK', 'IN', 'IT', 'NL', 'PL', 'SA', 'SE', 'TR', 'SG', 'AU', 'JP', 'CN', 'UNKNOWN'.";
         }
 
         return $invalid_properties;
@@ -255,13 +264,34 @@ class AmazonMWSEndpointDTO implements ArrayAccess
         if (!in_array($this->container['charset'], $allowed_values)) {
             return false;
         }
-        $allowed_values = ["BR", "CA", "MX", "US", "AE", "DE", "EG", "ES", "FR", "UK", "IN", "IT", "NL", "SA", "TR", "SG", "AU", "JP", "CN", "UNKNOWN"];
+        $allowed_values = ["BR", "CA", "MX", "US", "AE", "DE", "EG", "ES", "FR", "UK", "IN", "IT", "NL", "PL", "SA", "SE", "TR", "SG", "AU", "JP", "CN", "UNKNOWN"];
         if (!in_array($this->container['marketplace'], $allowed_values)) {
             return false;
         }
         return true;
     }
 
+
+    /**
+     * Gets business_prices
+     * @return bool
+     */
+    public function getBusinessPrices()
+    {
+        return $this->container['business_prices'];
+    }
+
+    /**
+     * Sets business_prices
+     * @param bool $business_prices
+     * @return $this
+     */
+    public function setBusinessPrices($business_prices)
+    {
+        $this->container['business_prices'] = $business_prices;
+
+        return $this;
+    }
 
     /**
      * Gets charset
@@ -304,9 +334,9 @@ class AmazonMWSEndpointDTO implements ArrayAccess
      */
     public function setMarketplace($marketplace)
     {
-        $allowed_values = array('BR', 'CA', 'MX', 'US', 'AE', 'DE', 'EG', 'ES', 'FR', 'UK', 'IN', 'IT', 'NL', 'SA', 'TR', 'SG', 'AU', 'JP', 'CN', 'UNKNOWN');
+        $allowed_values = array('BR', 'CA', 'MX', 'US', 'AE', 'DE', 'EG', 'ES', 'FR', 'UK', 'IN', 'IT', 'NL', 'PL', 'SA', 'SE', 'TR', 'SG', 'AU', 'JP', 'CN', 'UNKNOWN');
         if (!is_null($marketplace) && (!in_array($marketplace, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'marketplace', must be one of 'BR', 'CA', 'MX', 'US', 'AE', 'DE', 'EG', 'ES', 'FR', 'UK', 'IN', 'IT', 'NL', 'SA', 'TR', 'SG', 'AU', 'JP', 'CN', 'UNKNOWN'");
+            throw new \InvalidArgumentException("Invalid value for 'marketplace', must be one of 'BR', 'CA', 'MX', 'US', 'AE', 'DE', 'EG', 'ES', 'FR', 'UK', 'IN', 'IT', 'NL', 'PL', 'SA', 'SE', 'TR', 'SG', 'AU', 'JP', 'CN', 'UNKNOWN'");
         }
         $this->container['marketplace'] = $marketplace;
 

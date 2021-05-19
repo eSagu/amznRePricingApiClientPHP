@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**business_price_settings_id** | **int** |  | [optional] 
 **buy_box_settings_id** | **int** |  | [optional] 
 **custom_code_id** | **int** |  | [optional] 
 **exclusion_criteria_id** | **int** |  | [optional] 

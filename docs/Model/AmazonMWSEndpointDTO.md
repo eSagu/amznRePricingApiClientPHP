@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**business_prices** | **bool** |  | [optional] 
 **charset** | **string** |  | [optional] 
 **marketplace** | **string** |  | [optional] 
 **marketplace_id** | **string** |  | [optional] 

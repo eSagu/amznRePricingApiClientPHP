@@ -55,6 +55,7 @@ class RepricingItemStrategyDTO implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'business_price_settings_id' => 'int',
         'buy_box_settings_id' => 'int',
         'custom_code_id' => 'int',
         'exclusion_criteria_id' => 'int',
@@ -75,6 +76,7 @@ class RepricingItemStrategyDTO implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'business_price_settings_id' => 'businessPriceSettingsId',
         'buy_box_settings_id' => 'buyBoxSettingsId',
         'custom_code_id' => 'customCodeId',
         'exclusion_criteria_id' => 'exclusionCriteriaId',
@@ -91,6 +93,7 @@ class RepricingItemStrategyDTO implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'business_price_settings_id' => 'setBusinessPriceSettingsId',
         'buy_box_settings_id' => 'setBuyBoxSettingsId',
         'custom_code_id' => 'setCustomCodeId',
         'exclusion_criteria_id' => 'setExclusionCriteriaId',
@@ -107,6 +110,7 @@ class RepricingItemStrategyDTO implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'business_price_settings_id' => 'getBusinessPriceSettingsId',
         'buy_box_settings_id' => 'getBuyBoxSettingsId',
         'custom_code_id' => 'getCustomCodeId',
         'exclusion_criteria_id' => 'getExclusionCriteriaId',
@@ -148,6 +152,7 @@ class RepricingItemStrategyDTO implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['business_price_settings_id'] = isset($data['business_price_settings_id']) ? $data['business_price_settings_id'] : null;
         $this->container['buy_box_settings_id'] = isset($data['buy_box_settings_id']) ? $data['buy_box_settings_id'] : null;
         $this->container['custom_code_id'] = isset($data['custom_code_id']) ? $data['custom_code_id'] : null;
         $this->container['exclusion_criteria_id'] = isset($data['exclusion_criteria_id']) ? $data['exclusion_criteria_id'] : null;
@@ -182,6 +187,27 @@ class RepricingItemStrategyDTO implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets business_price_settings_id
+     * @return int
+     */
+    public function getBusinessPriceSettingsId()
+    {
+        return $this->container['business_price_settings_id'];
+    }
+
+    /**
+     * Sets business_price_settings_id
+     * @param int $business_price_settings_id
+     * @return $this
+     */
+    public function setBusinessPriceSettingsId($business_price_settings_id)
+    {
+        $this->container['business_price_settings_id'] = $business_price_settings_id;
+
+        return $this;
+    }
 
     /**
      * Gets buy_box_settings_id

@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ItemOfferDTO Class Doc Comment
  *
  * @category    Class
- * @description A offer on amzn. An offer contains information about an offer on a item. The exclusion reasons are computed by the item&#39;Äs exclusion criteria. The gap is computed by the item&#39;s price gap. The the comparedTo flag marks the offer which was used as repricing target.
+ * @description A offer on amzn. An offer contains information about an offer on a item. The exclusion reasons are computed by the item&#39;s exclusion criteria. The gap is computed by the item&#39;s price gap. The the comparedTo flag marks the offer which was used as repricing target.
  * @package     eSagu\Amzn\RePricing\V1
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

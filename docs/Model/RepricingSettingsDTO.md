@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **merchant_shipping_groups** | **string[]** |  | [optional] 
 **show_expert_settings** | **bool** |  | [optional] 
 **stock_update_max_age** | **int** |  | [optional] 
-**time_zone** | **string** |  | [optional] 
 **trigger_enabled** | **bool** |  | [optional] 
 **trigger_limit** | **int** |  | [optional] 
 **updated** | [**\DateTime**](\DateTime.md) |  | [optional] 

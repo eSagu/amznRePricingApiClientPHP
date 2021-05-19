@@ -62,13 +62,13 @@ eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKey('Aut
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // eSagu\Amzn\RePricing\V1\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingBuyBoxSettingsApi();
+$api_instance = new eSagu\Amzn\RePricing\V1\Api\RepricingBusinessPriceSettingsApi();
 
 try {
     $result = $api_instance->callList();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RepricingBuyBoxSettingsApi->callList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RepricingBusinessPriceSettingsApi->callList: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -80,6 +80,11 @@ All URIs are relative to *https://api.esagu.de/amzn/repricing/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*RepricingBusinessPriceSettingsApi* | [**callList**](docs/Api/RepricingBusinessPriceSettingsApi.md#calllist) | **GET** /business-price-settings | Gets all business price settings of a service.
+*RepricingBusinessPriceSettingsApi* | [**delete**](docs/Api/RepricingBusinessPriceSettingsApi.md#delete) | **DELETE** /business-price-settings/{businessPriceSettingsId} | Delete a business price settings by id.
+*RepricingBusinessPriceSettingsApi* | [**get**](docs/Api/RepricingBusinessPriceSettingsApi.md#get) | **GET** /business-price-settings/{businessPriceSettingsId} | Get a business price settings specified by it&#39;s id.
+*RepricingBusinessPriceSettingsApi* | [**post**](docs/Api/RepricingBusinessPriceSettingsApi.md#post) | **POST** /business-price-settings | Adds a new business price settings.
+*RepricingBusinessPriceSettingsApi* | [**put**](docs/Api/RepricingBusinessPriceSettingsApi.md#put) | **PUT** /business-price-settings/{businessPriceSettingsId} | Edit a business price settings.
 *RepricingBuyBoxSettingsApi* | [**callList**](docs/Api/RepricingBuyBoxSettingsApi.md#calllist) | **GET** /buy-box-settings | Get all user service&#39;s buy box settings.
 *RepricingBuyBoxSettingsApi* | [**delete**](docs/Api/RepricingBuyBoxSettingsApi.md#delete) | **DELETE** /buy-box-settings/{buyBoxSettingsId} | Delete buy box settings by id.
 *RepricingBuyBoxSettingsApi* | [**get**](docs/Api/RepricingBuyBoxSettingsApi.md#get) | **GET** /buy-box-settings/{buyBoxSettingsId} | Get the buy box settings specified by it&#39;s id.
@@ -124,7 +129,6 @@ Class | Method | HTTP request | Description
 *RepricingShippingCostsApi* | [**get**](docs/Api/RepricingShippingCostsApi.md#get) | **GET** /shipping-costs/{shippingCostsId} | Get the shipping costs specified by it&#39;s id.
 *RepricingShippingCostsApi* | [**post**](docs/Api/RepricingShippingCostsApi.md#post) | **POST** /shipping-costs | Adds new repricing shipping costs for service.
 *RepricingShippingCostsApi* | [**put**](docs/Api/RepricingShippingCostsApi.md#put) | **PUT** /shipping-costs/{shippingCostsId} | Edit the repricing shipping costs by id.
-*TimeZoneApi* | [**callList**](docs/Api/TimeZoneApi.md#calllist) | **GET** /time-zone | Gets all available TimeZones.
 *UserServiceMWSAccountApi* | [**get**](docs/Api/UserServiceMWSAccountApi.md#get) | **GET** /mws-account | Get a user service&#39;s Amazon MWS account.
 
 
@@ -140,6 +144,7 @@ Class | Method | HTTP request | Description
  - [PriceGapDTO](docs/Model/PriceGapDTO.md)
  - [PriceGapShippingTimeDTO](docs/Model/PriceGapShippingTimeDTO.md)
  - [RepricingAmazonOrderHistoryDTO](docs/Model/RepricingAmazonOrderHistoryDTO.md)
+ - [RepricingBusinessPriceSettingsDTO](docs/Model/RepricingBusinessPriceSettingsDTO.md)
  - [RepricingBuyBoxSettingsDTO](docs/Model/RepricingBuyBoxSettingsDTO.md)
  - [RepricingBuyBoxSlotsDTO](docs/Model/RepricingBuyBoxSlotsDTO.md)
  - [RepricingCSVImportDTO](docs/Model/RepricingCSVImportDTO.md)

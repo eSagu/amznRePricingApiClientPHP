@@ -35,7 +35,7 @@ use \ArrayAccess;
  * RepricingSettingsDTO Class Doc Comment
  *
  * @category    Class
- * @description The global settings. The global settings contains flags for dis or enabling up and downloads or the number of Amazon MWS API request performed by esagu. The name must be unique.
+ * @description The global settings. The global settings contains flags for toggling up and downloads or the number of Amazon MWS API request performed by eSagu…
  * @package     eSagu\Amzn\RePricing\V1
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -71,7 +71,6 @@ class RepricingSettingsDTO implements ArrayAccess
         'merchant_shipping_groups' => 'string[]',
         'show_expert_settings' => 'bool',
         'stock_update_max_age' => 'int',
-        'time_zone' => 'string',
         'trigger_enabled' => 'bool',
         'trigger_limit' => 'int',
         'updated' => '\DateTime',
@@ -104,7 +103,6 @@ class RepricingSettingsDTO implements ArrayAccess
         'merchant_shipping_groups' => 'merchantShippingGroups',
         'show_expert_settings' => 'showExpertSettings',
         'stock_update_max_age' => 'stockUpdateMaxAge',
-        'time_zone' => 'timeZone',
         'trigger_enabled' => 'triggerEnabled',
         'trigger_limit' => 'triggerLimit',
         'updated' => 'updated',
@@ -133,7 +131,6 @@ class RepricingSettingsDTO implements ArrayAccess
         'merchant_shipping_groups' => 'setMerchantShippingGroups',
         'show_expert_settings' => 'setShowExpertSettings',
         'stock_update_max_age' => 'setStockUpdateMaxAge',
-        'time_zone' => 'setTimeZone',
         'trigger_enabled' => 'setTriggerEnabled',
         'trigger_limit' => 'setTriggerLimit',
         'updated' => 'setUpdated',
@@ -162,7 +159,6 @@ class RepricingSettingsDTO implements ArrayAccess
         'merchant_shipping_groups' => 'getMerchantShippingGroups',
         'show_expert_settings' => 'getShowExpertSettings',
         'stock_update_max_age' => 'getStockUpdateMaxAge',
-        'time_zone' => 'getTimeZone',
         'trigger_enabled' => 'getTriggerEnabled',
         'trigger_limit' => 'getTriggerLimit',
         'updated' => 'getUpdated',
@@ -316,7 +312,6 @@ class RepricingSettingsDTO implements ArrayAccess
         $this->container['merchant_shipping_groups'] = isset($data['merchant_shipping_groups']) ? $data['merchant_shipping_groups'] : null;
         $this->container['show_expert_settings'] = isset($data['show_expert_settings']) ? $data['show_expert_settings'] : null;
         $this->container['stock_update_max_age'] = isset($data['stock_update_max_age']) ? $data['stock_update_max_age'] : null;
-        $this->container['time_zone'] = isset($data['time_zone']) ? $data['time_zone'] : null;
         $this->container['trigger_enabled'] = isset($data['trigger_enabled']) ? $data['trigger_enabled'] : null;
         $this->container['trigger_limit'] = isset($data['trigger_limit']) ? $data['trigger_limit'] : null;
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
@@ -834,27 +829,6 @@ class RepricingSettingsDTO implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'stock_update_max_age', must be one of '900', '1200', '1800', '2700', '3600', '5400', '7200', '14400', '28800', '57600', '86400'");
         }
         $this->container['stock_update_max_age'] = $stock_update_max_age;
-
-        return $this;
-    }
-
-    /**
-     * Gets time_zone
-     * @return string
-     */
-    public function getTimeZone()
-    {
-        return $this->container['time_zone'];
-    }
-
-    /**
-     * Sets time_zone
-     * @param string $time_zone
-     * @return $this
-     */
-    public function setTimeZone($time_zone)
-    {
-        $this->container['time_zone'] = $time_zone;
 
         return $this;
     }
